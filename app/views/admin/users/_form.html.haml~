@@ -1,0 +1,28 @@
+= form_for @user, :url => [:admin, @user] do |f|
+  = f.label :login
+  = f.text_field :login
+  = f.error_message_on :login
+
+  = f.label :first_name
+  = f.text_field :first_name
+  = f.error_message_on :login
+
+  = f.label :last_name
+  = f.text_field :last_name
+  = f.error_message_on :login
+
+  = f.label :email
+  = f.text_field :email
+  = f.error_message_on :email
+
+  = f.label :password
+  = f.password_field :password
+  = f.error_message_on :password
+
+  = f.label :password_confirmation
+  = f.password_field :password_confirmation
+  = f.error_message_on :password_confirmation
+
+  .actions
+    = f.submit
+

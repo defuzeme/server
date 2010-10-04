@@ -1,0 +1,345 @@
+$apple: #88C833
+$link: darken($apple, 20)
+$back: #dadfda
+$color: #666
+$error: #c55
+$actions: #888
+
+$sidebar_width: 200px
+$sidebar_back: #eee
+
+@mixin button_up($color)
+  border-color: lighten($color, 5) darken($color, 5) darken($color, 5) lighten($color, 5)
+
+@mixin button_down($color)
+  border-color: darken($color, 5) darken($color, 5) darken($color, 5) darken($color, 5)
+
+@mixin gradient_background($color)
+  background: $color
+  background-image: -moz-linear-gradient(top, lighten($color, 15), $color)
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten($color, 15)), to($color))
+
+@mixin back_gradient_background($color)
+  background: darken($color, 5)
+  background-image: -moz-linear-gradient(top, $color, lighten($color, 10))
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color), to(lighten($color, 10)))
+
+@mixin box-shadow($args)
+  -webkit-box-shadow: $args
+  box-shadow: $args
+  -moz-box-shadow: $args
+
+@mixin box-shadow2($args1, $args2)
+  -webkit-box-shadow: $args1, $args2
+  box-shadow: $args1, $args2
+  -moz-box-shadow: $args1, $args2
+
+@mixin tlborder-radius($radius)
+  border-top-left-radius: $radius
+  -moz-border-radius-topleft: $radius
+
+@mixin blborder-radius($radius)
+  border-bottom-left-radius: $radius
+  -moz-border-radius-bottomleft: $radius
+
+@mixin trborder-radius($radius)
+  border-top-right-radius: $radius
+  -moz-border-radius-topright: $radius
+
+@mixin brborder-radius($radius)
+  border-bottom-right-radius: $radius
+  -moz-border-radius-bottomright: $radius
+
+@mixin lborder-radius($radius)
+  @include tlborder-radius($radius)
+  @include blborder-radius($radius)
+
+@mixin rborder-radius($radius)
+  @include trborder-radius($radius)
+  @include brborder-radius($radius)
+
+@mixin border-radius($radius)
+  @include lborder-radius($radius)
+  @include rborder-radius($radius)
+
+body
+  background-color: $back
+  margin: 0
+  padding: 0
+  text-align: center
+  color: #444
+  font-size: 14px
+  font-family: 'Avant Garde', sans, helvetica, Arial
+
+#wrapper
+  width: 960px
+  margin: 0 auto
+  text-align: left
+  &.app
+    width: auto
+    min-width: 50em
+    margin: 0 2em
+
+a
+  text-decoration: none
+  color: $link
+
+a:hover
+  color: $apple
+
+.clear
+  clear: both
+  display: block
+
+h2
+  padding: 0.3em 10px
+  margin: 0
+  color: $apple
+
+ul
+  list-style: none
+  padding: 0
+
+.actions a,
+.actions input,
+input.button
+  @include gradient_background($actions)
+  text-shadow: 0 -1px 1px darken($actions, 15)
+  color: white
+  font-weight: bold
+  padding: 0px 8px
+  border: 1px solid $actions
+  cursor: pointer
+  @include button_up($actions) 
+  &:hover
+    color: white
+    @include gradient_background($apple)
+    text-shadow: 0 -1px 1px darken($apple, 10)
+    @include button_up($apple)
+  &:active
+    color: white
+    @include back_gradient_background($apple)
+    text-shadow: 0 -1px 1px darken($apple, 10)
+    @include button_down($apple)
+
+form
+  padding: 1em
+  label, input
+    display: block
+    float: left
+    line-height: 25px
+    height: 25px
+    margin-bottom: 18px
+    position: relative
+  label, .formError
+    clear: left
+    width: 30%
+    padding: 2px 0
+    text-align: right
+  input
+    border: 1px solid $back
+    @include button_up($back)
+    font-size: 1.2em
+    padding: 1px 5px
+    margin-left: 1em
+    width: 50%
+    @include border-radius(3px)
+    &:focus
+      outline: none
+      border: 1px solid $apple
+      @include box-shadow(0 0 3px 1px $apple)
+  .checkbox
+    width: auto
+    margin-top: 0.4em
+    height: auto
+    padding: 2px
+    border: none
+    &:focus
+      border: none
+      @include box-shadow(none)
+  .actions
+    clear: both
+    padding: 0 10px
+    input
+      float: none
+      margin: 0 auto
+      font-size: 1em
+      width: auto
+  .formError
+    float: left
+    color: $error
+    position: relative
+    top: -32px
+    font-size: 0.8em
+    margin-bottom: -25px
+  .field_with_errors
+    label
+      line-height: 12px
+    input
+      @include button_up($error)
+      background-color: lighten($error, 41)
+      &:focus
+        @include box-shadow(0 0 3px 1px $error)
+    
+table
+  width: 100%
+  border-collapse: collapse
+  th
+    @include gradient_background($apple)
+    text-shadow: 0 -1px 1px darken($apple, 10)
+    color: white
+    padding: 4px 8px
+    border-right: 1px solid lighten($apple, 30)
+    &:last-child
+      border-right: none
+  td
+    padding: 4px 8px
+  tr.even
+    td
+      background-color: darken(white, 5)
+
+.actions
+  a
+    display: block
+    float: left
+    font-size: 0.8em
+    line-height: 25px
+    &:first-child
+      @include lborder-radius(3px)
+    &:last-child
+      @include rborder-radius(3px)
+
+.block
+  margin: 10px
+
+header
+  text-shadow: 0 1px 0.1em white
+
+  a.logo
+    color: $apple
+    display: block
+    float: left
+    overflow: hidden
+    line-height: 50px
+    font-size: 12px
+    padding: 10px 0 10px 0
+  h1
+    height: 50px
+    width: 123px
+    background-image: url('../images/logo.gif')
+    margin: 0
+    position: relative
+    cursor: pointer
+    span
+      display: none
+          
+  #version
+    float: left
+    height: 50px
+    line-height: 50px
+    margin: 15px 0 0 15px
+    font-size: 2.1em
+    color: white
+    text-shadow: 0 -1px 1px darken($back, 5)
+
+  #signin
+    float: right
+    width: 400px
+    line-height: 27px
+    margin: 30px 0 0 0
+    text-align: right
+    .actions
+      float: right
+      margin-left: 1em
+
+#content
+  background-color: $sidebar_back
+  @include box-shadow(0px 1px 3px darken($back, 15))
+  margin-bottom: 10px
+  position: relative
+  color: $color
+  
+  .flash
+    position: absolute
+    top: -19px
+    left: 80px
+    background-color: $apple
+    color: white
+    padding: 5px 10px
+    text-shadow: 0 -1px 1px darken($apple, 10)
+    border: 2px solid white
+    @include box-shadow2(0px 1px 3px darken($back, 10), 0 0 1em darken($apple, 5) inset)
+    &.error
+      background-color: $error
+      text-shadow: 0 -1px 1px darken($error, 10)
+      @include box-shadow2(0px 1px 3px darken($back, 10), 0 0 1em darken($error, 10) inset) 
+
+#breadcrumb
+  ul
+    margin: 0
+    font-weight: bold
+    height: 2em
+    line-height: 2em
+    font-size: 0.9em
+    border-bottom: 1px solid darken($sidebar_back, 5)
+    @include gradient_background($actions)
+    text-shadow: 0 -1px 1px darken($actions, 15)
+    color: white
+    li
+      float: left
+      &.separator
+        padding: 0 5px
+      a
+        display: block
+        height: 2em
+        padding: 0px 5px
+        color: white
+        &:hover
+          @include gradient_background($apple)
+          text-shadow: 0 -1px 1px darken($apple, 10)
+        &:active
+          @include back_gradient_background($apple)
+          text-shadow: 0 -1px 1px darken($apple, 10)
+          
+#main
+  background-color: white
+  border: 1px solid #ccc
+  overflow: hidden
+
+  .coming
+    text-align: center
+    margin-top: 3em
+  .twitter
+    padding: 0 300px
+    margin-top: 5em
+    a
+      display: block
+      text-align: center
+      font-size: 1.5em
+      padding: 1em
+      border: 1px solid white
+      &:hover
+        background-color: lighten($back, 10)
+        border: 1px solid $back
+        @include border-radius(3px)
+.app
+  #main
+    margin-right: $sidebar_width
+    border-right: 1px solid darken($sidebar_back, 5)
+
+  #misc
+    float: right
+    width: $sidebar_width
+    background-color: #eee
+    height: 100px
+
+footer
+  div
+    color: #777
+    font-size: 0.9em
+    text-align: center
+    text-shadow: 0 1px 0.1em white
+
+img
+  border: none
+
