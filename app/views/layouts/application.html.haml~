@@ -1,0 +1,27 @@
+!!! 5
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  = render :partial => 'layouts/head'
+  %body
+    #wrapper.app
+      %header
+        = link_to root_path, :class => :logo do
+          %h1
+            %span Defuze.me
+        #version
+          - if defined? admin
+            admin
+          - else
+            alphα
+        #signin
+          = render :partial => 'sessions/controls'
+        .clear
+      #content
+        - flash.each do |type, msg|
+          %div{:class => "flash #{type}"}= msg
+        #misc= yield :misc
+        #main
+          #breadcrumb
+          = yield
+      %footer
+        %div
+          defuze.me © 2010-2012
