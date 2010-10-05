@@ -1,175 +1,167 @@
-(function() {
-  // Technique from Juriy Zaytsev
-  // http://thinkweb2.com/projects/prototype/detecting-event-support-without-browser-sniffing/
-  function isEventSupported(eventName) {
-    var el = document.createElement('div');
-    eventName = 'on' + eventName;
-    var isSupported = (eventName in el);
-    if (!isSupported) {
-      el.setAttribute(eventName, 'return;');
-      isSupported = typeof el[eventName] == 'function';
-    }
-    el = null;
-    return isSupported;
-  }
+/*
+---
+description: A MooTools driver for the Ruby on Rails 3 unobtrusive JavaScript API.
 
-  function isForm(element) {
-    return Object.isElement(element) && element.nodeName.toUpperCase() == 'FORM'
-  }
+license: MIT-style
 
-  function isInput(element) {
-    if (Object.isElement(element)) {
-      var name = element.nodeName.toUpperCase()
-      return name == 'INPUT' || name == 'SELECT' || name == 'TEXTAREA'
-    }
-    else return false
-  }
+authors:
+- Kevin Valdek
 
-  var submitBubbles = isEventSupported('submit'),
-      changeBubbles = isEventSupported('change')
+requires:
+  core/1.2.4: '*'
 
-  if (!submitBubbles || !changeBubbles) {
-    // augment the Event.Handler class to observe custom events when needed
-    Event.Handler.prototype.initialize = Event.Handler.prototype.initialize.wrap(
-      function(init, element, eventName, selector, callback) {
-        init(element, eventName, selector, callback)
-        // is the handler being attached to an element that doesn't support this event?
-        if ( (!submitBubbles && this.eventName == 'submit' && !isForm(this.element)) ||
-             (!changeBubbles && this.eventName == 'change' && !isInput(this.element)) ) {
-          // "submit" => "emulated:submit"
-          this.eventName = 'emulated:' + this.eventName
+provides:
+  - Rails 3 MooTools driver
+
+...
+*/
+
+window.addEvent('domready', function() {
+
+  rails.csrf = {
+    token: rails.getCsrf('token'),
+    param: rails.getCsrf('param')
+  };
+
+  rails.applyEvents();
+});
+
+(function($) {
+
+  window.rails = {
+    /**
+     * If el is passed as argument, events will only be applied to
+     * elements within el. Otherwise applied to document body.
+     */
+    applyEvents: function(el) {
+      el = $(el || document.body);
+      var apply = function(selector, action, callback) {
+        el.getElements(selector).addEvent(action, callback);
+      };
+
+      apply('form[data-remote="true"]', 'submit', rails.handleRemote);
+      apply('a[data-remote="true"], input[data-remote="true"]', 'click', rails.handleRemote);
+      apply('a[data-method][data-remote!=true]', 'click', function(e) {
+        e.preventDefault();
+        if(rails.confirmed(this)) {
+          var form = new Element('form', {
+            method: 'post',
+            action: this.get('href'),
+            styles: { display: 'none' }
+          }).inject(this, 'after');
+          
+          var methodInput = new Element('input', {
+            type: 'hidden',
+            name: '_method',
+            value: this.get('data-method')
+          });
+          
+          var csrfInput = new Element('input', {
+            type: 'hidden',
+            name: rails.csrf.param,
+            value: rails.csrf.token
+          });
+          
+          form.adopt(methodInput, csrfInput).submit();
         }
+      });
+      var noMethodNorRemoteConfirm = ':not([data-method]):not([data-remote=true])[data-confirm]';
+      apply('a' + noMethodNorRemoteConfirm + ',' + 'input' + noMethodNorRemoteConfirm, 'click', function() {
+        return rails.confirmed(this);
+      });
+    },
+
+    getCsrf: function(name) {
+      var meta = document.getElement('meta[name=csrf-' + name + ']');
+      return (meta ? meta.get('content') : null);
+    },
+
+    confirmed: function(el) {
+      var confirmMessage = el.get('data-confirm');
+      if(confirmMessage && !confirm(confirmMessage)) {
+        return false;
       }
-    )
-  }
+      return true;
+    },
 
-  if (!submitBubbles) {
-    // discover forms on the page by observing focus events which always bubble
-    document.on('focusin', 'form', function(focusEvent, form) {
-      // special handler for the real "submit" event (one-time operation)
-      if (!form.retrieve('emulated:submit')) {
-        form.on('submit', function(submitEvent) {
-          var emulated = form.fire('emulated:submit', submitEvent, true)
-          // if custom event received preventDefault, cancel the real one too
-          if (emulated.returnValue === false) submitEvent.preventDefault()
-        })
-        form.store('emulated:submit', true)
+    disable: function(el) {
+      var button = el.get('data-disable-with') ? el : el.getElement('[data-disable-with]');
+
+      if(button) {
+        var enableWith = button.get('value');
+        el.addEvent('ajax:complete', function() {
+          button.set({
+            value: enableWith,
+            disabled: false
+          });
+        });
+        button.set({
+          value: button.get('data-disable-with'),
+          disabled: true
+        });
       }
-    })
-  }
+    },
 
-  if (!changeBubbles) {
-    // discover form inputs on the page
-    document.on('focusin', 'input, select, texarea', function(focusEvent, input) {
-      // special handler for real "change" events
-      if (!input.retrieve('emulated:change')) {
-        input.on('change', function(changeEvent) {
-          input.fire('emulated:change', changeEvent, true)
-        })
-        input.store('emulated:change', true)
+    handleRemote: function(e) {
+      e.preventDefault();
+
+      if(rails.confirmed(this)) {
+        this.request = new Request.Rails(this);
+        rails.disable(this);
+        this.request.send();
       }
-    })
-  }
+    }
+  };
 
-  function handleRemote(element) {
-    var method, url, params;
+  Request.Rails = new Class({
 
-    var event = element.fire("ajax:before");
-    if (event.stopped) return false;
+    Extends: Request,
 
-    if (element.tagName.toLowerCase() === 'form') {
-      method = element.readAttribute('method') || 'post';
-      url    = element.readAttribute('action');
-      params = element.serialize();
-    } else {
-      method = element.readAttribute('data-method') || 'get';
-      url    = element.readAttribute('href');
-      params = {};
+    initialize: function(element, options) {
+      this.el = element;
+      this.parent($merge({
+        method: this.el.get('method') || this.el.get('data-method') || 'get',
+        url: this.el.get('action') || this.el.get('href')
+      }, options));
+      this.headers.Accept = '*/*';
+
+      this.addRailsEvents();
+    },
+
+    send: function(options) {
+      this.el.fireEvent('ajax:before');
+      if(this.el.get('tag') == 'form') {
+        this.options.data = this.el;
+      }
+      this.parent(options);
+      this.el.fireEvent('ajax:after', this.xhr);
+    },
+
+    addRailsEvents: function() {
+      this.addEvent('request', function() {
+        this.el.fireEvent('ajax:loading', this.xhr);
+      });
+
+      this.addEvent('success', function() {
+        this.el.fireEvent('ajax:success', this.xhr);
+      });
+
+      this.addEvent('complete', function() {
+        this.el.fireEvent('ajax:complete', this.xhr);
+        this.el.fireEvent('ajax:loaded', this.xhr);
+      });
+
+      this.addEvent('failure', function() {
+        this.el.fireEvent('ajax:failure', this.xhr);
+      });
     }
 
-    new Ajax.Request(url, {
-      method: method,
-      parameters: params,
-      evalScripts: true,
-
-      onComplete:    function(request) { element.fire("ajax:complete", request); },
-      onSuccess:     function(request) { element.fire("ajax:success",  request); },
-      onFailure:     function(request) { element.fire("ajax:failure",  request); }
-    });
-
-    element.fire("ajax:after");
-  }
-
-  function handleMethod(element) {
-    var method = element.readAttribute('data-method'),
-        url = element.readAttribute('href'),
-        csrf_param = $$('meta[name=csrf-param]')[0],
-        csrf_token = $$('meta[name=csrf-token]')[0];
-
-    var form = new Element('form', { method: "POST", action: url, style: "display: none;" });
-    element.parentNode.insert(form);
-
-    if (method !== 'post') {
-      var field = new Element('input', { type: 'hidden', name: '_method', value: method });
-      form.insert(field);
-    }
-
-    if (csrf_param) {
-      var param = csrf_param.readAttribute('content'),
-          token = csrf_token.readAttribute('content'),
-          field = new Element('input', { type: 'hidden', name: param, value: token });
-      form.insert(field);
-    }
-
-    form.submit();
-  }
-
-
-  document.on("click", "*[data-confirm]", function(event, element) {
-    var message = element.readAttribute('data-confirm');
-    if (!confirm(message)) event.stop();
   });
 
-  document.on("click", "a[data-remote]", function(event, element) {
-    if (event.stopped) return;
-    handleRemote(element);
-    event.stop();
-  });
+})(document.id);
 
-  document.on("click", "a[data-method]", function(event, element) {
-    if (event.stopped) return;
-    handleMethod(element);
-    event.stop();
-  });
-
-  document.on("submit", function(event) {
-    var element = event.findElement(),
-        message = element.readAttribute('data-confirm');
-    if (message && !confirm(message)) {
-      event.stop();
-      return false;
-    }
-
-    var inputs = element.select("input[type=submit][data-disable-with]");
-    inputs.each(function(input) {
-      input.disabled = true;
-      input.writeAttribute('data-original-value', input.value);
-      input.value = input.readAttribute('data-disable-with');
-    });
-
-    var element = event.findElement("form[data-remote]");
-    if (element) {
-      handleRemote(element);
-      event.stop();
-    }
-  });
-
-  document.on("ajax:after", "form", function(event, element) {
-    var inputs = element.select("input[type=submit][disabled=true][data-disable-with]");
-    inputs.each(function(input) {
-      input.value = input.readAttribute('data-original-value');
-      input.removeAttribute('data-original-value');
-      input.disabled = false;
-    });
-  });
-})();
+/**
+ * MooTools selector engine does not match data-* attributes.
+ * This will be fixed in 1.3, when the engine is swapped for Slick.
+ */
+Selectors.RegExps.combined = (/\.([\w-]+)|\[([\w-]+)(?:([!*^$~|]?=)(["']?)([^\4]*?)\4)?\]|:([\w-]+)(?:\(["']?(.*?)?["']?\)|$)/g);
