@@ -1,2 +1,0 @@
-%h2 Edit my profile
-= render :partial => 'new'

@@ -31,4 +31,9 @@ class HomeControllerTest < ActionController::TestCase
     get :admin
     assert_response :forbidden
   end
+  
+  test "should get request hostname stored" do
+    get :index
+    assert_equal 'test.host', $host
+  end
 end

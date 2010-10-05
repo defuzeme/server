@@ -6,6 +6,10 @@ class UserTest < ActiveSupport::TestCase
   include AuthenticatedTestHelper
   fixtures :users
 
+  def setup
+    $host = 'test.defuze.me'
+  end
+
   test 'should_create_user' do
     assert_difference 'User.count' do
       user = create_user

@@ -1,3 +1,0 @@
-%h1= @user.login
-= link_to '(edit)'
-.name= @user.name
