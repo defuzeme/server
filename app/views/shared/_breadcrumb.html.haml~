@@ -1,7 +1,0 @@
-%ul
-  - path = ''
-  %li= link_to 'Home', '/'
-  - for elem in request.path.split('/').delete_if {|e| e.blank?}
-    %li.separator &raquo;
-    - path << '/' + elem
-    %li= link_to elem, path

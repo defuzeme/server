@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   layout :auto_layout
 
   helper_method :is_admin?
+  
+  before_filter :get_request_hostname
 
   # HTML Status
   { :unauthorized => 401,
@@ -43,6 +45,10 @@ class ApplicationController < ActionController::Base
   end
   
   protected
+  
+  def get_request_hostname
+    $host ||= request.env['HTTP_HOST']
+  end
   
   def auto_layout
     if logged_in?

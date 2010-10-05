@@ -1,8 +1,7 @@
 Your account has been created.
 
   Username: <%=h @user.login %>
-  Password: <%=h @user.password %>
 
 Visit this url to activate your account:
 
-<%=h @url %>
+<%= activate_url @user.activation_code %>

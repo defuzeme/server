@@ -1,2 +1,0 @@
-- $stdout.puts :admin
-= render :template => 'layouts/application', :locals => {:admin => true}
