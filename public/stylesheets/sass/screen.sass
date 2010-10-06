@@ -128,6 +128,31 @@ input.button
     text-shadow: 0 -1px 1px darken($apple, 10)
     @include button_down($apple)
 
+.actions
+  a
+    display: block
+    float: left
+    font-size: 0.8em
+    line-height: 25px
+    &:first-child
+      @include lborder-radius(3px)
+    &:last-child
+      @include rborder-radius(3px)
+
+.split
+  overflow: hidden
+  clear: both
+  label, .formError
+    width: 40%
+  input
+    width: 48%
+  .left
+    float: left
+    width: 50%
+  .right
+    float: right
+    width: 50%
+
 form
   padding: 1em
   label, input
@@ -139,7 +164,7 @@ form
     position: relative
   label, .formError
     clear: left
-    width: 30%
+    width: 20%
     padding: 2px 0
     text-align: right
   input
@@ -148,7 +173,7 @@ form
     font-size: 1.2em
     padding: 1px 5px
     margin-left: 1em
-    width: 50%
+    width: 74%
     @include border-radius(3px)
     &:focus
       outline: none
@@ -203,17 +228,6 @@ table
   tr.even
     td
       background-color: darken(white, 5)
-
-.actions
-  a
-    display: block
-    float: left
-    font-size: 0.8em
-    line-height: 25px
-    &:first-child
-      @include lborder-radius(3px)
-    &:last-child
-      @include rborder-radius(3px)
 
 .block
   margin: 10px
@@ -333,7 +347,6 @@ header
         @include border-radius(3px)
 .app
   #main
-    margin-right: $sidebar_width
     border-right: 1px solid darken($sidebar_back, 5)
 
   #misc

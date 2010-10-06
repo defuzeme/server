@@ -1,27 +1,30 @@
 - @user.password = @user.password_confirmation = nil
 
 = form_for @user, :url => @user do |f|
-  - if @user.new_record?
-    = f.label :invitation_code
-    = f.text_field :invitation_code
-    = f.error_message_on :invitation_code
+  .split
+    .left
+      = auto_text_field f, :login
+    .right
+      = auto_text_field f, :email
 
-    = f.label :login
-    = f.text_field :login
-    = f.error_message_on :login
+  .split
+    .left
+      = auto_text_field f, :first_name
 
-  = f.label :email
-  = f.text_field :email
-  = f.error_message_on :email
+    .right
+      = auto_text_field f, :last_name
 
-  = f.label :password
-  = f.password_field :password
-  = f.error_message_on :password
+  .split
+    .left
+      = auto_password_field f, :password
 
-  = f.label :password_confirmation
-  = f.password_field :password_confirmation
-  = f.error_message_on :password_confirmation
+    .right
+      = auto_password_field f, :password_confirmation
 
+  .split
+    .left
+      - if @user.new_record?
+        = auto_text_field f, :invitation_code
   .actions
     = f.submit
 

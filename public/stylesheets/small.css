@@ -1,0 +1,10 @@
+.split {
+  overflow: hidden;
+  clear: both; }
+  .split label, .split .formError {
+    width: 20%; }
+  .split input {
+    width: 74%; }
+  .split .left, .split .right {
+    float: none;
+    width: auto; }
