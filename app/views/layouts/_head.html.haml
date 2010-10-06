@@ -1,3 +1,4 @@
+- max_width = 980
 %head
   %title Defuze.me
   %meta{:charset => "utf-8"}/
@@ -7,6 +8,7 @@
   %meta{:content => "index, follow", :name => "robots"}/
   %link{:href => '/favicon.png', :rel => 'shortcut icon'}/
   = stylesheet_link_tag 'screen'
+  = stylesheet_link_tag 'small', :media => "only screen and (max-width: #{max_width}px), only screen and (max-device-width: #{max_width}px)"
   = javascript_include_tag 'mootools-1.2.5-core', 'rails', 'alert', 'application'
   = csrf_meta_tag
   /[if lte IE 8]

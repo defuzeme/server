@@ -68,6 +68,36 @@ input.button {
     text-shadow: 0 -1px 1px #6c9f29;
     border-color: #7ab42e #7ab42e #7ab42e #7ab42e; }
 
+.actions a {
+  display: block;
+  float: left;
+  font-size: 0.8em;
+  line-height: 25px; }
+  .actions a:first-child {
+    border-top-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomleft: 3px; }
+  .actions a:last-child {
+    border-top-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    border-bottom-right-radius: 3px;
+    -moz-border-radius-bottomright: 3px; }
+
+.split {
+  overflow: hidden;
+  clear: both; }
+  .split label, .split .formError {
+    width: 40%; }
+  .split input {
+    width: 48%; }
+  .split .left {
+    float: left;
+    width: 50%; }
+  .split .right {
+    float: right;
+    width: 50%; }
+
 form {
   padding: 1em; }
   form label, form input {
@@ -79,7 +109,7 @@ form {
     position: relative; }
   form label, form .formError {
     clear: left;
-    width: 30%;
+    width: 20%;
     padding: 2px 0;
     text-align: right; }
   form input {
@@ -88,7 +118,7 @@ form {
     font-size: 1.2em;
     padding: 1px 5px;
     margin-left: 1em;
-    width: 50%;
+    width: 74%;
     border-top-left-radius: 3px;
     -moz-border-radius-topleft: 3px;
     border-bottom-left-radius: 3px;
@@ -156,22 +186,6 @@ table {
     padding: 4px 8px; }
   table tr.even td {
     background-color: #f2f2f2; }
-
-.actions a {
-  display: block;
-  float: left;
-  font-size: 0.8em;
-  line-height: 25px; }
-  .actions a:first-child {
-    border-top-left-radius: 3px;
-    -moz-border-radius-topleft: 3px;
-    border-bottom-left-radius: 3px;
-    -moz-border-radius-bottomleft: 3px; }
-  .actions a:last-child {
-    border-top-right-radius: 3px;
-    -moz-border-radius-topright: 3px;
-    border-bottom-right-radius: 3px;
-    -moz-border-radius-bottomright: 3px; }
 
 .block {
   margin: 10px; }
@@ -303,7 +317,6 @@ header {
         -moz-border-radius-bottomright: 3px; }
 
 .app #main {
-  margin-right: 200px;
   border-right: 1px solid #e1e1e1; }
 .app #misc {
   float: right;
