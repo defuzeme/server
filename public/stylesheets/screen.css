@@ -221,10 +221,10 @@ header {
   margin-bottom: 10px;
   position: relative;
   color: #666666; }
-  #content .flash {
+  #content .flash, #content #alert {
     position: absolute;
-    top: -19px;
-    left: 80px;
+    top: -10px;
+    left: 250px;
     background-color: #88c833;
     color: white;
     padding: 5px 10px;
@@ -233,12 +233,14 @@ header {
     -webkit-box-shadow: 0px 1px 3px #bfc7bf, 0 0 1em #7ab42e inset;
     box-shadow: 0px 1px 3px #bfc7bf, 0 0 1em #7ab42e inset;
     -moz-box-shadow: 0px 1px 3px #bfc7bf, 0 0 1em #7ab42e inset; }
-    #content .flash.error {
+    #content .flash.error, #content #alert.error {
       background-color: #cc5555;
       text-shadow: 0 -1px 1px #b73737;
       -webkit-box-shadow: 0px 1px 3px #bfc7bf, 0 0 1em #b73737 inset;
       box-shadow: 0px 1px 3px #bfc7bf, 0 0 1em #b73737 inset;
       -moz-box-shadow: 0px 1px 3px #bfc7bf, 0 0 1em #b73737 inset; }
+  #content #alert {
+    cursor: pointer; }
 
 #breadcrumb ul {
   margin: 0;
