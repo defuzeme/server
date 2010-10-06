@@ -8,6 +8,12 @@ $actions: #888
 $sidebar_width: 200px
 $sidebar_back: #eee
 
+@mixin smooth($props, $duration=0.3s)
+  -moz-transition: $props $duration linear
+  -o-transition: $props $duration linear
+  -webkit-transition: $props $duration linear
+  transition: $props $duration linear
+  
 @mixin button_up($color)
   border-color: lighten($color, 5) darken($color, 5) darken($color, 5) lighten($color, 5)
 
@@ -259,10 +265,10 @@ header
   position: relative
   color: $color
   
-  .flash
+  .flash, #alert
     position: absolute
-    top: -19px
-    left: 80px
+    top: -10px
+    left: 250px
     background-color: $apple
     color: white
     padding: 5px 10px
@@ -273,6 +279,9 @@ header
       background-color: $error
       text-shadow: 0 -1px 1px darken($error, 10)
       @include box-shadow2(0px 1px 3px darken($back, 10), 0 0 1em darken($error, 10) inset) 
+  #alert
+    cursor: pointer
+
 
 #breadcrumb
   ul
