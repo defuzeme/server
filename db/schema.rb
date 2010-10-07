@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100914175923) do
+ActiveRecord::Schema.define(:version => 20101006195204) do
+
+  create_table "radios", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "permalink"
+    t.string   "website"
+    t.float    "frequency"
+    t.integer  "band"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 50
