@@ -1,0 +1,9 @@
+en:
+  sessions:
+    controls:
+      logged_in: Logged in as
+      you_are: ", You're"
+      visitor: "Visitor"
+      log_in: Log in
+      log_out: Log out
+      sign_up: Sign up

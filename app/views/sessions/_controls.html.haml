@@ -1,14 +1,14 @@
 - if logged_in?
   %div.actions
-    = link_to "Log out", logout_path
-  Logged in as
+    = link_to t('.log_out'), logout_path
+  = t '.logged_in'
   = link_to_current_user :content_method => :login
   - if is_admin?
-    , You're
+    = t '.you_are'
     = link_to 'admin', admin_users_path
 - else
   %div.actions
-    = link_to "Log in",  login_path
-    = link_to "Sign up", signup_path
-  Not logged in
+    = link_to t('.log_in'),  login_path
+    = link_to t('.sign_up'), signup_path
+  = t '.visitor'
 

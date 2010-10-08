@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :is_admin?
   
   before_filter :get_request_hostname
+  before_filter :set_locale
 
   # HTML Status
   { :unauthorized => 401,
@@ -45,6 +46,21 @@ class ApplicationController < ActionController::Base
   end
   
   protected
+  
+  def set_locale
+    locale = params[:locale] || session[:locale] || I18n.default_locale
+    if I18n.available_locales.include? locale.to_sym
+      I18n.locale = locale.to_s
+      session[:locale] = locale
+    else
+      session.delete :locale
+      not_found
+    end
+  end
+
+  def default_url_options(options={})
+    { :locale => I18n.locale } 
+  end  
   
   def get_request_hostname
     $host ||= request.env['HTTP_HOST']

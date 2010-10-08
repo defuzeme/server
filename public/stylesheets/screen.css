@@ -10,7 +10,8 @@ body {
 #wrapper {
   width: 960px;
   margin: 0 auto;
-  text-align: left; }
+  text-align: left;
+  padding-top: 10px; }
   #wrapper.app {
     width: auto;
     min-width: 50em;
@@ -199,7 +200,7 @@ header {
     overflow: hidden;
     line-height: 50px;
     font-size: 12px;
-    padding: 10px 0 10px 0; }
+    padding: 0 0 10px 0; }
   header h1 {
     height: 50px;
     width: 123px;
@@ -213,15 +214,27 @@ header {
     float: left;
     height: 50px;
     line-height: 50px;
-    margin: 15px 0 0 15px;
+    margin: 5px 0 5px 15px;
     font-size: 2.1em;
     color: white;
     text-shadow: 0 -1px 1px #ccd3cc; }
+  header #language-selector {
+    float: right;
+    line-height: 27px;
+    margin: 15px 0 0 20px;
+    text-align: right; }
+    header #language-selector a {
+      padding-right: 25px;
+      background-position: right 50%;
+      background-repeat: no-repeat; }
+      header #language-selector a.fr {
+        background-image: url(../images/flags/fr.gif); }
+      header #language-selector a.en {
+        background-image: url(../images/flags/en.gif); }
   header #signin {
     float: right;
-    width: 400px;
     line-height: 27px;
-    margin: 25px 0 0 0;
+    margin: 15px 0 15px 0;
     text-align: right; }
     header #signin .actions {
       float: right;

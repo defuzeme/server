@@ -1,0 +1,9 @@
+fr:
+  sessions:
+    controls:
+      logged_in: Connecté en tant que
+      you_are: ", Vous êtes"
+      visitor: "Visiteur"
+      log_in: Connexion
+      log_out: Déconnexion
+      sign_up: Inscription
