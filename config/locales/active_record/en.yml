@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    models:
+      user: User
+      radio: Radio
+    errors:
+      messages:
+        blank: must be filled
+    attributes:
+      user:
+        password_confirmation: Confirmation
+      radio:
+        band: Band
+        bands:
+          fm: FM
+          am: AM
