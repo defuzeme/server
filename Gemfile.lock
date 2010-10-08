@@ -61,6 +61,8 @@ GEM
       rake (>= 0.8.4)
       thor (~> 0.14.0)
     rake (0.8.7)
+    routing-filter (0.1.7)
+      actionpack
     thor (0.14.3)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
@@ -73,3 +75,4 @@ DEPENDENCIES
   haml (= 3.0.18)
   pg
   rails (= 3.0.0)
+  routing-filter

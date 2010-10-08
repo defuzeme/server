@@ -81,6 +81,7 @@ body
   width: 960px
   margin: 0 auto
   text-align: left
+  padding-top: 10px
   &.app
     width: auto
     min-width: 50em
@@ -242,7 +243,7 @@ header
     overflow: hidden
     line-height: 50px
     font-size: 12px
-    padding: 10px 0 10px 0
+    padding: 0 0 10px 0
   h1
     height: 50px
     width: 123px
@@ -257,16 +258,29 @@ header
     float: left
     height: 50px
     line-height: 50px
-    margin: 15px 0 0 15px
+    margin: 5px 0 5px 15px
     font-size: 2.1em
     color: white
     text-shadow: 0 -1px 1px darken($back, 5)
 
+  #language-selector
+    float: right
+    line-height: 27px
+    margin: 15px 0 0 20px
+    text-align: right
+    a
+      padding-right: 25px
+      background-position: right 50%
+      background-repeat: no-repeat
+      &.fr
+        background-image: url(../images/flags/fr.gif)
+      &.en
+        background-image: url(../images/flags/en.gif)
+
   #signin
     float: right
-    width: 400px
     line-height: 27px
-    margin: 25px 0 0 0
+    margin: 15px 0 15px 0
     text-align: right
     .actions
       float: right
