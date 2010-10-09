@@ -8,3 +8,8 @@
   .split .left, .split .right {
     float: none;
     width: auto; }
+
+#wrapper {
+  width: auto;
+  margin: 0 15px;
+  min-width: 40em; }

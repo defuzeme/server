@@ -1,9 +1,10 @@
 $apple: #88C833
-$link: darken($apple, 20)
-$back: #dadfda
+$red: #e5392d
+$link: $red
+$back: #dfdfda
 $color: #666
-$error: #c55
-$actions: #888
+$error: $red
+$actions: #998
 
 $sidebar_width: 200px
 $sidebar_back: #eee
@@ -15,10 +16,10 @@ $sidebar_back: #eee
   transition: $props $duration linear
   
 @mixin button_up($color)
-  border-color: lighten($color, 5) darken($color, 5) darken($color, 5) lighten($color, 5)
+  border-color: $color darken($color, 10) darken($color, 10 ) $color
 
 @mixin button_down($color)
-  border-color: darken($color, 5) darken($color, 5) darken($color, 5) darken($color, 5)
+  border-color: darken($color, 10) darken($color, 10) darken($color, 10) darken($color, 10)
 
 @mixin gradient_background($color)
   background: $color
@@ -75,7 +76,7 @@ body
   text-align: center
   color: #444
   font-size: 14px
-  font-family: 'Avant Garde', sans, helvetica, Arial
+  font-family: Arial
 
 #wrapper
   width: 960px
@@ -84,15 +85,15 @@ body
   padding-top: 10px
   &.app
     width: auto
-    min-width: 50em
-    margin: 0 2em
+    min-width: 40em
+    margin: 0 15px
 
 a
   text-decoration: none
-  color: $link
+  color: darken($link, 20)
 
 a:hover
-  color: $apple
+  color: $link
 
 .clear
   clear: both
@@ -101,7 +102,7 @@ a:hover
 h2
   padding: 0.3em 10px
   margin: 0
-  color: $apple
+  color: $red
 
 ul
   list-style: none
@@ -133,7 +134,7 @@ input.button
   a
     display: block
     float: left
-    font-size: 0.8em
+    font-size: 0.9em
     line-height: 25px
     &:first-child
       @include lborder-radius(3px)
@@ -161,7 +162,8 @@ form
     float: left
     line-height: 25px
     height: 25px
-    margin-bottom: 18px
+    margin-top: 5px
+    margin-bottom: 13px
     position: relative
   label, .formError
     clear: left
@@ -179,7 +181,7 @@ form
     &:focus
       outline: none
       border: 1px solid $apple
-      @include box-shadow(0 0 3px 1px $apple)
+      @include box-shadow(0 0 7px -1px $apple)
   .checkbox
     width: auto
     margin-top: 0.4em
@@ -195,7 +197,8 @@ form
     input
       float: none
       margin: 0 auto
-      font-size: 1em
+      font-size: 0.9em
+      font-weight: bold
       width: auto
   .formError
     float: left
@@ -209,9 +212,9 @@ form
       line-height: 12px
     input
       @include button_up($error)
-      background-color: lighten($error, 41)
+      background-color: lighten($error, 42)
       &:focus
-        @include box-shadow(0 0 3px 1px $error)
+        @include box-shadow(0 0 7px -1px $error)
     
 table
   width: 100%

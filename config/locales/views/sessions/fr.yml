@@ -7,3 +7,5 @@ fr:
       log_in: Connexion
       log_out: Déconnexion
       sign_up: Inscription
+    new:
+      title: Connectez vous avec vos identifiants
