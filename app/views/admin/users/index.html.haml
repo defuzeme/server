@@ -1,14 +1,14 @@
-%h2 Users
+%h2= User.human_name.pluralize
 
 .block
   %table
     %thead
       %tr
-        %th Login
-        %th Name
-        %th Email
-        %th Join at
-        %th Activated at
+        %th= User.human_attribute_name :login
+        %th= User.human_attribute_name :name
+        %th= User.human_attribute_name :email
+        %th= User.human_attribute_name :created_at
+        %th= User.human_attribute_name :activated_at
         %th
     %tbody
       - for user in @users
@@ -28,4 +28,4 @@
             - else
               never
           %td
-            = link_to 'edit', edit_admin_user_path(user)
+            = link_to t(:edit), edit_admin_user_path(user)

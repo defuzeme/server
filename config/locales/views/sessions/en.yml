@@ -7,3 +7,5 @@ en:
       log_in: Log in
       log_out: Log out
       sign_up: Sign up
+    new:
+      title: Log in using your credentials

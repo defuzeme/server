@@ -1,16 +1,37 @@
 en:
+  attributes:
+    admin: Administrator
+    email: Email
+    first_name: First name
+    last_name: Last name
+    login: Login
+    name: Name
+    password: Password
+    updated_at: Last modification date
   activerecord:
     models:
       user: User
       radio: Radio
-    errors:
-      messages:
-        blank: must be filled
     attributes:
       user:
+        activated_at: Activation date
+        activation_code: Activation token
+        created_at: Sign up date
+        invitation_code: Invitation code
         password_confirmation: Confirmation
+        remember_me: Remember me
       radio:
         band: Band
         bands:
           fm: FM
           am: AM
+    errors:
+      messages:
+        blank: must be filled
+  helpers:
+    submit:
+      create: "Create {{model}}"
+      update: "Submit changes"
+      user:
+        create: "Sign up"
+    label:

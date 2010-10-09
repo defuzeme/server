@@ -6,3 +6,12 @@ class Array
     end
   end
 end
+
+module ActiveRecord
+  class Base
+    # Get list of mandatory fields from presence validations
+    def self.mandatory_fields
+      self.validators.select {|v| v.kind == :presence }.map(&:attributes).flatten
+    end
+  end
+end
