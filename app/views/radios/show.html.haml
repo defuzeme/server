@@ -1,0 +1,5 @@
+.actions
+  = link_to t(:edit), [:edit, @radio]
+  = link_to t(:delete), [:delete, @radio], :class => 'important'
+%h2= @radio.name
+= @radio

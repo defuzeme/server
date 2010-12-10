@@ -1,4 +1,5 @@
 - max_width = 990
+- mobile_width = 600
 %head
   %title Defuze.me
   %meta{:charset => "utf-8"}/
@@ -6,9 +7,13 @@
   %meta{:content => "http://defuze.me", :name => "identifier-url"}/
   %meta{:content => "Defuze.me EIP team", :lang => "fr", :name => "author"}/
   %meta{:content => "index, follow", :name => "robots"}/
+
+  %meta{:content => "width=device-width, user-scalable=yes, maximum-scale=1, minimum-scale=0.8", :name => "viewport"}/
+
   %link{:href => '/favicon.png', :rel => 'shortcut icon'}/
   = stylesheet_link_tag 'screen'
-  = stylesheet_link_tag 'small', :media => "only screen and (max-width: #{max_width}px), only screen and (max-device-width: #{max_width}px)"
+  = stylesheet_link_tag 'small', :media => "only screen and (max-width: #{max_width}px)"
+  = stylesheet_link_tag 'mobile', :media => "only screen and (max-width: #{mobile_width}px)"
   = javascript_include_tag 'mootools-1.2.5-core', 'rails', 'alert', 'application'
   = csrf_meta_tag
   /[if lte IE 8]

@@ -1,0 +1,22 @@
+!!! 5
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  = render :partial => 'layouts/head'
+  %body
+    #wrapper.alert
+      %header
+        = link_to dashboard_path, :class => :logo do
+          %h1
+            %span Defuze.me
+        #version
+          - if defined? admin
+            admin
+          - else
+            alphα
+        #language-selector
+          = render :partial => 'shared/language_selector'
+        .clear
+      #content
+        #main
+          = yield
+      %footer
+        defuze.me © 2010-2012

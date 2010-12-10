@@ -1,0 +1,10 @@
+%h2= t '.title'
+- if current_user.radio?
+  .block
+    .left
+      %h3= t '.my_radio'
+      = render current_user.radio
+- else
+  .block
+    = render :partial => 'no_radio_yet'
+

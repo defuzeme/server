@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(:version => 20101006195204) do
 
   create_table "radios", :force => true do |t|
-    t.integer  "user_id"
     t.string   "name"
     t.string   "permalink"
     t.string   "website"
@@ -38,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20101006195204) do
     t.datetime "remember_token_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "radio_id"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

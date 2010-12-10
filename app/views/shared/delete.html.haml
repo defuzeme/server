@@ -1,0 +1,6 @@
+.block
+  = t '.are_you_sure', :wants_to => t(".#{@c}")
+  = form_tag url_for(params.merge(:action => :show)), :method => :delete do
+    .actions
+      = submit_tag t(:yes), :class => 'important'
+      = link_to t(:no_wrong), request.referrer || url_for(params.merge(:action => :show))

@@ -12,6 +12,7 @@
 #  id                        :integer       not null, primary key
 #  last_name                 :string(40)
 #  login                     :string(50)
+#  radio_id                  :integer
 #  remember_token            :string(40)
 #  remember_token_expires_at :datetime
 #  salt                      :string(40)
@@ -49,6 +50,8 @@ class User < ActiveRecord::Base
     :presence   => true,
     :format     => { :with => /d#ve7aS4/ }
 
+  belongs_to :radio
+
   before_create :make_activation_code 
 
   # prevents a user from submitting a crafted form that bypasses activation
@@ -79,6 +82,10 @@ class User < ActiveRecord::Base
   def active?
     # the existence of an activation code means they have not activated yet
     activation_code.nil?
+  end
+
+  def radio?
+    radio_id?
   end
 
   def self.authenticate(login, password)

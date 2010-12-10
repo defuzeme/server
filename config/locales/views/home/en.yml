@@ -3,3 +3,14 @@ en:
     index:
       comming: "Defuze.me is coming soon ... stay tuned:"
       follow_us: "Follow us on twitter!"
+    dashboard:
+      title: "Dashboard"
+      my_radio: "My radio"
+    no_radio_yet:
+      title: "Welcome on defuze.me! There's just 1 step left to the end. You can:"
+      new_radio:
+        title: Create your own radio
+        desc: If you're the first (or only) member of your radio here
+      join_radio:
+        title: Join an existing radio
+        desc: If someone of your team already created it, you can request to join it

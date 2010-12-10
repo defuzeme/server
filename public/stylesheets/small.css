@@ -3,8 +3,10 @@
   clear: both; }
   .split label, .split .formError {
     width: 20%; }
-  .split input {
-    width: 74%; }
+  .split input, .split textarea {
+    width: 73%; }
+  .split select {
+    width: 75%; }
   .split .left, .split .right {
     float: none;
     width: auto; }
@@ -12,4 +14,4 @@
 #wrapper {
   width: auto;
   margin: 0 15px;
-  min-width: 40em; }
+  min-width: 280px; }

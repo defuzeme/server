@@ -44,6 +44,15 @@ class ApplicationController < ActionController::Base
   def load_user
     @user = User.find_by_login(params[:user_id] || params[:id]) || not_found
   end
+
+  def load_radio
+    @radio = Radio.find_by_permalink(params[:radio_id] || params[:id]) || not_found
+  end
+  
+  def delete
+    @c = controller_name
+    render :template => 'shared/delete', :layout => 'alert'
+  end
   
   protected
   

@@ -4,7 +4,7 @@
   %body
     #wrapper.app
       %header
-        = link_to root_path, :class => :logo do
+        = link_to dashboard_path, :class => :logo do
           %h1
             %span Defuze.me
         #version
@@ -22,8 +22,8 @@
           %div{:class => "flash #{type}"}= msg
         #misc= yield :misc
         #main
-          #breadcrumb= render :partial => 'shared/breadcrumb'
+          -#
+            #breadcrumb= render :partial => 'shared/breadcrumb'
           = yield
       %footer
-        %div
-          defuze.me © 2010-2012
+        defuze.me © 2010-2012

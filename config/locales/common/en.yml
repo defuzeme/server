@@ -5,3 +5,7 @@ en:
     en: English
     fr: French
   edit: Edit
+  delete: Delete
+  'yes': 'Yes'
+  'no': 'No'
+  no_wrong: No, take me back to the previous page

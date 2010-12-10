@@ -1,3 +1,5 @@
-%h1= @user.login
-= link_to t(:edit), [:edit, @user]
-.name= @user.name
+.actions
+  = link_to t(:edit), [:edit, @user]
+%h2= @user.login
+.block
+  .name= @user.name

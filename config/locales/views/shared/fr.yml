@@ -1,0 +1,5 @@
+fr:
+  shared:
+    delete:
+      are_you_sure: Êtes vous vraiment sûr de vouloir supprimer {{wants_to}} ?
+      radios: cette radio
