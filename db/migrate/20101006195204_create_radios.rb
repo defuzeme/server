@@ -11,7 +11,7 @@ class CreateRadios < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :users, :radio_id
+    remove_column :users, :radio_id rescue nil
     drop_table :radios
   end
 end

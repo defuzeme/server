@@ -55,7 +55,7 @@ class Radio < ActiveRecord::Base
   
   # Because there's no permalink field, we need to show errors on name field
   def report_permalink_uniqueness
-    errors[:name] << errors.on(:permalink) if errors.on(:permalink)
+    errors[:name] << errors[:permalink] if errors[:permalink]
   end
   
   def generate_permalink
