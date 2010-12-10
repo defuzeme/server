@@ -1,4 +1,4 @@
-%h2= User.human_name.pluralize
+%h2= User.model_name.pluralize
 
 .block
   %table
@@ -21,10 +21,10 @@
             = link_to user.login, [:admin, user        ]
           %td= user.name
           %td= user.email
-          %td= l(user.created_at, :format => :long)
+          %td= l(user.created_at, :format => :short)
           %td
             - if user.activated_at
-              = l(user.activated_at, :format => :long)
+              = l(user.activated_at, :format => :short)
             - else
               never
           %td

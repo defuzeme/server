@@ -1,0 +1,17 @@
+= form_for @radio do |f|
+  .split
+    .left
+      = auto_text_field f, :name
+    .right
+      = auto_text_field f, :website
+
+  .split
+    .left
+      = auto_text_area f, :description
+    .right
+      = auto_text_field f, :frequency
+      = auto_select f, :band
+
+  .actions
+    = f.submit
+

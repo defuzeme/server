@@ -2,7 +2,7 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml"}
   = render :partial => 'layouts/head'
   %body
-    #wrapper.app
+    #wrapper.alert
       %header
         = link_to dashboard_path, :class => :logo do
           %h1
@@ -14,16 +14,9 @@
             alphα
         #language-selector
           = render :partial => 'shared/language_selector'
-        #signin
-          = render :partial => 'sessions/controls'
         .clear
       #content
-        - flash.each do |type, msg|
-          %div{:class => "flash #{type}"}= msg
-        #misc= yield :misc
         #main
-          -#
-            #breadcrumb= render :partial => 'shared/breadcrumb'
           = yield
       %footer
         defuze.me © 2010-2012

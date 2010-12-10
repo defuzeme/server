@@ -1,0 +1,76 @@
+$apple: #88C833
+$red: #e5392d
+$link: $red
+$back: #dfdfda
+$color: #666
+$error: $red
+$actions: #998
+
+$fonts: Sans, Arial
+
+$sidebar_width: 200px
+$sidebar_back: #eee
+
+@mixin smooth($props, $duration=0.3s)
+  -moz-transition: $props $duration linear
+  -o-transition: $props $duration linear
+  -webkit-transition: $props $duration linear
+  transition: $props $duration linear
+  
+@mixin button_up($color)
+  border-color: $color darken($color, 10) darken($color, 10 ) $color
+
+@mixin button_down($color)
+  border-color: darken($color, 10) darken($color, 10) darken($color, 10) darken($color, 10)
+
+@mixin gradient_background($color)
+  background: $color
+  background-image: -moz-linear-gradient(top, lighten($color, 15), $color)
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten($color, 15)), to($color))
+
+@mixin back_gradient_background($color)
+  background: darken($color, 5)
+  background-image: -moz-linear-gradient(top, $color, lighten($color, 10))
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color), to(lighten($color, 10)))
+
+@mixin box-shadow($args)
+  -webkit-box-shadow: $args
+  box-shadow: $args
+  -moz-box-shadow: $args
+
+@mixin box-shadow2($args1, $args2)
+  -webkit-box-shadow: $args1, $args2
+  box-shadow: $args1, $args2
+  -moz-box-shadow: $args1, $args2
+
+@mixin tlborder-radius($radius)
+  border-top-left-radius: $radius
+  -moz-border-radius-topleft: $radius
+
+@mixin blborder-radius($radius)
+  border-bottom-left-radius: $radius
+  -moz-border-radius-bottomleft: $radius
+
+@mixin trborder-radius($radius)
+  border-top-right-radius: $radius
+  -moz-border-radius-topright: $radius
+
+@mixin brborder-radius($radius)
+  border-bottom-right-radius: $radius
+  -moz-border-radius-bottomright: $radius
+
+@mixin lborder-radius($radius)
+  @include tlborder-radius($radius)
+  @include blborder-radius($radius)
+
+@mixin rborder-radius($radius)
+  @include trborder-radius($radius)
+  @include brborder-radius($radius)
+
+@mixin border-radius($radius)
+  @include lborder-radius($radius)
+  @include rborder-radius($radius)
+  
+@mixin hide-text
+  text-indent: -10000px
+  text-shadow: none

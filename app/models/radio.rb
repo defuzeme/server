@@ -10,7 +10,6 @@
 #  name        :string(255)
 #  permalink   :string(255)
 #  updated_at  :datetime
-#  user_id     :integer
 #  website     :string(255)
 #
 
@@ -35,9 +34,31 @@ class Radio < ActiveRecord::Base
     :numericality => { :greater_than => 87, :less_than => 109, :allow_nil => true }
 
   validates :website,
-    :format     => { :with => /^http:\/\/[a-z0-9\-_\.]+\/?$/i, :allow_blank => true }
+    :format     => { :with => /^(http:\/\/)?[a-z0-9\-_\.]+\/?$/i, :allow_blank => true }
 
   enum :band, %w(fm am)
   
-  has_many :users
+  has_many :users, :dependent => :nullify
+  
+  before_validation :generate_permalink
+  after_validation :report_permalink_uniqueness
+  
+  def editable_by? user
+    user and (user_ids.include? user.id or user.admin?)
+  end
+  
+  def to_param
+    permalink
+  end
+  
+  protected
+  
+  # Because there's no permalink field, we need to show errors on name field
+  def report_permalink_uniqueness
+    errors[:name] << errors.on(:permalink) if errors.on(:permalink)
+  end
+  
+  def generate_permalink
+    self.permalink ||= name.parameterize
+  end
 end

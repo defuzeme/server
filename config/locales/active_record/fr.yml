@@ -1,6 +1,7 @@
 fr:
   attributes:
     admin: Administrateur
+    description: Description
     email: Email
     first_name: Prénom
     last_name: Nom
@@ -8,6 +9,7 @@ fr:
     name: Nom
     password: Mot de passe
     updated_at: Date dernière modification
+    website: Site web
   activerecord:
     models:
       user: Utilisateur
@@ -22,6 +24,7 @@ fr:
         remember_me: Se souvenir de moi
       radio:
         band: Bande
+        frequency: Fréquence
         bands:
           fm: FM
           am: AM
@@ -54,8 +57,10 @@ fr:
         record_invalid: "La validation a échoué : %{errors}"
   helpers:
     submit:
-      create: "Création %{model}"
+      create: "Créer %{model}"
       update: "Valider les changements"
       user:
         create: "Valider l'inscription"
+      radio:
+        create: "Créer ma radio"
     label:

@@ -89,7 +89,7 @@ class RadioTest < ActiveSupport::TestCase
 
   test "should reject invalid website" do
     assert_no_difference 'Radio.count' do
-      for website in ['a', 'http://', 'www.funradio.fr']
+      for website in ['http://', 'www.funradio.fr/index.php?']
         radio = create_radio(:website => website, :permalink => "radio_#{website.hash}")
         assert radio.errors[:website].any?
       end
@@ -98,7 +98,7 @@ class RadioTest < ActiveSupport::TestCase
 
   test "should reject invalid permalink" do
     assert_no_difference 'Radio.count' do
-      for permalink in [nil, 'a', 'fun radio']
+      for permalink in ['a', 'fun radio']
         radio = create_radio(:permalink => permalink)
         assert radio.errors[:permalink].any?
       end

@@ -3,4 +3,14 @@ fr:
     index:
       comming: "Defuze.me arrive bientôt ... surveillez :"
       follow_us: "Suivez nous sur twitter !"
-
+    dashboard:
+      title: "Panneau de contrôle"
+      my_radio: "Ma radio"
+    no_radio_yet:
+      title: "Bienvenue sur defuze.me ! Vous êtes à une étape de la fin. vous pouvez:"
+      new_radio:
+        title: Créer votre propre radio
+        desc: Si vous êtes le premier (ou le seul) représentant de votre radio ici
+      join_radio:
+        title: Rejoindre une radio existante
+        desc: Si votre radio a déjà été crée par votre équipe, vous pouvez demander à la rejoindre

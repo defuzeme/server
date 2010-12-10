@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_filter :only_for_me, :except => [:show, :new, :create, :activate]
 
   def show
-    respond_with(@user)
+    respond_with @user
   end
 
   def new
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-    respond_with(@user)
+    respond_with @user
   end
  
   def update

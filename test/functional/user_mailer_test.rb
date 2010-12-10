@@ -18,7 +18,7 @@ class UserMailerTest < ActionMailer::TestCase
     assert_equal [@user.email], email.to
     assert_equal "[Defuze.me] Please activate your new account", email.subject
     assert_match /Your account has been created./, email.encoded
-    assert_match /http\:\/\/#{$host}\/activate\/#{@user.activation_code}/, email.encoded
+    assert_match /http\:\/\/#{$host}\/(fr|en)\/activate\/#{@user.activation_code}/, email.encoded
   end
 
   test "activation" do

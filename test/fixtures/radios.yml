@@ -10,7 +10,6 @@
 #  name        :string(255)
 #  permalink   :string(255)
 #  updated_at  :datetime
-#  user_id     :integer
 #  website     :string(255)
 #
 

@@ -1,82 +1,13 @@
-$apple: #88C833
-$red: #e5392d
-$link: $red
-$back: #dfdfda
-$color: #666
-$error: $red
-$actions: #998
-
-$sidebar_width: 200px
-$sidebar_back: #eee
-
-@mixin smooth($props, $duration=0.3s)
-  -moz-transition: $props $duration linear
-  -o-transition: $props $duration linear
-  -webkit-transition: $props $duration linear
-  transition: $props $duration linear
-  
-@mixin button_up($color)
-  border-color: $color darken($color, 10) darken($color, 10 ) $color
-
-@mixin button_down($color)
-  border-color: darken($color, 10) darken($color, 10) darken($color, 10) darken($color, 10)
-
-@mixin gradient_background($color)
-  background: $color
-  background-image: -moz-linear-gradient(top, lighten($color, 15), $color)
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten($color, 15)), to($color))
-
-@mixin back_gradient_background($color)
-  background: darken($color, 5)
-  background-image: -moz-linear-gradient(top, $color, lighten($color, 10))
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color), to(lighten($color, 10)))
-
-@mixin box-shadow($args)
-  -webkit-box-shadow: $args
-  box-shadow: $args
-  -moz-box-shadow: $args
-
-@mixin box-shadow2($args1, $args2)
-  -webkit-box-shadow: $args1, $args2
-  box-shadow: $args1, $args2
-  -moz-box-shadow: $args1, $args2
-
-@mixin tlborder-radius($radius)
-  border-top-left-radius: $radius
-  -moz-border-radius-topleft: $radius
-
-@mixin blborder-radius($radius)
-  border-bottom-left-radius: $radius
-  -moz-border-radius-bottomleft: $radius
-
-@mixin trborder-radius($radius)
-  border-top-right-radius: $radius
-  -moz-border-radius-topright: $radius
-
-@mixin brborder-radius($radius)
-  border-bottom-right-radius: $radius
-  -moz-border-radius-bottomright: $radius
-
-@mixin lborder-radius($radius)
-  @include tlborder-radius($radius)
-  @include blborder-radius($radius)
-
-@mixin rborder-radius($radius)
-  @include trborder-radius($radius)
-  @include brborder-radius($radius)
-
-@mixin border-radius($radius)
-  @include lborder-radius($radius)
-  @include rborder-radius($radius)
+@import "definitions"
 
 body
   background-color: $back
   margin: 0
   padding: 0
   text-align: center
-  color: #444
-  font-size: 14px
-  font-family: Arial
+  color: #333
+  font-size: 13px
+  font-family: $fonts
 
 #wrapper
   width: 960px
@@ -85,8 +16,10 @@ body
   padding-top: 10px
   &.app
     width: auto
-    min-width: 40em
     margin: 0 15px
+  &.alert
+    width: 40em
+    margin: 0 auto
 
 a
   text-decoration: none
@@ -110,32 +43,46 @@ ul
 
 .actions a,
 .actions input,
-input.button
+input.button,
+a.button
+  display: block
   @include gradient_background($actions)
-  text-shadow: 0 -1px 1px darken($actions, 15)
+  @include box-shadow(1px 1px 1px darken(white, 20))
+  text-shadow: 0 -1px 0px darken($actions, 15)
   color: white
   font-weight: bold
-  padding: 0px 8px
+  padding: 0px 0.5em
   border: 1px solid $actions
   cursor: pointer
   @include button_up($actions) 
+  line-height: 2em
   &:hover
     color: white
     @include gradient_background($apple)
-    text-shadow: 0 -1px 1px darken($apple, 10)
+    text-shadow: 0 -1px 0px darken($apple, 10)
     @include button_up($apple)
+    @include box-shadow(0px 0px 5px lighten($apple, 5))
+    &.important
+      @include gradient_background($red)
+      text-shadow: 0 -1px 0px darken($red, 10)
+      @include button_up($red)
+      @include box-shadow(0px 0px 5px lighten($red, 5))
   &:active
     color: white
     @include back_gradient_background($apple)
-    text-shadow: 0 -1px 1px darken($apple, 10)
+    text-shadow: 0 -1px 0px darken($apple, 10)
     @include button_down($apple)
+    @include box-shadow(-1px -1px 1px darken(white, 20))
+    &.important
+      @include back_gradient_background($red)
+      text-shadow: 0 -1px 0px darken($red, 10)
+      @include button_down($red)
+      @include box-shadow(-1px -1px 1px darken(white, 20))
+    
 
 .actions
   a
-    display: block
     float: left
-    font-size: 0.9em
-    line-height: 25px
     &:first-child
       @include lborder-radius(3px)
     &:last-child
@@ -146,8 +93,10 @@ input.button
   clear: both
   label, .formError
     width: 40%
-  input
+  input, textarea
     width: 48%
+  select
+    width: 50%
   .left
     float: left
     width: 50%
@@ -157,24 +106,21 @@ input.button
 
 form
   padding: 1em
-  label, input
+  label, input, textarea, select
     display: block
     float: left
-    line-height: 25px
-    height: 25px
-    margin-top: 5px
-    margin-bottom: 13px
-    position: relative
+    font-size: 1.1em
+    margin-top: 0.3em
+    margin-bottom: 0.6em
   label, .formError
-    clear: left
+    clear: both
     width: 20%
-    padding: 2px 0
+    padding: 0.4em 0
     text-align: right
-  input
+  input, textarea, select, a
     border: 1px solid $back
     @include button_up($back)
-    font-size: 1.2em
-    padding: 1px 5px
+    padding: 0.4em 0.3em
     margin-left: 1em
     width: 74%
     @include border-radius(3px)
@@ -182,35 +128,37 @@ form
       outline: none
       border: 1px solid $apple
       @include box-shadow(0 0 7px -1px $apple)
+  textarea
+    height: 4em
   .checkbox
     width: auto
-    margin-top: 0.4em
     height: auto
-    padding: 2px
-    border: none
+    margin-top: 0.7em
     &:focus
-      border: none
       @include box-shadow(none)
   .actions
     clear: both
-    padding: 0 10px
-    input
+    padding-top: 1em
+    text-align: center
+    input, a
+      font-family: $fonts
+      display: inline-block
       float: none
       margin: 0 auto
-      font-size: 0.9em
       font-weight: bold
       width: auto
+      font-size: 1em
   .formError
     float: left
     color: $error
     position: relative
-    top: -32px
+    top: -25px
     font-size: 0.8em
-    margin-bottom: -25px
+    margin-bottom: -15px
   .field_with_errors
     label
-      line-height: 12px
-    input
+      padding-top: 0
+    input, textarea, select
       @include button_up($error)
       background-color: lighten($error, 42)
       &:focus
@@ -237,7 +185,7 @@ table
   margin: 10px
 
 header
-  text-shadow: 0 1px 0.1em white
+  text-shadow: 0 1px 1px white
 
   a.logo
     color: $apple
@@ -245,44 +193,47 @@ header
     float: left
     overflow: hidden
     line-height: 50px
-    font-size: 12px
-    padding: 0 0 10px 0
   h1
     height: 50px
     width: 123px
     background-image: url('../images/logo.gif')
     margin: 0
-    position: relative
     cursor: pointer
     span
       display: none
           
   #version
     float: left
-    height: 50px
     line-height: 50px
-    margin: 5px 0 5px 15px
-    font-size: 2.1em
+    margin: 5px 0 0 15px
+    font-size: 28px
     color: white
     text-shadow: 0 -1px 1px darken($back, 5)
 
   #language-selector
     float: right
-    line-height: 27px
     margin: 15px 0 0 20px
-    text-align: right
+    padding-top: 0.3em
     a
-      padding-right: 25px
-      background-position: right 50%
-      background-repeat: no-repeat
+      display: block
+      width: 30px
+      height: 22px
+      background: transparent url(../images/flags.gif) left -22px
+      @include hide-text
+      @include smooth(background-position)
+      @include box-shadow(1px 1px 1px darken(white, 40))
       &.fr
-        background-image: url(../images/flags/fr.gif)
-      &.en
-        background-image: url(../images/flags/en.gif)
-
+        background-position: left top
+      &:hover
+        background-position: left top
+        &.fr
+          background-position: left -22px
+        
+        
+    
   #signin
     float: right
-    line-height: 27px
+    line-height: 2.1em
     margin: 15px 0 15px 0
     text-align: right
     .actions
@@ -343,25 +294,35 @@ header
           
 #main
   background-color: white
-  border: 1px solid #ccc
   overflow: hidden
 
   .coming
     text-align: center
     margin-top: 3em
   .twitter
-    padding: 0 300px
+    text-align: center
     margin-top: 5em
     a
       display: block
-      text-align: center
+      margin: 0 auto
+      width: 271px
       font-size: 1.5em
-      padding: 1em
       border: 1px solid white
+      padding: 1em
       &:hover
         background-color: lighten($back, 10)
         border: 1px solid $back
         @include border-radius(3px)
+  .actions
+    float: right
+    font-size: 0.8em
+    margin: 0.7em 10px 0 0
+  form
+    .actions
+      float: none
+      font-size: 1em
+      margin: auto
+
 .app
   #main
     border-right: 1px solid darken($sidebar_back, 5)
@@ -370,15 +331,17 @@ header
     float: right
     width: $sidebar_width
     background-color: #eee
-    height: 100px
+    min-height: 10px
 
 footer
-  div
-    color: #777
-    font-size: 0.9em
-    text-align: center
-    text-shadow: 0 1px 0.1em white
+  display: block
+  color: #777
+  font-size: 0.9em
+  padding-bottom: 1em
+  text-align: center
+  text-shadow: 0 1px 0.1em white
 
 img
   border: none
 
+@import "dashboard"

@@ -17,7 +17,7 @@ class UserMailer < ActionMailer::Base
     @subject     = "[Defuze.me] "
     @sent_on     = Time.now
     @user = user
-    default_url_options[:host] = $host
+    default_url_options[:host] = $host || 'defuze.me'
   end
 
 end

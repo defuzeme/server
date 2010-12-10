@@ -1,6 +1,7 @@
 en:
   attributes:
     admin: Administrator
+    description: Description
     email: Email
     first_name: First name
     last_name: Last name
@@ -8,6 +9,7 @@ en:
     name: Name
     password: Password
     updated_at: Last modification date
+    website: Website
   activerecord:
     models:
       user: User
@@ -22,6 +24,7 @@ en:
         remember_me: Remember me
       radio:
         band: Band
+        frequency: Frequency
         bands:
           fm: FM
           am: AM
@@ -30,8 +33,10 @@ en:
         blank: must be filled
   helpers:
     submit:
-      create: "Create {{model}}"
+      create: "Create %{model}"
       update: "Submit changes"
       user:
         create: "Sign up"
+      radio:
+        create: "Create my radio"
     label:
