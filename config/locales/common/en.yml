@@ -9,3 +9,7 @@ en:
   'yes': 'Yes'
   'no': 'No'
   no_wrong: No, take me back to the previous page
+  dashboard: Dashboard
+  my_radio: My radio
+  my_profile: My profile
+  administration: Administration

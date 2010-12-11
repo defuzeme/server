@@ -348,6 +348,34 @@ header {
         background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#88c833), to(#a0d559));
         text-shadow: 0 -1px 1px #6c9f29; }
 
+nav .item a {
+  display: block;
+  line-height: 32px;
+  height: 32px;
+  padding: 0.5em 0 0.5em 55px;
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid #e1e1e1; }
+  nav .item a:hover {
+    background-color: #888888;
+    color: white; }
+nav .item.active a {
+  background-color: white;
+  position: relative;
+  left: -1px; }
+  nav .item.active a:hover {
+    background-color: #888888;
+    color: white;
+    left: 0px; }
+nav .item.dashboard a {
+  background-image: url(../images/icons/32/board.png); }
+nav .item.my-radio a {
+  background-image: url(../images/icons/32/microphone.png); }
+nav .item.my-profile a {
+  background-image: url(../images/icons/32/edit_group.png); }
+nav .item.admin a {
+  background-image: url(../images/icons/32/password.png); }
+
 #main {
   background-color: white;
   overflow: hidden; }

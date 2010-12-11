@@ -292,6 +292,35 @@ header
           @include back_gradient_background($apple)
           text-shadow: 0 -1px 1px darken($apple, 10)
           
+nav .item
+  a
+    display: block
+    line-height: 32px
+    height: 32px
+    padding: 0.5em 0 0.5em 55px
+    background-position: 10px center
+    background-repeat: no-repeat
+    border-bottom: 1px solid darken($sidebar_back, 5)
+    &:hover
+      background-color: darken($sidebar_back, 40)
+      color: white
+  &.active a
+    background-color: white
+    position: relative
+    left: -1px
+    &:hover
+      background-color: darken($sidebar_back, 40)
+      color: white
+      left: 0px
+  &.dashboard a
+    background-image: url(../images/icons/32/board.png)
+  &.my-radio a
+    background-image: url(../images/icons/32/microphone.png)
+  &.my-profile a
+    background-image: url(../images/icons/32/edit_group.png)
+  &.admin a
+    background-image: url(../images/icons/32/password.png)
+
 #main
   background-color: white
   overflow: hidden
