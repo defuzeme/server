@@ -1,0 +1,13 @@
+%nav
+  .item.dashboard{:class => (controller_name == 'home' ? 'active' : '')}
+    = link_to dashboard_path do
+      = t('dashboard')
+  - if current_user.radio?
+    .item.my-radio{:class => (controller_name == 'radios' ? 'active' : '')}
+      = link_to t('my_radio'), radio_path(current_user.radio)
+  .item.my-profile{:class => (controller_name == 'users' ? 'active' : '')}
+    = link_to t('my_profile'), current_user
+  - if current_user.admin?
+    .item.admin
+      = link_to t('administration'), admin_users_path
+

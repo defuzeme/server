@@ -33,7 +33,7 @@ class RadiosController < ApplicationController
   
   def destroy
     @radio.destroy
-    redirect_to root_path
+    redirect_to dashboard_path
   end
   
   protected

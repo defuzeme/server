@@ -20,10 +20,11 @@
       #content
         - flash.each do |type, msg|
           %div{:class => "flash #{type}"}= msg
-        #misc= yield :misc
+        #misc
+          = render :partial => 'shared/menu'
+          = yield :misc
         #main
-          -#
-            #breadcrumb= render :partial => 'shared/breadcrumb'
+          -#breadcrumb= render :partial => 'shared/breadcrumb'
           = yield
       %footer
         defuze.me © 2010-2012
