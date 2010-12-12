@@ -107,7 +107,7 @@ class RadioTest < ActiveSupport::TestCase
 
   test "should reject invalid name" do
     assert_no_difference 'Radio.count' do
-      for name in [nil, 'a', 'my bad\\ name']
+      for name in [nil, 'a']
         radio = create_radio(:name => name)
         assert radio.errors[:name].any?
       end

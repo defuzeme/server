@@ -13,7 +13,7 @@ DefuzeMe::Application.routes.draw do
 
 
   match 'dashboard' => 'home#dashboard'
-  resources :radios do
+  resources :radios, :except => :index do
     get :delete, :on => :member
   end
 
