@@ -8,10 +8,12 @@ class CreateRadios < ActiveRecord::Migration
       t.timestamps
     end
     add_column :users, :radio_id, :integer
+    add_index :radios, :permalink, :unique => true
   end
 
   def self.down
     remove_column :users, :radio_id
+    remove_index :radios, :permalink 
     drop_table :radios
   end
 end
