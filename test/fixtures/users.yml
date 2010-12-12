@@ -46,6 +46,10 @@ aaron:
   activation_code:           1b6453892473a467d07372d45eb05abc2031647a
   activated_at:              
 
+john:
+  id:                         4
+  login:                     john
+  email:                     john@yopmail.com
 
 old_password_holder:
   id:                        3
