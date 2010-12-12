@@ -2,6 +2,7 @@ development:
   adapter: postgresql
   database: defuzeme_dev
   username: bigbourin
+  min_messages: WARNING
 
 production:
   adapter: postgresql
@@ -12,4 +13,5 @@ test:
   adapter: postgresql
   database: defuzeme_test
   username: bigbourin
+  min_messages: WARNING
 
