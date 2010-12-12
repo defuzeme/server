@@ -4,3 +4,4 @@ log/*.log
 tmp/**/*
 .svn
 config/email.yml
+config/database.yml
