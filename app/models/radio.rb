@@ -18,8 +18,7 @@ class Radio < ActiveRecord::Base
 
   validates :name,
     :presence   => true,
-    :length     => { :within => 2..100 },
-    :format     => { :with => Authentication.name_regex }
+    :length     => { :within => 2..100 }
 
   validates :permalink,
     :presence   => true,

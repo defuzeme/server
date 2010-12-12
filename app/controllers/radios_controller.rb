@@ -1,12 +1,8 @@
 class RadiosController < ApplicationController
   before_filter :login_required, :except => [:show, :index]
-  before_filter :load_radio, :only => [:show, :edit, :update, :destroy]
-  before_filter :authorization_required, :only => [:edit, :update, :destroy]
-  
-  def index
-    @radios = Radio.all
-    respond_with @radios
-  end
+  before_filter :load_radio, :only => [:show, :edit, :update, :destroy, :delete]
+  before_filter :authorization_required, :only => [:edit, :update, :destroy, :delete]
+  before_filter :ensure_only_one_radio_per_user, :only => [:new, :create]
   
   def show
     respond_with @radio
@@ -27,7 +23,6 @@ class RadiosController < ApplicationController
   
   def update
     @radio.update_attributes params[:radio]
-    puts @radio.errors.inspect
     respond_with @radio
   end
   
@@ -40,5 +35,9 @@ class RadiosController < ApplicationController
   
   def authorization_required
     forbidden if not @radio.editable_by? current_user    
+  end
+  
+  def ensure_only_one_radio_per_user
+    forbidden if current_user.radio?
   end
 end

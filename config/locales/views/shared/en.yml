@@ -1,5 +1,5 @@
 en:
   shared:
     delete:
-      are_you_sure: Are you sure you really want to remove {{wants_to}}?
+      are_you_sure: Are you sure you really want to remove %{wants_to}?
       radios: this radio

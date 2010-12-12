@@ -32,6 +32,7 @@ quentin:
   activation_code:           
   activated_at:              <%= 5.days.ago.to_s :db %>
   admin:                     true
+  radio:                     rfm
       
 aaron:
   id:                        2
