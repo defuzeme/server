@@ -38,6 +38,7 @@ class Radio < ActiveRecord::Base
   enum :band, %w(fm am)
   
   has_many :users, :dependent => :nullify
+  has_many :invitations, :dependent => :nullify
   
   before_validation :generate_permalink
   after_validation :report_permalink_uniqueness

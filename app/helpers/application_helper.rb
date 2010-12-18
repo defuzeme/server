@@ -15,6 +15,15 @@ module ApplicationHelper
     auto_field :password_field, *args
   end
 
+  def auto_check_box *args
+    if args.last.is_a? Hash
+      args.last.merge!(:class => 'checkbox')
+    else
+      args << {:class => 'checkbox'}
+    end
+    auto_field :check_box, *args
+  end
+
   def auto_text_area f, field, options = {}
     options.merge! :style => ''
     auto_field :text_area, f, field, options

@@ -6,6 +6,7 @@ en:
     first_name: First name
     last_name: Last name
     login: Login
+    message: Message
     name: Name
     password: Password
     updated_at: Last modification date
@@ -14,6 +15,7 @@ en:
     models:
       user: User
       radio: Radio
+      invitation: Invitation
     attributes:
       user:
         activated_at: Activation date
@@ -28,9 +30,13 @@ en:
         bands:
           fm: FM
           am: AM
+      invitation:
+        radio_id: "Link to my radio"
     errors:
       messages:
+        already_registered: "user already registered"
         blank: must be filled
+        invalid: "invalid"
   helpers:
     submit:
       create: "Create %{model}"
@@ -39,4 +45,6 @@ en:
         create: "Sign up"
       radio:
         create: "Create my radio"
+      invitation:
+        create: "Send invitation"
     label:

@@ -17,6 +17,8 @@ DefuzeMe::Application.routes.draw do
     get :delete, :on => :member
   end
 
+  resources :invitations, :only => [:show, :new, :create]
+
   # Admin panel
   match 'admin' => 'home#admin', :as => :admin
   namespace :admin do

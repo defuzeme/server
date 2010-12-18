@@ -1,0 +1,7 @@
+%h2= t '.invited'
+.block
+  %p= t('.blurb', :creator => @invitation.creator.name).html_safe
+  - if @invitation.radio.present?
+    %p= t('.join-radio', :radio => @invitation.radio.name).html_safe
+  - if @user.present?
+    = render :partial => 'users/form'

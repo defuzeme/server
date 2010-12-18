@@ -6,6 +6,7 @@ fr:
     dashboard:
       title: "Panneau de contrôle"
       my_radio: "Ma radio"
+      my_invitations: "Mes invitations"
     no_radio_yet:
       title: "Bienvenue sur defuze.me ! Vous êtes à une étape de la fin. vous pouvez:"
       new_radio:

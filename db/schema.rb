@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20101212194208) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "radio_id"
+    t.integer  "invitations_left"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

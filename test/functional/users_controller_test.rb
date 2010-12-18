@@ -49,7 +49,8 @@ class UsersControllerTest < ActionController::TestCase
   test 'should sign up user with activation code' do
     create_user
     assigns(:user).reload
-    assert_not_nil assigns(:user).activation_code
+  #  activation disabled during invitation beta
+  #  assert_not_nil assigns(:user).activation_code
   end
 
   test 'should activate user' do
@@ -122,7 +123,8 @@ class UsersControllerTest < ActionController::TestCase
   protected
 
   def create_user(options = {})
+    i = invitations :aaron_to_john
     post :create, :user => { :login => 'quire', :email => 'quire@example.com',
-      :password => 'quire69', :password_confirmation => 'quire69', :invitation_code => 'd#ve7aS4' }.merge(options)
+      :password => 'quire69', :password_confirmation => 'quire69', :invitation_code => i.token}.merge(options)
   end
 end

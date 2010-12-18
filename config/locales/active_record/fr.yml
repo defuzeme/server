@@ -6,6 +6,7 @@ fr:
     first_name: Prénom
     last_name: Nom
     login: Identifiant
+    message: Message
     name: Nom
     password: Mot de passe
     updated_at: Date dernière modification
@@ -14,6 +15,7 @@ fr:
     models:
       user: Utilisateur
       radio: Radio
+      invitation: Invitation
     attributes:
       user:
         activated_at: Date d'activation
@@ -28,6 +30,8 @@ fr:
         bands:
           fm: FM
           am: AM
+      invitation:
+        radio_id: "Lier à ma radio"
     errors:
       template:
         header: 
@@ -35,26 +39,27 @@ fr:
           other: "Impossible d'enregistrer %{model}: %{count} erreurs."
         body: "Veuillez vérifier les champs suivants :"
       messages:
-        inclusion: "n'est pas inclus(e) dans la liste"
-        exclusion: "n'est pas disponible"
-        invalid: "n'est pas valide"
-        confirmation: "ne concorde pas avec la confirmation"
         accepted: "doit être accepté(e)"
-        empty: "doit être rempli(e)"
+        already_registered: "utilisateur déja enregisté"
         blank: "doit être rempli(e)"
+        confirmation: "ne concorde pas avec la confirmation"
+        empty: "doit être rempli(e)"
+        equal_to: "doit être égal à %{count}"
+        even: "doit être pair"
+        exclusion: "non disponible"
+        greater_than: "doit être supérieur à %{count}"
+        greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
+        inclusion: "n'est pas inclus(e) dans la liste"
+        invalid: "invalide"
+        less_than: "doit être inférieur à %{count}"
+        less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
+        not_a_number: "n'est pas un nombre"
+        odd: "doit être impair"
+        record_invalid: "La validation a échoué : %{errors}"
+        taken: "non disponible"
         too_long: "est trop long (pas plus de %{count} caractères)"
         too_short: "est trop court (au moins %{count} caractères)"
         wrong_length: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
-        taken: "n'est pas disponible"
-        not_a_number: "n'est pas un nombre"
-        greater_than: "doit être supérieur à %{count}"
-        greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
-        equal_to: "doit être égal à %{count}"
-        less_than: "doit être inférieur à %{count}"
-        less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
-        odd: "doit être impair"
-        even: "doit être pair"
-        record_invalid: "La validation a échoué : %{errors}"
   helpers:
     submit:
       create: "Créer %{model}"
@@ -63,4 +68,6 @@ fr:
         create: "Valider l'inscription"
       radio:
         create: "Créer ma radio"
+      invitation:
+        create: "Envoyer l'invitation"
     label:

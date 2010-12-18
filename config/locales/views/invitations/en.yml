@@ -1,0 +1,18 @@
+en:
+  invitations:
+    show:
+      invited: "Join defuze.me"
+      blurb: "You've been invited by <strong>%{creator}</strong> to join defuze.me, you can create your account now by filling the quick form below."
+      join-radio: "As requested by the person inviting you, your account will automatically be linked to his radio called : <strong>%{radio}</strong>"
+    invitations:
+      invitations_left:
+        one: "You can invite only %{count} more person to join defuze.me !"
+        other: "You can invite %{count} more people to join defuze.me"
+      no_more_invitations: "You've used all of your availables invitations."
+      invite: "Invite somebody"
+    status:
+      email-soon: "The invitation email has not been sent already"
+      email-sent: "Email sent at %{sent_at}"
+      opened: "The invitation was opened at %{opened_at}"
+      accepted: "The invitation was accepted at %{accepted_at}"
+      linked: "This user is/will be a member of my radio"

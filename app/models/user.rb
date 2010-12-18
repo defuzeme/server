@@ -26,6 +26,8 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
 
+  INVITATIONS_PER_USER = 5
+
   attr_accessor :invitation_code
 
   validates :login,
@@ -45,15 +47,14 @@ class User < ActiveRecord::Base
     :format     => { :with => Authentication.email_regex },
     :length     => { :within => 6..50 }
 
-  validates :invitation_code,
-    :on         => :create,
-    :presence   => true,
-    :format     => { :with => /d#ve7aS4/ }
-
   belongs_to :radio
+  has_many :invitations, :foreign_key => :creator_id, :dependent => :nullify
+  has_one :invitation, :foreign_key => :new_user_id, :dependent => :nullify
 
-  before_create :make_activation_code 
-
+  before_create :make_activation_code
+  before_validation :set_default_values, :on => :create
+  after_create :update_invitation
+  
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation, :invitation_code, :first_name, :last_name
@@ -63,7 +64,11 @@ class User < ActiveRecord::Base
   end
 
   def name
-    "#{first_name} #{last_name}"
+    if first_name.present? or last_name.present?
+      "#{first_name} #{last_name}"
+    else
+      login
+    end
   end
 
   # Activates the user in the database.
@@ -105,6 +110,20 @@ class User < ActiveRecord::Base
   protected
     
   def make_activation_code
-      self.activation_code = self.class.make_token
+    self.activation_code = self.class.make_token
+  end
+  
+  def set_default_values
+    self.invitations_left = INVITATIONS_PER_USER
+    self.invitation = Invitation.pending.find_by_token(invitation_code)
+    if invitation.present?
+      self.radio = invitation.radio
+    else
+      errors[:invitation_code] << I18n.t("activerecord.errors.messages.invalid")
+    end
+  end
+  
+  def update_invitation
+    invitation.update_attributes! :new_user_id => id, :accepted_at => Time.now
   end
 end

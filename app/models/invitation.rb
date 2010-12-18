@@ -36,12 +36,22 @@ class Invitation < ActiveRecord::Base
   belongs_to :creator, :class_name => 'User'
   belongs_to :radio
   belongs_to :new_user, :class_name => 'User'
+
+  scope :ordered, :order => 'accepted_at DESC nulls last, opened_at DESC nulls last, sent_at DESC nulls last'
+  scope :pending, :conditions => {:accepted_at => nil}
   
   before_validation :generate_token, :on => :create
+  after_create :charge_creator
+  
+  validate :validates_no_existing_user, :on => :create
+  
+  def to_param
+    token
+  end
   
   # mark the invitation as opened (link clicked)
   def open!
-    update_attribute :opened_at, Time.now
+    update_attribute :opened_at, Time.now if opened_at.blank?
   end
   
   def send!
@@ -52,7 +62,7 @@ class Invitation < ActiveRecord::Base
   # when the new_user is set, accepted_at take the current date
   def new_user= u
     self.accepted_at ||= Time.now
-    write_attribute :new_user, u
+    write_attribute :new_user_id, u.id
   end
   
   # generate a random unique token
@@ -60,5 +70,17 @@ class Invitation < ActiveRecord::Base
     begin
       self.token = rand(36**length).to_s(36)
     end while Invitation.find_by_token(self.token)
+  end
+  
+  protected
+  
+  def validates_no_existing_user
+    if User.find_by_email(email)
+      errors[:email] << I18n.t(:already_registered, :scope => [:activerecord, :errors, :messages])
+    end
+  end
+  
+  def charge_creator
+    creator.decrement! :invitations_left
   end
 end

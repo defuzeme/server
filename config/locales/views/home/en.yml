@@ -6,6 +6,7 @@ en:
     dashboard:
       title: "Dashboard"
       my_radio: "My radio"
+      my_invitations: "My invitations"
     no_radio_yet:
       title: "Welcome on defuze.me! There's just 1 step left to the end. You can:"
       new_radio:

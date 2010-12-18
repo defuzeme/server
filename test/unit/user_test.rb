@@ -16,12 +16,40 @@ class UserTest < ActiveSupport::TestCase
       assert !user.new_record?, "#{user.errors.full_messages.to_sentence}"
     end
   end
+  
+  test 'should update invitation at creation' do
+    i = invitations :aaron_to_john
+    user = create_user
+    i.reload
+    assert_equal user, i.new_user
+    assert_not_nil i.accepted_at
+  end
+
+  test 'should get invitation radio' do
+    i = invitations :aaron_to_john
+    assert_not_nil i.radio
+    user = create_user
+    assert_equal i.radio, user.radio
+  end
+
+  test 'should deny create with bad token' do
+    assert_no_difference 'User.count' do
+      user = create_user(:invitation_code => 'toto')
+    end
+  end
 
   test 'should_initialize_activation_code_upon_creation' do
     user = create_user
     user.reload
     assert_not_nil user.activation_code
   end
+
+  test 'should initialize invitations left upon creation' do
+    user = create_user
+    user.reload
+    assert_equal User::INVITATIONS_PER_USER, user.invitations_left
+  end
+
 
   test 'should_require_login' do
     assert_no_difference 'User.count' do
@@ -117,7 +145,8 @@ class UserTest < ActiveSupport::TestCase
   protected
 
   def create_user(options = {})
-    record = User.new({ :login => 'quire', :email => 'quire@example.com', :password => 'quire69', :password_confirmation => 'quire69', :invitation_code => 'd#ve7aS4' }.merge(options))
+    i = invitations :aaron_to_john
+    record = User.new({ :login => 'quire', :email => 'quire@example.com', :password => 'quire69', :password_confirmation => 'quire69', :invitation_code => i.token }.merge(options))
     record.save
     record
   end

@@ -1,0 +1,18 @@
+fr:
+  invitations:
+    show:
+      invited: "Rejoindre defuze.me"
+      blurb: "Vous avez été invité par <strong>%{creator}</strong> pour rejoindre defuze.me. Vous pouvez dès maintenant créer votre compte en remplissant le court formulaire ci-dessous."
+      join-radio: "À la demande de la personne qui vous invite, votre compte sera automatiquement lié a sa radio nommée : <strong>%{radio}</strong>"
+    invitations:
+      invitations_left:
+        one: "Vous pouvez encore inviter une personne a rejoindre defuze.me !"
+        other: "Vous pouvez encore inviter %{count} personnes a rejoindre defuze.me !"
+      no_more_invitations: "Vous avez utilisé toutes vos invitations disponibles."
+      invite: "Inviter quelqu'un"
+    status:
+      email-soon: "L'email d'invitation n'a pas encoré été envoyé"
+      email-sent: "Email envoyé le %{sent_at}"
+      opened: "L'invitation a été consulté le %{opened_at}"
+      accepted: "L'invitation a été accepté le %{accepted_at}"
+      linked: "Cet utilisateur et/sera un membre de ma radio"

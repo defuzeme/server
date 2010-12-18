@@ -40,13 +40,22 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  # Loaders
-  def load_user
-    @user = User.find_by_login(params[:user_id] || params[:id]) || not_found
-  end
-
-  def load_radio
-    @radio = Radio.find_by_permalink(params[:radio_id] || params[:id]) || not_found
+  # Auto loaders
+  {
+    :user => :login,
+    :radio => :permalink,
+    :invitation => :token
+  }.each do |model, field|
+    define_method "load_#{model}" do
+      # get the concerned model
+      klass = model.to_s.capitalize.constantize
+      # get the parameter value
+      param = params[:"#{model}_id"] || params[:id]
+      # fetch and store the object
+      instance_variable_set("@#{model}", klass.send("find_by_#{field}", param))
+      # return it
+      instance_variable_get("@#{model}") || not_found
+    end
   end
   
   def delete
