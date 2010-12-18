@@ -119,11 +119,11 @@ class User < ActiveRecord::Base
     if invitation.present?
       self.radio = invitation.radio
     else
-      errors[:invitation_code] << I18n.t("activerecord.errors.messages.invalid")
+      errors[:invitation_code] << I18n.t("activerecord.errors.messages.invalid") unless admin?
     end
   end
   
   def update_invitation
-    invitation.update_attributes! :new_user_id => id, :accepted_at => Time.now
+    invitation.update_attributes! :new_user_id => id, :accepted_at => Time.now if invitation
   end
 end

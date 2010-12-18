@@ -10,10 +10,11 @@ puts "Creating admin accounts"
 
 User.destroy_all
 def create_admin login, email, first_name, last_name
-  u = User.create!(:login => login, :email => email,
+  u = User.new(:login => login, :email => email,
         :first_name => first_name, :last_name => last_name, :password => 'd#ve7aS4',
         :password_confirmation => 'd#ve7aS4', :invitation_code => 'd#ve7aS4')
   u.admin = true
+  u.save
   u.activate!
 end
 
