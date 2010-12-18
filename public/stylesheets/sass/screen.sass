@@ -72,7 +72,7 @@ a.button
     @include back_gradient_background($apple)
     text-shadow: 0 -1px 0px darken($apple, 10)
     @include button_down($apple)
-    @include box-shadow(-1px -1px 1px darken(white, 20))
+    @include box-shadow(0px 0px 2px darken(white, 30))
     &.important
       @include back_gradient_background($red)
       text-shadow: 0 -1px 0px darken($red, 10)
@@ -166,17 +166,22 @@ form
     
 table
   width: 100%
-  border-collapse: collapse
+  border-spacing: 0
+  border-bottom: 2px solid $apple
   th
     @include gradient_background($apple)
     text-shadow: 0 -1px 1px darken($apple, 10)
     color: white
     padding: 4px 8px
-    border-right: 1px solid lighten($apple, 30)
+    border-right: 1px solid darken($apple, 5)
+    border-left: 1px solid lighten($apple, 20)
     &:last-child
       border-right: none
   td
-    padding: 4px 8px
+    padding: 0 8px
+    line-height: 2em
+    img
+      vertical-align: middle
   tr.even
     td
       background-color: darken(white, 5)
@@ -345,6 +350,8 @@ nav .item
   .actions
     float: right
     font-size: 0.8em
+    margin: 0 0 1em 1em
+  &> .actions
     margin: 0.7em 10px 0 0
   form
     .actions

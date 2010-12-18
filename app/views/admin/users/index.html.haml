@@ -15,9 +15,9 @@
         %tr{:class => cycle('odd', 'even')}
           %td
             - if user.admin?
-              = image_tag 'icons/admin.png', :alt => '[admin]', :title => 'Admin'
+              = image_tag 'icons/16/admin.png', :alt => '[admin]', :title => 'Admin'
             - else
-              = image_tag 'icons/user.png', :alt => '[basic user]', :title => 'Basic user'
+              = image_tag 'icons/16/user.png', :alt => '[basic user]', :title => 'Basic user'
             = link_to user.login, [:admin, user        ]
           %td= user.name
           %td= user.email

@@ -33,6 +33,7 @@ quentin:
   activated_at:              <%= 5.days.ago.to_s :db %>
   admin:                     true
   radio:                     rfm
+  invitations_left:         1
       
 aaron:
   id:                        2
@@ -45,11 +46,13 @@ aaron:
   remember_token:            
   activation_code:           1b6453892473a467d07372d45eb05abc2031647a
   activated_at:              
+  invitations_left:         5
 
 john:
   id:                         4
   login:                     john
   email:                     john@yopmail.com
+  invitations_left:         0
 
 old_password_holder:
   id:                        3

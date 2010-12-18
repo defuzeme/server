@@ -2,11 +2,13 @@
   overflow: hidden;
   clear: both; }
   .split label, .split .formError {
-    width: 20%; }
+    width: 30%; }
   .split input, .split textarea {
-    width: 73%; }
+    width: 63%; }
+  .split .checkbox {
+    width: auto; }
   .split select {
-    width: 75%; }
+    width: 65%; }
   .split .left, .split .right {
     float: none;
     width: auto; }

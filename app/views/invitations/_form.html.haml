@@ -1,0 +1,12 @@
+= form_for @invitation do |f|
+  .split
+    .left
+      = auto_text_field f, :email
+      - if current_user.radio?
+        = auto_check_box f, :radio_id, :value => current_user.radio_id
+    .right
+      = auto_text_area f, :message
+
+  .actions
+    = f.submit
+

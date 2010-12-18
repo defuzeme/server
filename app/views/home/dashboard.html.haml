@@ -1,9 +1,14 @@
 %h2= t '.title'
 - if current_user.radio?
-  .block
+  .split
     .left
-      %h3= t '.my_radio'
-      = render current_user.radio
+      .block
+        %h3= t '.my_radio'
+        = render current_user.radio
+    .right
+      .block
+        %h3= t '.my_invitations'
+        = render :partial => 'invitations/invitations', :locals => {:invitations => current_user.invitations}
 - else
   .block
     = render :partial => 'no_radio_yet'

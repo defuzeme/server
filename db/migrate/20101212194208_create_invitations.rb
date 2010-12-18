@@ -10,9 +10,12 @@ class CreateInvitations < ActiveRecord::Migration
     add_index :invitations, :radio_id
     add_index :invitations, :new_user_id
     add_index :invitations, :token
+    add_column :users, :invitations_left, :integer
+    User.update_all :invitations_left => User::INVITATIONS_PER_USER
   end
 
   def self.down
+    remove_column :users, :invitations_left
     remove_index :invitations, :token
     remove_index :invitations, :new_user_id
     remove_index :invitations, :radio_id

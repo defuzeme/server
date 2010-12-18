@@ -9,14 +9,28 @@ class InvitationTest < ActiveSupport::TestCase
     end
   end
 
+  test "should generate token" do
+    u = users :quentin
+    i = create_invitation :creator => u
+    assert_match /[a-z][0-9]+/i, i.token, "Bad token"
+  end
+
   test "can't invite same person twice" do
     u = users :quentin
     assert_no_difference 'Invitation.count' do
       i = create_invitation :creator => u, :email => 'john@yopmail.com'
-      assert_equal 1, i.errors[:email].size
+      assert i.errors[:email].any?
     end
   end
-  
+
+  test "can't invite registered users" do
+    u = users :quentin
+    assert_no_difference 'Invitation.count' do
+      i = create_invitation :creator => u, :email => u.email
+      assert i.errors[:email].any?
+    end
+  end
+
   test "can't invite without creator" do
     assert_no_difference 'Invitation.count' do
       create_invitation
@@ -33,6 +47,7 @@ class InvitationTest < ActiveSupport::TestCase
   
   test "should send email" do
     i = invitations :aaron_to_john
+    assert_nil i.sent_at
     i.send!
     assert_not_nil i.sent_at, "email not sent"
   end
@@ -40,6 +55,6 @@ class InvitationTest < ActiveSupport::TestCase
   protected
 
   def create_invitation(options = {})
-    Invitation.create({ :email => 'bob@yopmail.com' }.merge(options))
+    Invitation.create({ :email => 'bob2@yopmail.com' }.merge(options))
   end
 end

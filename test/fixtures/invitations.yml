@@ -24,5 +24,6 @@
 #
 aaron_to_john:
   creator_id: 2
+  radio: rfm
   email: john@yopmail.com
-  token: deadbeaf
+  token: 4r8jhbfrit
