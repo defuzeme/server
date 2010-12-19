@@ -12,8 +12,9 @@ User.destroy_all
 def create_admin login, email, first_name, last_name
   u = User.new(:login => login, :email => email,
         :first_name => first_name, :last_name => last_name, :password => 'd#ve7aS4',
-        :password_confirmation => 'd#ve7aS4', :invitation_code => 'd#ve7aS4')
+        :password_confirmation => 'd#ve7aS4')
   u.admin = true
+  u.invitations_left = 20
   u.save
   u.activate!
 end
@@ -31,3 +32,7 @@ puts "Creating demo radio"
 Radio.destroy_all
 radio = Radio.create(:name => 'Defuze.me demo radio', :website => 'defuze.me', :description => 'This radio is not phisically existing and is only used by defuze.me development team')
 radio.users = User.all
+
+puts "Clear invitations"
+
+Invitation.destroy_all

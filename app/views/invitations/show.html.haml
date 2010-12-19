@@ -3,5 +3,7 @@
   %p= t('.blurb', :creator => @invitation.creator.name).html_safe
   - if @invitation.radio.present?
     %p= t('.join-radio', :radio => @invitation.radio.name).html_safe
+  - if @invitation.message.present?
+    = t('.message', :name => @invitation.creator.name, :message => @invitation.message).html_safe
   - if @user.present?
     = render :partial => 'users/form'

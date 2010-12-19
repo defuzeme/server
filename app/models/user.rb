@@ -124,6 +124,10 @@ class User < ActiveRecord::Base
   end
   
   def update_invitation
-    invitation.update_attributes! :new_user_id => id, :accepted_at => Time.now if invitation
+    if invitation
+      invitation.new_user_id = id
+      invitation.accepted_at = Time.now
+      invitation.save
+    end
   end
 end

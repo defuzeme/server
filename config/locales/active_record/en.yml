@@ -31,7 +31,7 @@ en:
           fm: FM
           am: AM
       invitation:
-        radio_id: "Link to my radio"
+        link_radio: "Link to my radio"
     errors:
       messages:
         already_registered: "user already registered"

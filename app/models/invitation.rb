@@ -33,6 +33,9 @@ class Invitation < ActiveRecord::Base
             :format     => { :with => Authentication.email_regex },
             :length     => { :within => 6..50 }
 
+  attr_accessor :link_radio
+  attr_accessible :email, :message, :link_radio, :creator
+
   belongs_to :creator, :class_name => 'User'
   belongs_to :radio
   belongs_to :new_user, :class_name => 'User'
@@ -41,6 +44,7 @@ class Invitation < ActiveRecord::Base
   scope :pending, :conditions => {:accepted_at => nil}
   
   before_validation :generate_token, :on => :create
+  before_create :assign_radio
   after_create :charge_creator
   
   validate :validates_no_existing_user, :on => :create
@@ -73,6 +77,11 @@ class Invitation < ActiveRecord::Base
   end
   
   protected
+  
+  def assign_radio
+    self.radio = creator.radio if link_radio == '1'
+    true
+  end
   
   def validates_no_existing_user
     if User.find_by_email(email)

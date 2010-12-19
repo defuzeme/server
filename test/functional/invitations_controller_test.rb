@@ -17,10 +17,31 @@ class InvitationsControllerTest < ActionController::TestCase
     u = users :aaron
     login_as u
     assert_difference 'Invitation.count' do
-      get :new
-      assert_response :success
       invite(:message => "Hello you !")
       assert_response :redirect
+    end
+  end
+
+  test 'should invite with radio' do
+    u = users :aaron
+    login_as u
+    assert_difference 'Invitation.count' do
+      invite(:link_radio => "1")
+      i = assigns[:invitation]
+      assert_response :redirect
+      assert_equal u.radio, i.radio
+    end
+  end
+
+  test 'should invite without radio' do
+    u = users :aaron
+    login_as u
+    assert_difference 'Invitation.count' do
+      invite(:link_radio => "0")
+      i = assigns[:invitation]
+      assert_response :redirect
+      assert_nil i.radio_id
+      assert_nil i.radio
     end
   end
 

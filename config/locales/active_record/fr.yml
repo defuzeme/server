@@ -31,7 +31,7 @@ fr:
           fm: FM
           am: AM
       invitation:
-        radio_id: "Lier à ma radio"
+        link_radio: "Lier à ma radio"
     errors:
       template:
         header: 

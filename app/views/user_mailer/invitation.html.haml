@@ -1,7 +1,11 @@
-= @invitation.creator.name
-invites you to join defuze.me
-- if @invitation.radio
-  and his/her radio "#{@invitation.radio.name}"
-
-Follow this link to join defuze.me:
-= link_to signup_path, signup_path
+= t '.blurb', :creator => @invitation.creator.name
+- if @invitation.radio.present?
+  = t '.join_radio', :radio => @invitation.radio.name
+= "\n"
+- if @invitation.message.present?
+  = t '.message', :name => @invitation.creator.name, :message => @invitation.message
+= "\n"
+= t '.your_invitation_code', :code => @invitation.token
+= "\n"
+= t '.how_to_join'
+= invitation_url(@invitation)
