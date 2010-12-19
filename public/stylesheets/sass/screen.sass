@@ -13,7 +13,7 @@ body
   width: 960px
   margin: 0 auto
   text-align: left
-  padding-top: 10px
+  padding-top: 3px
   &.app
     width: auto
     margin: 0 15px
@@ -194,29 +194,34 @@ table
 
 header
   text-shadow: 0 1px 1px white
+  height: 65px
+  position: relative
 
   a.logo
     color: $apple
     display: block
     float: left
     overflow: hidden
-    line-height: 50px
+    line-height: 60px
   h1
-    height: 50px
-    width: 123px
-    background-image: url('../images/logo.gif')
+    height: 60px
+    width: 140px
+    background-image: url('../images/logo.png')
     margin: 0
     cursor: pointer
     span
       display: none
           
   #version
-    float: left
-    line-height: 50px
-    margin: 5px 0 0 15px
-    font-size: 28px
+    position: absolute
+    width: 142px
+    text-align: right
+    top: 0px
+    left: 0px
+    line-height: 30px
+    font-size: 18px
     color: white
-    text-shadow: 0 -1px 1px darken($back, 5)
+    text-shadow: 0 -1px 1px darken($back, 15)
 
   #language-selector
     float: right
