@@ -11,7 +11,7 @@ body {
   width: 960px;
   margin: 0 auto;
   text-align: left;
-  padding-top: 10px; }
+  padding-top: 3px; }
   #wrapper.app {
     width: auto;
     margin: 0 15px; }
@@ -240,28 +240,33 @@ table {
   margin: 10px; }
 
 header {
-  text-shadow: 0 1px 1px white; }
+  text-shadow: 0 1px 1px white;
+  height: 65px;
+  position: relative; }
   header a.logo {
     color: #88c833;
     display: block;
     float: left;
     overflow: hidden;
-    line-height: 50px; }
+    line-height: 60px; }
   header h1 {
-    height: 50px;
-    width: 123px;
-    background-image: url("../images/logo.gif");
+    height: 60px;
+    width: 140px;
+    background-image: url("../images/logo.png");
     margin: 0;
     cursor: pointer; }
     header h1 span {
       display: none; }
   header #version {
-    float: left;
-    line-height: 50px;
-    margin: 5px 0 0 15px;
-    font-size: 28px;
+    position: absolute;
+    width: 142px;
+    text-align: right;
+    top: 0px;
+    left: 0px;
+    line-height: 30px;
+    font-size: 18px;
     color: white;
-    text-shadow: 0 -1px 1px #d3d3cc; }
+    text-shadow: 0 -1px 1px #bcbcb1; }
   header #language-selector {
     float: right;
     margin: 15px 0 0 20px;
