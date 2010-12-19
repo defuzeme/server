@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   layout 'public'
   
   def index
+    a.b
   end
 
   def dashboard
