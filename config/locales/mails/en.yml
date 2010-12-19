@@ -1,0 +1,8 @@
+en:
+  user_mailer:
+    invitation:
+      blurb: "You've been invited by %{creator} to join defuze.me."
+      join_radio: "As requested by the person inviting you, your account will automatically be linked to his radio called : %{radio}"
+      your_invitation_code: "Here is your invitation code: %{code}"
+      how_to_join: "You can join defuze.me by using this code in the registration form, or simply by following this link:"
+      message: "Here is %{name}'s message: %{message}"

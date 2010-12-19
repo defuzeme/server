@@ -39,6 +39,9 @@ ul {
   list-style: none;
   padding: 0; }
 
+cite {
+  color: #776655; }
+
 .actions a,
 .actions input,
 input.button,
