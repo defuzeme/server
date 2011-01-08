@@ -240,6 +240,7 @@ table {
   margin: 10px; }
 
 header {
+  display: block;
   text-shadow: 0 1px 1px white;
   height: 65px;
   position: relative; }
