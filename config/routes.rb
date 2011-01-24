@@ -12,12 +12,17 @@ DefuzeMe::Application.routes.draw do
   match 'activate/:activation_code' => 'users#activate', :as => :activate, :activation_code => nil
 
 
+  # Dashboard
   match 'dashboard' => 'home#dashboard'
   resources :radios, :except => :index do
     get :delete, :on => :member
   end
 
+  # Invitations
   resources :invitations, :only => [:show, :new, :create]
+
+  # Static pages
+  match 'license' => 'home#license', :as => :license
 
   # Admin panel
   match 'admin' => 'home#admin', :as => :admin
