@@ -6,6 +6,9 @@ class HomeController < ApplicationController
   def index
   end
 
+  def license
+  end
+
   def dashboard
     render :layout => 'application'
   end
