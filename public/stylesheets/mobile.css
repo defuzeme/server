@@ -1,9 +1,3 @@
-body {
-  font-size: 15px; }
-
-header #version {
-  display: none; }
-
 .split label, .split .formError {
   width: auto; }
 .split input, .split textarea {
