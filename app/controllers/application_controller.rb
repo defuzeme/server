@@ -81,7 +81,7 @@ class ApplicationController < ActionController::Base
   end  
   
   def get_request_hostname
-    $host ||= request.env['HTTP_HOST']
+    $host = request.env['HTTP_HOST'] if request.env['HTTP_HOST'].present?
   end
   
   def auto_layout
