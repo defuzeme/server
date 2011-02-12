@@ -6,6 +6,13 @@ class HomeControllerTest < ActionController::TestCase
     assert_response :success
   end
   
+  test "host should change" do
+  	old_host = $host
+	@request.env['HTTP_HOST'] = 'ya.ru'
+  	get :index
+  	assert_equal 'ya.ru', $host
+  end
+  
   test "get logged-in public page" do
     u = users(:aaron)
     login_as u
