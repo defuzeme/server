@@ -51,6 +51,10 @@ class Radio < ActiveRecord::Base
     permalink
   end
   
+  def frequency_band
+    "#{frequency} MHz #{band_key.to_s.upcase}"
+  end
+  
   protected
   
   # Because there's no permalink field, we need to show errors on name field
