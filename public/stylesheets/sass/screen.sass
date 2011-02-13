@@ -1,7 +1,7 @@
 @import "definitions"
 
 body
-  background-color: $back
+  background: $back url(../images/bg.png)
   margin: 0
   padding: 0
   text-align: center
@@ -23,10 +23,13 @@ body
 
 a
   text-decoration: none
-  color: darken($link, 20)
+  color: darken($link, 15)
 
 a:hover
   color: $link
+
+img
+  border: none
 
 .clear
   clear: both
@@ -44,13 +47,18 @@ ul
 cite
   color: $brown
 
+.block
+  margin: 10px
+  h2
+    padding-left: 0
+
 .actions a,
 .actions input,
 input.button,
 a.button
   display: block
   @include gradient_background($actions)
-  @include box-shadow(1px 1px 1px darken(white, 20))
+  @include box-shadow(0px 0px 1px darken($back, 20))
   text-shadow: 0 -1px 0px darken($actions, 15)
   color: white
   font-weight: bold
@@ -75,12 +83,12 @@ a.button
     @include back_gradient_background($apple)
     text-shadow: 0 -1px 0px darken($apple, 10)
     @include button_down($apple)
-    @include box-shadow(0px 0px 2px darken(white, 30))
+    @include box-shadow(0px 0px 2px darken($back, 30))
     &.important
       @include back_gradient_background($red)
       text-shadow: 0 -1px 0px darken($red, 10)
       @include button_down($red)
-      @include box-shadow(-1px -1px 1px darken(white, 20))
+      @include box-shadow(0px 0px 1px darken($back, 20))
     
 
 .actions
@@ -122,7 +130,7 @@ form
     text-align: right
   input, textarea, select, a
     border: 1px solid $back
-    @include button_up($back)
+    @include button_up(#bbb)
     padding: 0.4em 0.3em
     margin-left: 1em
     width: 74%
@@ -189,22 +197,12 @@ table
     td
       background-color: darken(white, 5)
 
-.block
-  margin: 10px
-  h2
-    padding-left: 0
-
-.license
-  margin: 2em 3em
-  text-align: justify
-  ul
-    list-style: circle
-    padding-left: 2em
-
 header
   display: block
-  text-shadow: 0 1px 1px white
-  height: 65px
+  text-shadow: 0 -1px 0px darken($back, 20)
+  margin-top: 0.5em
+  height: 75px
+  color: lighten($back, 40)
   position: relative
 
   a.logo
@@ -230,8 +228,7 @@ header
     left: 0px
     line-height: 30px
     font-size: 18px
-    color: white
-    text-shadow: 0 -1px 1px darken($back, 15)
+    color: lighten($back, 60)
 
   #language-selector
     float: right
@@ -244,7 +241,7 @@ header
       background: transparent url(../images/flags.gif) left -22px
       @include hide-text
       @include smooth(background-position)
-      @include box-shadow(1px 1px 1px darken(white, 40))
+      @include box-shadow(1px 1px 1px darken($back, 40))
       &.fr
         background-position: left top
       &:hover
@@ -363,8 +360,8 @@ nav .item
       border: 1px solid white
       padding: 1em
       &:hover
-        background-color: lighten($back, 10)
-        border: 1px solid $back
+        background-color: darken(white, 10)
+        border: 1px solid darken(white, 15)
         @include border-radius(3px)
   .actions
     float: right
@@ -394,9 +391,26 @@ footer
   font-size: 0.9em
   padding-bottom: 1em
   text-align: center
-  text-shadow: 0 1px 0.1em white
+  text-shadow: 0 -1px 0.1em darken($back, 15)
 
-img
-  border: none
+.license
+  margin: 2em 3em
+  text-align: justify
+  ul
+    list-style: circle
+    padding-left: 2em
 
+.radio
+  background: transparent url(../images/icons/microphone.png) left center no-repeat
+  min-height: 48px
+  padding-left: 55px
+  .name
+    font-size: 1.2em
+  .description
+    margin-top: 0.3em
+    text-align: justify
+  .freq
+    margin-top: 0.3em
+    font-weight: bold
+    
 @import "dashboard"

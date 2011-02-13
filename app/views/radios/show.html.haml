@@ -2,4 +2,19 @@
   = link_to t(:edit), [:edit, @radio]
   = link_to t(:delete), [:delete, @radio], :class => 'important'
 %h2= @radio.name
-= @radio
+.split
+  .left
+    .block
+      %h3= t 'details'
+      %dl
+        %dt= Radio.human_attribute_name :description
+        %dd= @radio.description
+        %dt= Radio.human_attribute_name :website
+        %dd= auto_link(@radio.website)
+        %dt= Radio.human_attribute_name :frequency
+        %dd= @radio.frequency_band
+  .right
+    .block
+      %h3= t 'members'
+      = render :partial => 'members'
+

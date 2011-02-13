@@ -1,5 +1,5 @@
 body {
-  background-color: #dfdfda;
+  background: #333333 url(../images/bg.png);
   margin: 0;
   padding: 0;
   text-align: center;
@@ -21,10 +21,13 @@ body {
 
 a {
   text-decoration: none;
-  color: #991c13; }
+  color: #b02016; }
 
 a:hover {
   color: #e5392d; }
+
+img {
+  border: none; }
 
 .clear {
   clear: both;
@@ -42,6 +45,11 @@ ul {
 cite {
   color: #776655; }
 
+.block {
+  margin: 10px; }
+  .block h2 {
+    padding-left: 0; }
+
 .actions a,
 .actions input,
 input.button,
@@ -50,9 +58,9 @@ a.button {
   background: #999988;
   background-image: -moz-linear-gradient(top, #bcbcb1, #999988);
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bcbcb1), to(#999988));
-  -webkit-box-shadow: 1px 1px 1px #cccccc;
-  box-shadow: 1px 1px 1px #cccccc;
-  -moz-box-shadow: 1px 1px 1px #cccccc;
+  -webkit-box-shadow: 0px 0px 1px black;
+  box-shadow: 0px 0px 1px black;
+  -moz-box-shadow: 0px 0px 1px black;
   text-shadow: 0 -1px 0px #727262;
   color: white;
   font-weight: bold;
@@ -96,9 +104,9 @@ a.button {
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#88c833), to(#a0d559));
     text-shadow: 0 -1px 0px #6c9f29;
     border-color: #6c9f29 #6c9f29 #6c9f29 #6c9f29;
-    -webkit-box-shadow: 0px 0px 2px #b3b3b3;
-    box-shadow: 0px 0px 2px #b3b3b3;
-    -moz-box-shadow: 0px 0px 2px #b3b3b3; }
+    -webkit-box-shadow: 0px 0px 2px black;
+    box-shadow: 0px 0px 2px black;
+    -moz-box-shadow: 0px 0px 2px black; }
     .actions a:active.important,
     .actions input:active.important,
     input.button:active.important,
@@ -108,9 +116,9 @@ a.button {
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e5392d), to(#eb645a));
       text-shadow: 0 -1px 0px #c62419;
       border-color: #c62419 #c62419 #c62419 #c62419;
-      -webkit-box-shadow: -1px -1px 1px #cccccc;
-      box-shadow: -1px -1px 1px #cccccc;
-      -moz-box-shadow: -1px -1px 1px #cccccc; }
+      -webkit-box-shadow: 0px 0px 1px black;
+      box-shadow: 0px 0px 1px black;
+      -moz-box-shadow: 0px 0px 1px black; }
 
 .actions a {
   float: left; }
@@ -155,8 +163,8 @@ form {
     padding: 0.4em 0;
     text-align: right; }
   form input, form textarea, form select, form a {
-    border: 1px solid #dfdfda;
-    border-color: #dfdfda #c7c7bf #c7c7bf #dfdfda;
+    border: 1px solid #333333;
+    border-color: #bbbbbb #a2a2a2 #a2a2a2 #bbbbbb;
     padding: 0.4em 0.3em;
     margin-left: 1em;
     width: 74%;
@@ -236,22 +244,12 @@ table {
   table tr.even td {
     background-color: #f2f2f2; }
 
-.block {
-  margin: 10px; }
-  .block h2 {
-    padding-left: 0; }
-
-.license {
-  margin: 2em 3em;
-  text-align: justify; }
-  .license ul {
-    list-style: circle;
-    padding-left: 2em; }
-
 header {
   display: block;
-  text-shadow: 0 1px 1px white;
-  height: 65px;
+  text-shadow: 0 -1px 0px black;
+  margin-top: 0.5em;
+  height: 75px;
+  color: #999999;
   position: relative; }
   header a.logo {
     color: #88c833;
@@ -275,8 +273,7 @@ header {
     left: 0px;
     line-height: 30px;
     font-size: 18px;
-    color: white;
-    text-shadow: 0 -1px 1px #bcbcb1; }
+    color: #cccccc; }
   header #language-selector {
     float: right;
     margin: 15px 0 0 20px;
@@ -292,9 +289,9 @@ header {
       -o-transition: background-position 0.3s linear;
       -webkit-transition: background-position 0.3s linear;
       transition: background-position 0.3s linear;
-      -webkit-box-shadow: 1px 1px 1px #999999;
-      box-shadow: 1px 1px 1px #999999;
-      -moz-box-shadow: 1px 1px 1px #999999; }
+      -webkit-box-shadow: 1px 1px 1px black;
+      box-shadow: 1px 1px 1px black;
+      -moz-box-shadow: 1px 1px 1px black; }
       header #language-selector a.fr {
         background-position: left top; }
       header #language-selector a:hover {
@@ -312,9 +309,9 @@ header {
 
 #content {
   background-color: #eeeeee;
-  -webkit-box-shadow: 0px 1px 3px #bcbcb1;
-  box-shadow: 0px 1px 3px #bcbcb1;
-  -moz-box-shadow: 0px 1px 3px #bcbcb1;
+  -webkit-box-shadow: 0px 1px 3px #0d0d0d;
+  box-shadow: 0px 1px 3px #0d0d0d;
+  -moz-box-shadow: 0px 1px 3px #0d0d0d;
   margin-bottom: 10px;
   position: relative;
   color: #666666;
@@ -328,15 +325,15 @@ header {
     padding: 5px 10px;
     text-shadow: 0 -1px 1px #6c9f29;
     border: 2px solid white;
-    -webkit-box-shadow: 0px 1px 3px #c7c7bf, 0 0 1em #7ab42e inset;
-    box-shadow: 0px 1px 3px #c7c7bf, 0 0 1em #7ab42e inset;
-    -moz-box-shadow: 0px 1px 3px #c7c7bf, 0 0 1em #7ab42e inset; }
+    -webkit-box-shadow: 0px 1px 3px #1a1a1a, 0 0 1em #7ab42e inset;
+    box-shadow: 0px 1px 3px #1a1a1a, 0 0 1em #7ab42e inset;
+    -moz-box-shadow: 0px 1px 3px #1a1a1a, 0 0 1em #7ab42e inset; }
     #content .flash.error, #content #alert.error {
       background-color: #e5392d;
       text-shadow: 0 -1px 1px #c62419;
-      -webkit-box-shadow: 0px 1px 3px #c7c7bf, 0 0 1em #c62419 inset;
-      box-shadow: 0px 1px 3px #c7c7bf, 0 0 1em #c62419 inset;
-      -moz-box-shadow: 0px 1px 3px #c7c7bf, 0 0 1em #c62419 inset; }
+      -webkit-box-shadow: 0px 1px 3px #1a1a1a, 0 0 1em #c62419 inset;
+      box-shadow: 0px 1px 3px #1a1a1a, 0 0 1em #c62419 inset;
+      -moz-box-shadow: 0px 1px 3px #1a1a1a, 0 0 1em #c62419 inset; }
   #content #alert {
     cursor: pointer; }
 
@@ -417,8 +414,8 @@ nav .item.admin a {
       border: 1px solid white;
       padding: 1em; }
       #main .twitter a:hover {
-        background-color: #f7f7f5;
-        border: 1px solid #dfdfda;
+        background-color: #e6e6e6;
+        border: 1px solid #d9d9d9;
         border-top-left-radius: 3px;
         -moz-border-radius-topleft: 3px;
         border-bottom-left-radius: 3px;
@@ -452,10 +449,27 @@ footer {
   font-size: 0.9em;
   padding-bottom: 1em;
   text-align: center;
-  text-shadow: 0 1px 0.1em white; }
+  text-shadow: 0 -1px 0.1em #0d0d0d; }
 
-img {
-  border: none; }
+.license {
+  margin: 2em 3em;
+  text-align: justify; }
+  .license ul {
+    list-style: circle;
+    padding-left: 2em; }
+
+.radio {
+  background: transparent url(../images/icons/microphone.png) left center no-repeat;
+  min-height: 48px;
+  padding-left: 55px; }
+  .radio .name {
+    font-size: 1.2em; }
+  .radio .description {
+    margin-top: 0.3em;
+    text-align: justify; }
+  .radio .freq {
+    margin-top: 0.3em;
+    font-weight: bold; }
 
 a.new-radio, a.join-radio {
   display: block;
