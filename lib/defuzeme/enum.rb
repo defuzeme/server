@@ -94,7 +94,7 @@ module Defuzeme
         end
 
         def self.#{field}_key i
-          #{constant_name}[i]
+          #{constant_name}[i] if i.is_a? Integer
         end
 
         def self.#{field}_index key
