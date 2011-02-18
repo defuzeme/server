@@ -119,7 +119,13 @@ class RadioTest < ActiveSupport::TestCase
     assert_equal ['FM', 'AM'], Radio.bands
     assert_equal [['FM', 0], ['AM', 1]], Radio.bands.to_select
   end
- 
+  
+  test "empty enum should not rise exception" do
+    r = radios :rfm
+    r.band = nil
+    assert_nil r.band_key
+  end
+  
   protected
 
   def create_radio(options = {})
