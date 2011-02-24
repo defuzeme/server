@@ -1,4 +1,4 @@
-- max_width = 990
+- max_width = 900
 - mobile_width = 600
 %head
   %title defuze.me
@@ -13,7 +13,7 @@
   %link{:href => '/favicon.png', :rel => 'shortcut icon'}/
   = stylesheet_link_tag 'screen'
   = stylesheet_link_tag 'small', :media => "only screen and (max-width: #{max_width}px)"
-  = stylesheet_link_tag 'mobile', :media => "only screen and (max-width: #{mobile_width}px)"
+  =# stylesheet_link_tag 'mobile', :media => "only screen and (max-width: #{mobile_width}px)"
   = javascript_include_tag 'mootools-1.2.5-core', 'rails', 'alert', 'application'
   = csrf_meta_tag
   /[if lte IE 8]

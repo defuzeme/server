@@ -25,4 +25,27 @@ a.button {
 #wrapper {
   width: auto;
   margin: 0 15px;
-  min-width: 280px; }
+  min-width: 550px; }
+
+#main {
+  clear: both; }
+
+#misc {
+  float: none;
+  width: auto;
+  background-color: #333333; }
+
+nav .item a {
+  float: left;
+  background-position: center 5px;
+  line-height: 1.5em;
+  height: 1.5em;
+  padding: 38px 0.8em 0.5em 0.8em;
+  border-bottom: none;
+  border-right: 1px solid #404040; }
+  nav .item a:hover {
+    background-color: #ee6644;
+    color: white; }
+nav .item.active a {
+  background-color: #262626;
+  color: white; }

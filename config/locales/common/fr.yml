@@ -9,10 +9,14 @@ fr:
   'yes': Oui
   'no': Non
   no_wrong: Non, revenir sur la page précédente
-  dashboard: Tableau de bord
-  my_radio: Ma radio
-  my_profile: Mon profil
-  administration: Administration
+  menu:
+    home: Accueil
+    overview: Présentation
+    contact: Contact
+    dashboard: Tableau de bord
+    my_radio: Ma radio
+    my_profile: Mon profil
+    administration: Administration
   members: Membres
   details: Détails
   actions: Actions

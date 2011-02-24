@@ -20,6 +20,9 @@
       #content
         - flash.each do |type, msg|
           %div{:class => "flash #{type}"}= msg
+        #misc
+          = render :partial => 'shared/public_menu'
+          = yield :misc
         #main= yield
       %footer
         %div
