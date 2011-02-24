@@ -2,7 +2,7 @@
   %div.actions
     = link_to t('.log_out'), logout_path
   = t '.logged_in'
-  = link_to_current_user :content_method => :login
+  = link_to current_user.login, dashboard_path
 - else
   %div.actions
     = link_to t('.log_in'),  login_path
