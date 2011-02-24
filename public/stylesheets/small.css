@@ -42,7 +42,7 @@ nav .item a {
   height: 1.5em;
   padding: 38px 0.8em 0.5em 0.8em;
   border-bottom: none;
-  border-right: 1px solid #404040; }
+  border-right: 1px solid #333333; }
   nav .item a:hover {
     background-color: #ee6644;
     color: white; }
