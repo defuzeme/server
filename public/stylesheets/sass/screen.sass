@@ -5,7 +5,7 @@ body
   margin: 0
   padding: 0
   text-align: center
-  color: #333
+  color: #ccc
   font-size: 13px
   font-family: $fonts
 
@@ -23,10 +23,10 @@ body
 
 a
   text-decoration: none
-  color: darken($link, 15)
+  color: $link
 
 a:hover
-  color: $link
+  color: lighten($link, 15)
 
 img
   border: none
@@ -130,7 +130,9 @@ form
     text-align: right
   input, textarea, select, a
     border: 1px solid $back
-    @include button_up(#bbb)
+    background-color: lighten($main, 10) !important
+    color: white
+    @include button_down($main)
     padding: 0.4em 0.3em
     margin-left: 1em
     width: 74%
@@ -138,7 +140,9 @@ form
     &:focus
       outline: none
       border: 1px solid $apple
-      @include box-shadow(0 0 7px -1px $apple)
+      @include box-shadow(0 0 9px -1px $apple)
+  input:-webkit-autofill
+    color: black
   textarea
     height: 4em
   .checkbox
@@ -171,9 +175,8 @@ form
       padding-top: 0
     input, textarea, select
       @include button_up($error)
-      background-color: lighten($error, 42)
       &:focus
-        @include box-shadow(0 0 7px -1px $error)
+        @include box-shadow(0 0 9px -1px $error)
     
 table
   width: 100%
@@ -195,7 +198,7 @@ table
       vertical-align: middle
   tr.even
     td
-      background-color: darken(white, 5)
+      background-color: lighten($main, 5)
 
 header
   display: block
@@ -262,7 +265,7 @@ header
 
 #content
   background-color: $sidebar_back
-  @include box-shadow(0px 1px 3px darken($back, 15))
+  @include box-shadow(0px 0px 3px lighten($back, 20))
   margin-bottom: 10px
   position: relative
   color: $color
@@ -277,11 +280,9 @@ header
     padding: 5px 10px
     text-shadow: 0 -1px 1px darken($apple, 10)
     border: 2px solid white
-    @include box-shadow2(0px 1px 3px darken($back, 10), 0 0 1em darken($apple, 5) inset)
     &.error
       background-color: $error
       text-shadow: 0 -1px 1px darken($error, 10)
-      @include box-shadow2(0px 1px 3px darken($back, 10), 0 0 1em darken($error, 10) inset) 
   #alert
     cursor: pointer
 
@@ -321,18 +322,13 @@ nav .item
     padding: 0.5em 0 0.5em 55px
     background-position: 10px center
     background-repeat: no-repeat
-    border-bottom: 1px solid darken($sidebar_back, 5)
+    border-bottom: 1px solid lighten($sidebar_back, 5)
     &:hover
-      background-color: darken($sidebar_back, 40)
+      background-color: $red
       color: white
   &.active a
-    background-color: white
-    position: relative
-    left: -1px
-    &:hover
-      background-color: darken($sidebar_back, 40)
-      color: white
-      left: 0px
+    background-color: $main
+    color: white
   &.dashboard a
     background-image: url(../images/icons/32/board.png)
   &.my-radio a
@@ -343,8 +339,9 @@ nav .item
     background-image: url(../images/icons/32/password.png)
 
 #main
-  background-color: white
+  background-color: $main
   overflow: hidden
+  min-height: 200px
 
   .coming
     text-align: center
@@ -382,7 +379,7 @@ nav .item
   #misc
     float: right
     width: $sidebar_width
-    background-color: #eee
+    background-color: $sidebar_back
     min-height: 10px
 
 footer

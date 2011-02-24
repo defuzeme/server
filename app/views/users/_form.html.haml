@@ -1,6 +1,6 @@
 - @user.password = @user.password_confirmation = nil
 
-= form_for @user do |f|
+= form_for @user, {:html => {:autocomplete => 'off'}} do |f|
   .split
     .left
       = auto_text_field f, :login

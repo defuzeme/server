@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  color: #333333;
+  color: #cccccc;
   font-size: 13px;
   font-family: Sans, Arial; }
 
@@ -21,10 +21,10 @@ body {
 
 a {
   text-decoration: none;
-  color: #b02016; }
+  color: #ee6644; }
 
 a:hover {
-  color: #e5392d; }
+  color: #f49f8a; }
 
 img {
   border: none; }
@@ -36,7 +36,7 @@ img {
 h2 {
   padding: 0.3em 10px;
   margin: 0;
-  color: #e5392d; }
+  color: #ee6644; }
 
 ul {
   list-style: none;
@@ -55,19 +55,19 @@ cite {
 input.button,
 a.button {
   display: block;
-  background: #999988;
-  background-image: -moz-linear-gradient(top, #bcbcb1, #999988);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bcbcb1), to(#999988));
+  background: #777766;
+  background-image: -moz-linear-gradient(top, #9d9d8d, #777766);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9d9d8d), to(#777766));
   -webkit-box-shadow: 0px 0px 1px black;
   box-shadow: 0px 0px 1px black;
   -moz-box-shadow: 0px 0px 1px black;
-  text-shadow: 0 -1px 0px #727262;
+  text-shadow: 0 -1px 0px #4e4e43;
   color: white;
   font-weight: bold;
   padding: 0px 0.5em;
-  border: 1px solid #999988;
+  border: 1px solid #777766;
   cursor: pointer;
-  border-color: #999988 #80806e #80806e #999988;
+  border-color: #777766 #5c5c4e #5c5c4e #777766;
   line-height: 2em; }
   .actions a:hover,
   .actions input:hover,
@@ -86,14 +86,14 @@ a.button {
     .actions input:hover.important,
     input.button:hover.important,
     a.button:hover.important {
-      background: #e5392d;
-      background-image: -moz-linear-gradient(top, #ed7971, #e5392d);
-      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ed7971), to(#e5392d));
-      text-shadow: 0 -1px 0px #c62419;
-      border-color: #e5392d #c62419 #c62419 #e5392d;
-      -webkit-box-shadow: 0px 0px 5px #e84e44;
-      box-shadow: 0px 0px 5px #e84e44;
-      -moz-box-shadow: 0px 0px 5px #e84e44; }
+      background: #ee6644;
+      background-image: -moz-linear-gradient(top, #f49f8a, #ee6644);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f49f8a), to(#ee6644));
+      text-shadow: 0 -1px 0px #ea4015;
+      border-color: #ee6644 #ea4015 #ea4015 #ee6644;
+      -webkit-box-shadow: 0px 0px 5px #f0795b;
+      box-shadow: 0px 0px 5px #f0795b;
+      -moz-box-shadow: 0px 0px 5px #f0795b; }
   .actions a:active,
   .actions input:active,
   input.button:active,
@@ -111,11 +111,11 @@ a.button {
     .actions input:active.important,
     input.button:active.important,
     a.button:active.important {
-      background: #dd281b;
-      background-image: -moz-linear-gradient(top, #e5392d, #eb645a);
-      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e5392d), to(#eb645a));
-      text-shadow: 0 -1px 0px #c62419;
-      border-color: #c62419 #c62419 #c62419 #c62419;
+      background: #ec532d;
+      background-image: -moz-linear-gradient(top, #ee6644, #f28c73);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ee6644), to(#f28c73));
+      text-shadow: 0 -1px 0px #ea4015;
+      border-color: #ea4015 #ea4015 #ea4015 #ea4015;
       -webkit-box-shadow: 0px 0px 1px black;
       box-shadow: 0px 0px 1px black;
       -moz-box-shadow: 0px 0px 1px black; }
@@ -164,7 +164,9 @@ form {
     text-align: right; }
   form input, form textarea, form select, form a {
     border: 1px solid #333333;
-    border-color: #bbbbbb #a2a2a2 #a2a2a2 #bbbbbb;
+    background-color: #404040 !important;
+    color: white;
+    border-color: #0d0d0d #0d0d0d #0d0d0d #0d0d0d;
     padding: 0.4em 0.3em;
     margin-left: 1em;
     width: 74%;
@@ -179,9 +181,11 @@ form {
     form input:focus, form textarea:focus, form select:focus, form a:focus {
       outline: none;
       border: 1px solid #88c833;
-      -webkit-box-shadow: 0 0 7px -1px #88c833;
-      box-shadow: 0 0 7px -1px #88c833;
-      -moz-box-shadow: 0 0 7px -1px #88c833; }
+      -webkit-box-shadow: 0 0 9px -1px #88c833;
+      box-shadow: 0 0 9px -1px #88c833;
+      -moz-box-shadow: 0 0 9px -1px #88c833; }
+  form input:-webkit-autofill {
+    color: black; }
   form textarea {
     height: 4em; }
   form .checkbox {
@@ -206,7 +210,7 @@ form {
       font-size: 1em; }
   form .formError {
     float: left;
-    color: #e5392d;
+    color: #ee6644;
     position: relative;
     top: -25px;
     font-size: 0.8em;
@@ -214,12 +218,11 @@ form {
   form .field_with_errors label {
     padding-top: 0; }
   form .field_with_errors input, form .field_with_errors textarea, form .field_with_errors select {
-    border-color: #e5392d #c62419 #c62419 #e5392d;
-    background-color: #fdedec; }
+    border-color: #ee6644 #ea4015 #ea4015 #ee6644; }
     form .field_with_errors input:focus, form .field_with_errors textarea:focus, form .field_with_errors select:focus {
-      -webkit-box-shadow: 0 0 7px -1px #e5392d;
-      box-shadow: 0 0 7px -1px #e5392d;
-      -moz-box-shadow: 0 0 7px -1px #e5392d; }
+      -webkit-box-shadow: 0 0 9px -1px #ee6644;
+      box-shadow: 0 0 9px -1px #ee6644;
+      -moz-box-shadow: 0 0 9px -1px #ee6644; }
 
 table {
   width: 100%;
@@ -242,7 +245,7 @@ table {
     table td img {
       vertical-align: middle; }
   table tr.even td {
-    background-color: #f2f2f2; }
+    background-color: #333333; }
 
 header {
   display: block;
@@ -308,13 +311,13 @@ header {
       margin-left: 1em; }
 
 #content {
-  background-color: #eeeeee;
-  -webkit-box-shadow: 0px 1px 3px #0d0d0d;
-  box-shadow: 0px 1px 3px #0d0d0d;
-  -moz-box-shadow: 0px 1px 3px #0d0d0d;
+  background-color: #333333;
+  -webkit-box-shadow: 0px 0px 3px #666666;
+  box-shadow: 0px 0px 3px #666666;
+  -moz-box-shadow: 0px 0px 3px #666666;
   margin-bottom: 10px;
   position: relative;
-  color: #666666;
+  color: #bbbbbb;
   clear: both; }
   #content .flash, #content #alert {
     position: absolute;
@@ -324,16 +327,10 @@ header {
     color: white;
     padding: 5px 10px;
     text-shadow: 0 -1px 1px #6c9f29;
-    border: 2px solid white;
-    -webkit-box-shadow: 0px 1px 3px #1a1a1a, 0 0 1em #7ab42e inset;
-    box-shadow: 0px 1px 3px #1a1a1a, 0 0 1em #7ab42e inset;
-    -moz-box-shadow: 0px 1px 3px #1a1a1a, 0 0 1em #7ab42e inset; }
+    border: 2px solid white; }
     #content .flash.error, #content #alert.error {
-      background-color: #e5392d;
-      text-shadow: 0 -1px 1px #c62419;
-      -webkit-box-shadow: 0px 1px 3px #1a1a1a, 0 0 1em #c62419 inset;
-      box-shadow: 0px 1px 3px #1a1a1a, 0 0 1em #c62419 inset;
-      -moz-box-shadow: 0px 1px 3px #1a1a1a, 0 0 1em #c62419 inset; }
+      background-color: #ee6644;
+      text-shadow: 0 -1px 1px #ea4015; }
   #content #alert {
     cursor: pointer; }
 
@@ -343,11 +340,11 @@ header {
   height: 2em;
   line-height: 2em;
   font-size: 0.9em;
-  border-bottom: 1px solid #e1e1e1;
-  background: #999988;
-  background-image: -moz-linear-gradient(top, #bcbcb1, #999988);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bcbcb1), to(#999988));
-  text-shadow: 0 -1px 1px #727262;
+  border-bottom: 1px solid #262626;
+  background: #777766;
+  background-image: -moz-linear-gradient(top, #9d9d8d, #777766);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9d9d8d), to(#777766));
+  text-shadow: 0 -1px 1px #4e4e43;
   color: white; }
   #breadcrumb ul li {
     float: left; }
@@ -376,18 +373,13 @@ nav .item a {
   padding: 0.5em 0 0.5em 55px;
   background-position: 10px center;
   background-repeat: no-repeat;
-  border-bottom: 1px solid #e1e1e1; }
+  border-bottom: 1px solid #404040; }
   nav .item a:hover {
-    background-color: #888888;
+    background-color: #ee6644;
     color: white; }
 nav .item.active a {
-  background-color: white;
-  position: relative;
-  left: -1px; }
-  nav .item.active a:hover {
-    background-color: #888888;
-    color: white;
-    left: 0px; }
+  background-color: #262626;
+  color: white; }
 nav .item.dashboard a {
   background-image: url(../images/icons/32/board.png); }
 nav .item.my-radio a {
@@ -398,8 +390,9 @@ nav .item.admin a {
   background-image: url(../images/icons/32/password.png); }
 
 #main {
-  background-color: white;
-  overflow: hidden; }
+  background-color: #262626;
+  overflow: hidden;
+  min-height: 200px; }
   #main .coming {
     text-align: center;
     margin-top: 3em; }
@@ -436,11 +429,11 @@ nav .item.admin a {
     margin: auto; }
 
 .app #main {
-  border-right: 1px solid #e1e1e1; }
+  border-right: 1px solid #262626; }
 .app #misc {
   float: right;
   width: 200px;
-  background-color: #eeeeee;
+  background-color: #333333;
   min-height: 10px; }
 
 footer {
@@ -496,7 +489,7 @@ a.new-radio, a.join-radio {
     min-height: 3em;
     line-height: 1.4em;
     margin: 0.5em 0;
-    text-shadow: 0 1px 1px #d4d4cd; }
+    text-shadow: 0 1px 1px #b4b4a8; }
 
 a.new-radio h4 {
   background: url(../images/icons/microphone.png) left center no-repeat; }
