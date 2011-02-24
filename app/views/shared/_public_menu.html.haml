@@ -1,0 +1,11 @@
+%nav
+  .item.home{:class => (controller_name == 'home' ? 'active' : '')}
+    = link_to root_path do
+      = t('menu.home')
+  .item.overview
+    = link_to root_path do
+      = t('menu.overview')
+  .item.contact
+    = link_to root_path do
+      = t('menu.contact')
+

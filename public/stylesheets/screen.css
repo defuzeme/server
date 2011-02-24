@@ -5,10 +5,10 @@ body {
   text-align: center;
   color: #cccccc;
   font-size: 13px;
-  font-family: Sans, Arial; }
+  font-family: Helvetica, Sans, Arial; }
 
 #wrapper {
-  width: 960px;
+  width: 870px;
   margin: 0 auto;
   text-align: left;
   padding-top: 3px; }
@@ -201,7 +201,7 @@ form {
     padding-top: 1em;
     text-align: center; }
     form .actions input, form .actions a {
-      font-family: Sans, Arial;
+      font-family: Helvetica, Sans, Arial;
       display: inline-block;
       float: none;
       margin: 0 auto;
@@ -227,18 +227,20 @@ form {
 table {
   width: 100%;
   border-spacing: 0;
-  border-bottom: 2px solid #88c833; }
+  border-bottom: 2px solid #7ab42e; }
   table th {
-    background: #88c833;
-    background-image: -moz-linear-gradient(top, #abda6e, #88c833);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#abda6e), to(#88c833));
-    text-shadow: 0 -1px 1px #6c9f29;
+    background: #7ab42e;
+    background-image: -moz-linear-gradient(top, #a0d559, #7ab42e);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a0d559), to(#7ab42e));
+    text-shadow: 0 -1px 1px #5f8b23;
     color: white;
     padding: 4px 8px;
-    border-right: 1px solid #7ab42e;
-    border-left: 1px solid #b7df82; }
+    border-right: 1px solid #6c9f29;
+    border-left: 1px solid #abda6e; }
     table th:last-child {
       border-right: none; }
+    table th:first-child {
+      border-left: none; }
   table td {
     padding: 0 8px;
     line-height: 2em; }
@@ -250,8 +252,8 @@ table {
 header {
   display: block;
   text-shadow: 0 -1px 0px black;
-  margin-top: 0.5em;
-  height: 75px;
+  margin-top: 1.2em;
+  height: 80px;
   color: #999999;
   position: relative; }
   header a.logo {
@@ -312,9 +314,16 @@ header {
 
 #content {
   background-color: #333333;
-  -webkit-box-shadow: 0px 0px 3px #666666;
-  box-shadow: 0px 0px 3px #666666;
-  -moz-box-shadow: 0px 0px 3px #666666;
+  border: 1px solid #333333;
+  border-color: #1f1f1f #404040 #404040 #1f1f1f;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
   margin-bottom: 10px;
   position: relative;
   color: #bbbbbb;
@@ -371,15 +380,22 @@ nav .item a {
   line-height: 32px;
   height: 32px;
   padding: 0.5em 0 0.5em 55px;
+  background-color: #404040;
   background-position: 10px center;
   background-repeat: no-repeat;
-  border-bottom: 1px solid #404040; }
+  border-bottom: 1px solid #333333; }
   nav .item a:hover {
     background-color: #ee6644;
     color: white; }
 nav .item.active a {
   background-color: #262626;
   color: white; }
+nav .item.home a {
+  background-image: url(../images/icons/32/home.png); }
+nav .item.contact a {
+  background-image: url(../images/icons/32/contact.png); }
+nav .item.overview a {
+  background-image: url(../images/icons/32/gear.png); }
 nav .item.dashboard a {
   background-image: url(../images/icons/32/board.png); }
 nav .item.my-radio a {
@@ -393,33 +409,26 @@ nav .item.admin a {
   background-color: #262626;
   overflow: hidden;
   min-height: 200px; }
-  #main .coming {
-    text-align: center;
-    margin-top: 3em; }
-  #main .twitter {
-    text-align: center;
-    margin-top: 5em; }
-    #main .twitter a {
-      display: block;
-      margin: 0 auto;
-      width: 271px;
-      font-size: 1.5em;
-      border: 1px solid white;
-      padding: 1em; }
-      #main .twitter a:hover {
-        background-color: #e6e6e6;
-        border: 1px solid #d9d9d9;
-        border-top-left-radius: 3px;
-        -moz-border-radius-topleft: 3px;
-        border-bottom-left-radius: 3px;
-        -moz-border-radius-bottomleft: 3px;
-        border-top-right-radius: 3px;
-        -moz-border-radius-topright: 3px;
-        border-bottom-right-radius: 3px;
-        -moz-border-radius-bottomright: 3px; }
+  #main .intro {
+    margin: 2em auto;
+    width: 550px; }
+    #main .intro p {
+      text-align: justify;
+      padding: 0 10px; }
+    #main .intro .mozaic {
+      padding: 0;
+      text-align: center;
+      font-size: 35px;
+      font-weight: bold;
+      color: white; }
+      #main .intro .mozaic img {
+        vertical-align: middle;
+        -webkit-box-shadow: 0 1px 4px black;
+        box-shadow: 0 1px 4px black;
+        -moz-box-shadow: 0 1px 4px black; }
   #main .actions {
     float: right;
-    font-size: 0.8em;
+    font-size: 0.9em;
     margin: 0 0 1em 1em; }
   #main > .actions {
     margin: 0.7em 10px 0 0; }
@@ -428,9 +437,7 @@ nav .item.admin a {
     font-size: 1em;
     margin: auto; }
 
-.app #main {
-  border-right: 1px solid #262626; }
-.app #misc {
+#misc {
   float: right;
   width: 200px;
   background-color: #333333;
