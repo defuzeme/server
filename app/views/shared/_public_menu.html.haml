@@ -1,11 +1,11 @@
 %nav
-  .item.home{:class => (controller_name == 'home' ? 'active' : '')}
+  .item.home{:class => (controller_name == 'home' and action_name == 'index' ? 'active' : '')}
     = link_to root_path do
       = t('menu.home')
-  .item.overview
-    = link_to root_path do
+  .item.overview{:class => (controller_name == 'home' and action_name == 'overview' ? 'active' : '')}
+    = link_to overview_path do
       = t('menu.overview')
-  .item.contact
-    = link_to root_path do
+  .item.contact{:class => (controller_name == 'home' and action_name == 'contact' ? 'active' : '')}
+    = link_to contact_path do
       = t('menu.contact')
 

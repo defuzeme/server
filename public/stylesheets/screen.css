@@ -10,21 +10,17 @@ body {
 #wrapper {
   width: 870px;
   margin: 0 auto;
-  text-align: left;
-  padding-top: 3px; }
+  text-align: left; }
   #wrapper.app {
     width: auto;
     margin: 0 15px; }
-  #wrapper.alert {
-    width: 40em;
-    margin: 0 auto; }
 
 a {
   text-decoration: none;
-  color: #ee6644; }
+  color: #88c833; }
 
 a:hover {
-  color: #f49f8a; }
+  color: #abda6e; }
 
 img {
   border: none; }
@@ -55,19 +51,19 @@ cite {
 input.button,
 a.button {
   display: block;
-  background: #777766;
-  background-image: -moz-linear-gradient(top, #9d9d8d, #777766);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9d9d8d), to(#777766));
+  background: #777777;
+  background-image: -moz-linear-gradient(top, #9d9d9d, #777777);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9d9d9d), to(#777777));
   -webkit-box-shadow: 0px 0px 1px black;
   box-shadow: 0px 0px 1px black;
   -moz-box-shadow: 0px 0px 1px black;
-  text-shadow: 0 -1px 0px #4e4e43;
+  text-shadow: 0 -1px 0px #515151;
   color: white;
   font-weight: bold;
   padding: 0px 0.5em;
-  border: 1px solid #777766;
+  border: 1px solid #777777;
   cursor: pointer;
-  border-color: #777766 #5c5c4e #5c5c4e #777766;
+  border-color: #777777 #5e5e5e #5e5e5e #777777;
   line-height: 2em; }
   .actions a:hover,
   .actions input:hover,
@@ -313,7 +309,35 @@ header {
       margin-left: 1em; }
 
 #content {
-  background-color: #333333;
+  margin-bottom: 10px;
+  color: #bbbbbb;
+  clear: both; }
+  #content .flash {
+    color: white;
+    line-height: 30px;
+    padding-left: 0.5em;
+    text-shadow: 0 -1px 1px #51771e;
+    margin-bottom: 1em;
+    background: #7ab42e;
+    background-image: -moz-linear-gradient(top, #a0d559, #7ab42e);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a0d559), to(#7ab42e)); }
+    #content .flash a.close {
+      float: right;
+      color: white;
+      display: block;
+      height: 30px;
+      width: 40px;
+      border-left: 1px solid rgba(255, 255, 255, 0.4);
+      background: transparent url(../images/icons/16/white-cross.png) center center no-repeat;
+      overflow: hidden;
+      text-indent: -100px; }
+    #content .flash.error {
+      background: #ea4015;
+      background-image: -moz-linear-gradient(top, #f0795b, #ea4015);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f0795b), to(#ea4015));
+      text-shadow: 0 -1px 1px #8c260d; }
+
+#main {
   border: 1px solid #333333;
   border-color: #1f1f1f #404040 #404040 #1f1f1f;
   border-top-left-radius: 5px;
@@ -324,88 +348,6 @@ header {
   -moz-border-radius-topright: 5px;
   border-bottom-right-radius: 5px;
   -moz-border-radius-bottomright: 5px;
-  margin-bottom: 10px;
-  position: relative;
-  color: #bbbbbb;
-  clear: both; }
-  #content .flash, #content #alert {
-    position: absolute;
-    top: -10px;
-    left: 250px;
-    background-color: #88c833;
-    color: white;
-    padding: 5px 10px;
-    text-shadow: 0 -1px 1px #6c9f29;
-    border: 2px solid white; }
-    #content .flash.error, #content #alert.error {
-      background-color: #ee6644;
-      text-shadow: 0 -1px 1px #ea4015; }
-  #content #alert {
-    cursor: pointer; }
-
-#breadcrumb ul {
-  margin: 0;
-  font-weight: bold;
-  height: 2em;
-  line-height: 2em;
-  font-size: 0.9em;
-  border-bottom: 1px solid #262626;
-  background: #777766;
-  background-image: -moz-linear-gradient(top, #9d9d8d, #777766);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9d9d8d), to(#777766));
-  text-shadow: 0 -1px 1px #4e4e43;
-  color: white; }
-  #breadcrumb ul li {
-    float: left; }
-    #breadcrumb ul li.separator {
-      padding: 0 5px; }
-    #breadcrumb ul li a {
-      display: block;
-      height: 2em;
-      padding: 0px 5px;
-      color: white; }
-      #breadcrumb ul li a:hover {
-        background: #88c833;
-        background-image: -moz-linear-gradient(top, #abda6e, #88c833);
-        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#abda6e), to(#88c833));
-        text-shadow: 0 -1px 1px #6c9f29; }
-      #breadcrumb ul li a:active {
-        background: #7ab42e;
-        background-image: -moz-linear-gradient(top, #88c833, #a0d559);
-        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#88c833), to(#a0d559));
-        text-shadow: 0 -1px 1px #6c9f29; }
-
-nav .item a {
-  display: block;
-  line-height: 32px;
-  height: 32px;
-  padding: 0.5em 0 0.5em 55px;
-  background-color: #404040;
-  background-position: 10px center;
-  background-repeat: no-repeat;
-  border-bottom: 1px solid #333333; }
-  nav .item a:hover {
-    background-color: #ee6644;
-    color: white; }
-nav .item.active a {
-  background-color: #262626;
-  color: white; }
-nav .item.home a {
-  background-image: url(../images/icons/32/home.png); }
-nav .item.contact a {
-  background-image: url(../images/icons/32/contact.png); }
-nav .item.overview a {
-  background-image: url(../images/icons/32/gear.png); }
-nav .item.dashboard a {
-  background-image: url(../images/icons/32/board.png); }
-nav .item.my-radio a {
-  background-image: url(../images/icons/32/microphone.png); }
-nav .item.my-profile a {
-  background-image: url(../images/icons/32/edit_group.png); }
-nav .item.admin a {
-  background-image: url(../images/icons/32/password.png); }
-
-#main {
   background-color: #262626;
   overflow: hidden;
   min-height: 200px; }
@@ -440,8 +382,84 @@ nav .item.admin a {
 #misc {
   float: right;
   width: 200px;
-  background-color: #333333;
-  min-height: 10px; }
+  min-height: 10px;
+  margin-left: 1em; }
+
+#breadcrumb ul {
+  margin: 0;
+  font-weight: bold;
+  height: 2em;
+  line-height: 2em;
+  font-size: 0.9em;
+  border-bottom: 1px solid #262626;
+  background: #777777;
+  background-image: -moz-linear-gradient(top, #9d9d9d, #777777);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9d9d9d), to(#777777));
+  text-shadow: 0 -1px 1px #515151;
+  color: white; }
+  #breadcrumb ul li {
+    float: left; }
+    #breadcrumb ul li.separator {
+      padding: 0 5px; }
+    #breadcrumb ul li a {
+      display: block;
+      height: 2em;
+      padding: 0px 5px;
+      color: white; }
+      #breadcrumb ul li a:hover {
+        background: #88c833;
+        background-image: -moz-linear-gradient(top, #abda6e, #88c833);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#abda6e), to(#88c833));
+        text-shadow: 0 -1px 1px #6c9f29; }
+      #breadcrumb ul li a:active {
+        background: #7ab42e;
+        background-image: -moz-linear-gradient(top, #88c833, #a0d559);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#88c833), to(#a0d559));
+        text-shadow: 0 -1px 1px #6c9f29; }
+
+nav .item {
+  height: 38px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  margin-bottom: 0.5em;
+  background-color: rgba(255, 255, 255, 0.1); }
+  nav .item:hover {
+    background: #88c833;
+    background-image: -moz-linear-gradient(top, #abda6e, #88c833);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#abda6e), to(#88c833)); }
+  nav .item a {
+    display: block;
+    line-height: 32px;
+    height: 32px;
+    padding: 3px 0 3px 55px;
+    background-position: 10px center;
+    background-repeat: no-repeat; }
+    nav .item a:hover {
+      color: white; }
+  nav .item.active {
+    background-color: #262626; }
+    nav .item.active a {
+      color: white; }
+  nav .item.home a {
+    background-image: url(../images/icons/32/home.png); }
+  nav .item.contact a {
+    background-image: url(../images/icons/32/contact.png); }
+  nav .item.overview a {
+    background-image: url(../images/icons/32/gear.png); }
+  nav .item.dashboard a {
+    background-image: url(../images/icons/32/board.png); }
+  nav .item.my-radio a {
+    background-image: url(../images/icons/32/microphone.png); }
+  nav .item.my-profile a {
+    background-image: url(../images/icons/32/edit_group.png); }
+  nav .item.admin a {
+    background-image: url(../images/icons/32/password.png); }
 
 footer {
   display: block;
@@ -496,7 +514,7 @@ a.new-radio, a.join-radio {
     min-height: 3em;
     line-height: 1.4em;
     margin: 0.5em 0;
-    text-shadow: 0 1px 1px #b4b4a8; }
+    text-shadow: 0 1px 1px #b7b7b7; }
 
 a.new-radio h4 {
   background: url(../images/icons/microphone.png) left center no-repeat; }

@@ -13,13 +13,9 @@ body
   width: 870px
   margin: 0 auto
   text-align: left
-  padding-top: 3px
   &.app
     width: auto
     margin: 0 15px
-  &.alert
-    width: 40em
-    margin: 0 auto
 
 a
   text-decoration: none
@@ -266,91 +262,35 @@ header
       margin-left: 1em
 
 #content
-  background-color: $sidebar_back
+  margin-bottom: 10px
+  color: $color
+  clear: both
+
+  .flash
+    color: white
+    line-height: 30px
+    padding-left: 0.5em
+    text-shadow: 0 -1px 1px darken($apple, 20)
+    margin-bottom: 1em
+    @include gradient_background(darken($apple, 5))
+    a.close
+      float: right
+      color: white
+      display: block
+      height: 30px
+      width: 40px
+      border-left: 1px solid rgba(255, 255, 255, 0.4)
+      background: transparent url(../images/icons/16/white-cross.png) center center no-repeat
+      overflow: hidden
+      text-indent: -100px
+    &.error
+      @include gradient_background(darken($error, 10))
+      text-shadow: 0 -1px 1px darken($error, 30)
+
+#main
   border: 1px solid $back
   border-color: darken($back, 8) lighten($back, 5) lighten($back, 5) darken($back, 8)
   @include border-radius(5px)
-  margin-bottom: 10px
-  position: relative
-  color: $color
-  clear: both
-  
-  .flash, #alert
-    position: absolute
-    top: -10px
-    left: 250px
-    background-color: $apple
-    color: white
-    padding: 5px 10px
-    text-shadow: 0 -1px 1px darken($apple, 10)
-    border: 2px solid white
-    &.error
-      background-color: $error
-      text-shadow: 0 -1px 1px darken($error, 10)
-  #alert
-    cursor: pointer
-
-
-#breadcrumb
-  ul
-    margin: 0
-    font-weight: bold
-    height: 2em
-    line-height: 2em
-    font-size: 0.9em
-    border-bottom: 1px solid darken($sidebar_back, 5)
-    @include gradient_background($actions)
-    text-shadow: 0 -1px 1px darken($actions, 15)
-    color: white
-    li
-      float: left
-      &.separator
-        padding: 0 5px
-      a
-        display: block
-        height: 2em
-        padding: 0px 5px
-        color: white
-        &:hover
-          @include gradient_background($apple)
-          text-shadow: 0 -1px 1px darken($apple, 10)
-        &:active
-          @include back_gradient_background($apple)
-          text-shadow: 0 -1px 1px darken($apple, 10)
-          
-nav
-  .item
-    a
-      display: block
-      line-height: 32px
-      height: 32px
-      padding: 0.5em 0 0.5em 55px
-      background-color: lighten($sidebar_back, 5)
-      background-position: 10px center
-      background-repeat: no-repeat
-      border-bottom: 1px solid $sidebar_back
-      &:hover
-        background-color: $red
-        color: white
-    &.active a
-      background-color: $main
-      color: white
-    &.home a
-      background-image: url(../images/icons/32/home.png)
-    &.contact a
-      background-image: url(../images/icons/32/contact.png)
-    &.overview a
-      background-image: url(../images/icons/32/gear.png)
-    &.dashboard a
-      background-image: url(../images/icons/32/board.png)
-    &.my-radio a
-      background-image: url(../images/icons/32/microphone.png)
-    &.my-profile a
-      background-image: url(../images/icons/32/edit_group.png)
-    &.admin a
-      background-image: url(../images/icons/32/password.png)
-
-#main
   background-color: $main
   overflow: hidden
   min-height: 200px
@@ -385,8 +325,71 @@ nav
 #misc
   float: right
   width: $sidebar_width
-  background-color: $sidebar_back
   min-height: 10px
+  margin-left: 1em
+
+#breadcrumb
+  ul
+    margin: 0
+    font-weight: bold
+    height: 2em
+    line-height: 2em
+    font-size: 0.9em
+    border-bottom: 1px solid darken($sidebar_back, 5)
+    @include gradient_background($actions)
+    text-shadow: 0 -1px 1px darken($actions, 15)
+    color: white
+    li
+      float: left
+      &.separator
+        padding: 0 5px
+      a
+        display: block
+        height: 2em
+        padding: 0px 5px
+        color: white
+        &:hover
+          @include gradient_background($apple)
+          text-shadow: 0 -1px 1px darken($apple, 10)
+        &:active
+          @include back_gradient_background($apple)
+          text-shadow: 0 -1px 1px darken($apple, 10)
+          
+nav
+  .item
+    height: 38px
+    @include border-radius(5px)
+    margin-bottom: 0.5em
+    background-color: rgba(255, 255, 255, 0.1)
+    &:hover
+      @include gradient_background($apple)
+    a
+      display: block
+      line-height: 32px
+      height: 32px
+      padding: 3px 0 3px 55px
+      background-position: 10px center
+      background-repeat: no-repeat
+      &:hover
+        color: white
+    &.active
+      background-color: $main
+      a
+        color: white
+    &.home a
+      background-image: url(../images/icons/32/home.png)
+    &.contact a
+      background-image: url(../images/icons/32/contact.png)
+    &.overview a
+      background-image: url(../images/icons/32/gear.png)
+    &.dashboard a
+      background-image: url(../images/icons/32/board.png)
+    &.my-radio a
+      background-image: url(../images/icons/32/microphone.png)
+    &.my-profile a
+      background-image: url(../images/icons/32/edit_group.png)
+    &.admin a
+      background-image: url(../images/icons/32/password.png)
 
 footer
   display: block
