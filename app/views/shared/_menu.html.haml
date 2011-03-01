@@ -1,5 +1,5 @@
 %nav
-  .item.dashboard{:class => (controller_name == 'home' ? 'active' : '')}
+  .item.dashboard{:class => (controller_name == 'home' and action_name == 'dashboard' ? 'active' : '')}
     = link_to dashboard_path do
       = t('menu.dashboard')
   - if current_user.radio?

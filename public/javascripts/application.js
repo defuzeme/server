@@ -2,12 +2,13 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 window.addEvent('domready', function() {
-  Alertbox.inject($('content'), 'top')
-  window._alert = window.alert
-  window.alert = function(message) { Alertbox.display(message) }
   $$('.flash').each(function(f) {
-    f.removeClass('flash')
-    Alertbox.display(f.get('text'), f.get('class'))
-    f.dispose()
+    close = new Element('a', {'class': 'close', text: 'close', href: ''})
+    close.inject(f)
+    close.addEvent('click', function(e) {
+      e.stop()
+      f.dispose()
+      return false
+    })
   })
 })

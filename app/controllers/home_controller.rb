@@ -9,6 +9,12 @@ class HomeController < ApplicationController
   def license
   end
 
+  def overview
+  end
+  
+  def contact
+  end
+
   def dashboard
     render :layout => 'application'
   end

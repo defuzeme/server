@@ -23,6 +23,8 @@ DefuzeMe::Application.routes.draw do
 
   # Static pages
   match 'license' => 'home#license', :as => :license
+  match 'overview' => 'home#overview', :as => :overview
+  match 'contact' => 'home#contact', :as => :contact
 
   # Admin panel
   match 'admin' => 'home#admin', :as => :admin

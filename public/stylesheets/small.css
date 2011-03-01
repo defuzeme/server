@@ -5,7 +5,7 @@ body {
 .actions input,
 input.button,
 a.button {
-  text-shadow: 0 -1px 1px #404037; }
+  text-shadow: 0 -1px 1px #444444; }
 
 .split {
   overflow: hidden;
@@ -33,19 +33,14 @@ a.button {
 #misc {
   float: none;
   width: auto;
+  margin-left: 0;
   background-color: #333333; }
 
-nav .item a {
+nav .item {
+  height: 64px;
   float: left;
-  background-position: center 5px;
-  line-height: 1.5em;
-  height: 1.5em;
-  padding: 38px 0.8em 0.5em 0.8em;
-  border-bottom: none;
-  border-right: 1px solid #333333; }
-  nav .item a:hover {
-    background-color: #ee6644;
-    color: white; }
-nav .item.active a {
-  background-color: #262626;
-  color: white; }
+  margin-right: 0.5em; }
+  nav .item a {
+    background-position: center 5px;
+    height: 30px;
+    padding: 34px 0.8em 0px 0.8em; }
