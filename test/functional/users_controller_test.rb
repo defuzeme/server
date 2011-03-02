@@ -108,6 +108,18 @@ class UsersControllerTest < ActionController::TestCase
     u.reload
     assert_equal old, u.email
   end
+  
+  test 'admin users should be able to edit other user' do
+    u = users(:quentin)
+    login_as u
+    old = u.email
+    get :edit, :id => 'quentin'
+    assert_response :success
+    put :update, :id => 'quentin', :user => {:email => 'me@aaron.com'}
+    assert_response :redirect
+    u.reload
+    assert_equal 'me@aaron.com', u.email
+  end
 
   test 'logged user should be able to edit' do
     u = users(:aaron)

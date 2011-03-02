@@ -1,5 +1,11 @@
 .actions
-  = link_to t(:edit), [:edit, @user]
+  = link_to t(:edit), [:edit, @user] if @user.editable_by? current_user
 %h2= @user.login
-.block
-  .name= @user.name
+.split
+  .left
+    .block
+      .name= @user.name
+  .right
+    .block
+      %h3= t '.my_invitations'
+      = render :partial => 'invitations/invitations', :locals => {:invitations => current_user.invitations}
