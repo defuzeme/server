@@ -14,6 +14,8 @@ body {
   #wrapper.app {
     width: auto;
     margin: 0 15px; }
+  #wrapper.alert {
+    width: 500px; }
 
 a {
   text-decoration: none;
@@ -33,7 +35,11 @@ img {
 h2 {
   padding: 0.3em 10px;
   margin: 0;
-  color: #88c833; }
+  color: #88c833;
+  border-bottom: 1px solid #333333; }
+
+h3 {
+  color: white; }
 
 ul {
   list-style: none;
@@ -83,14 +89,14 @@ a.button {
     .actions input:hover.important,
     input.button:hover.important,
     a.button:hover.important {
-      background: #ee6644;
-      background-image: -moz-linear-gradient(top, #f49f8a, #ee6644);
-      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f49f8a), to(#ee6644));
-      text-shadow: 0 -1px 0px #ea4015;
-      border-color: #ee6644 #ea4015 #ea4015 #ee6644;
-      -webkit-box-shadow: 0px 0px 5px #f0795b;
-      box-shadow: 0px 0px 5px #f0795b;
-      -moz-box-shadow: 0px 0px 5px #f0795b; }
+      background: #ee5533;
+      background-image: -moz-linear-gradient(top, #f4907a, #ee5533);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f4907a), to(#ee5533));
+      text-shadow: 0 -1px 0px #dc3712;
+      border-color: #ee5533 #dc3712 #dc3712 #ee5533;
+      -webkit-box-shadow: 0px 0px 5px #f0694b;
+      box-shadow: 0px 0px 5px #f0694b;
+      -moz-box-shadow: 0px 0px 5px #f0694b; }
   .actions a:active,
   .actions input:active,
   input.button:active,
@@ -108,11 +114,11 @@ a.button {
     .actions input:active.important,
     input.button:active.important,
     a.button:active.important {
-      background: #ec532d;
-      background-image: -moz-linear-gradient(top, #ee6644, #f28c73);
-      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ee6644), to(#f28c73));
-      text-shadow: 0 -1px 0px #ea4015;
-      border-color: #ea4015 #ea4015 #ea4015 #ea4015;
+      background: #ec411b;
+      background-image: -moz-linear-gradient(top, #ee5533, #f27c62);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ee5533), to(#f27c62));
+      text-shadow: 0 -1px 0px #dc3712;
+      border-color: #dc3712 #dc3712 #dc3712 #dc3712;
       -webkit-box-shadow: 0px 0px 1px black;
       box-shadow: 0px 0px 1px black;
       -moz-box-shadow: 0px 0px 1px black; }
@@ -207,7 +213,7 @@ form {
       font-size: 1em; }
   form .formError {
     float: left;
-    color: #ee6644;
+    color: #ee5533;
     position: relative;
     top: -25px;
     font-size: 0.8em;
@@ -215,11 +221,11 @@ form {
   form .field_with_errors label {
     padding-top: 0; }
   form .field_with_errors input, form .field_with_errors textarea, form .field_with_errors select {
-    border-color: #ee6644 #ea4015 #ea4015 #ee6644; }
+    border-color: #ee5533 #dc3712 #dc3712 #ee5533; }
     form .field_with_errors input:focus, form .field_with_errors textarea:focus, form .field_with_errors select:focus {
-      -webkit-box-shadow: 0 0 9px -1px #ee6644;
-      box-shadow: 0 0 9px -1px #ee6644;
-      -moz-box-shadow: 0 0 9px -1px #ee6644; }
+      -webkit-box-shadow: 0 0 9px -1px #ee5533;
+      box-shadow: 0 0 9px -1px #ee5533;
+      -moz-box-shadow: 0 0 9px -1px #ee5533; }
 
 table {
   width: 100%;
@@ -333,10 +339,10 @@ header {
       overflow: hidden;
       text-indent: -100px; }
     #content .flash.error {
-      background: #ea4015;
-      background-image: -moz-linear-gradient(top, #f0795b, #ea4015);
-      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f0795b), to(#ea4015));
-      text-shadow: 0 -1px 1px #8c260d; }
+      background: #dc3712;
+      background-image: -moz-linear-gradient(top, #f0694b, #dc3712);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f0694b), to(#dc3712));
+      text-shadow: 0 -1px 1px #7e1f0a; }
 
 #main {
   border: 1px solid #333333;
@@ -351,8 +357,7 @@ header {
   -moz-border-radius-bottomright: 5px;
   background-color: #262626;
   overflow: hidden;
-  min-height: 200px;
-  text-shadow: 0 -1px 1px #0d0d0d; }
+  text-shadow: 0 -1px 0px #0d0d0d; }
   #main .intro {
     margin: 2em auto;
     width: 550px; }
@@ -375,7 +380,7 @@ header {
     font-size: 0.9em;
     margin: 0 0 1em 1em; }
   #main > .actions {
-    margin: 0.7em 10px 0 0; }
+    margin: 0.5em 0.5em 0 0; }
   #main form .actions {
     float: none;
     font-size: 1em;
@@ -429,12 +434,9 @@ nav .item {
   -moz-border-radius-topright: 5px;
   border-bottom-right-radius: 5px;
   -moz-border-radius-bottomright: 5px;
-  margin-bottom: 0.5em;
-  background-color: rgba(255, 255, 255, 0.1); }
+  margin-bottom: 0.5em; }
   nav .item:hover {
-    background: #88c833;
-    background-image: -moz-linear-gradient(top, #abda6e, #88c833);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#abda6e), to(#88c833)); }
+    background-color: rgba(255, 255, 255, 0.1); }
   nav .item a {
     display: block;
     line-height: 32px;

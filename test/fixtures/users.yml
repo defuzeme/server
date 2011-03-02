@@ -46,6 +46,7 @@ aaron:
   remember_token:            
   activation_code:           1b6453892473a467d07372d45eb05abc2031647a
   activated_at:              
+  admin:                      false
   invitations_left:         5
 
 john:

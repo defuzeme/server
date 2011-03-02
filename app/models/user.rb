@@ -107,6 +107,10 @@ class User < ActiveRecord::Base
     write_attribute :email, (value ? value.downcase : nil)
   end
 
+  def editable_by? user
+    user and (user.admin? or user == self)
+  end
+
   protected
     
   def make_activation_code

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :login_required, :except => [:show, :new, :create, :activate]
   before_filter :load_user, :only => [:show, :edit, :update, :destroy]
-  before_filter :only_for_me, :except => [:show, :new, :create, :activate]
+  before_filter :authorization_required, :except => [:show, :new, :create, :activate]
 
   def show
     respond_with @user
@@ -50,5 +50,11 @@ class UsersController < ApplicationController
     else 
       redirect_back_or_default('/', :flash => { :error  => "We couldn't find a user with that activation code -- check your email? Or maybe you've already activated -- try signing in." })
     end
+  end
+  
+protected
+  
+  def authorization_required
+    forbidden if not @user.editable_by? current_user
   end
 end
