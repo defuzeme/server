@@ -10,6 +10,7 @@
 #  email                     :string(50)
 #  first_name                :string(40)
 #  id                        :integer       not null, primary key
+#  invitations_left          :integer
 #  last_name                 :string(40)
 #  login                     :string(50)
 #  radio_id                  :integer

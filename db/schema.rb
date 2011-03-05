@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101212194208) do
+ActiveRecord::Schema.define(:version => 20110305155914) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "creator_id"
@@ -43,6 +43,18 @@ ActiveRecord::Schema.define(:version => 20101212194208) do
   end
 
   add_index "radios", ["permalink"], :name => "index_radios_on_permalink", :unique => true
+
+  create_table "tokens", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "token"
+    t.string   "machine"
+    t.datetime "expires_at"
+    t.datetime "last_use_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tokens", ["token"], :name => "index_tokens_on_token"
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 50

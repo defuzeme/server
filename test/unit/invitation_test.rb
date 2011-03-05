@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class InvitationTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
   test "user should invite" do
     u = users :quentin
     assert_difference 'Invitation.count' do

@@ -3,7 +3,6 @@ DefuzeMe::Application.routes.draw do
   filter 'locale'
 
   # User signup & login
-  resources :users, :except => [:index, :new]
   resource :session, :only => [:create]
   match 'signup' => 'users#new', :as => :signup
   match 'register' => 'users#create', :as => :register
@@ -16,6 +15,11 @@ DefuzeMe::Application.routes.draw do
   match 'dashboard' => 'home#dashboard'
   resources :radios, :except => :index do
     get :delete, :on => :member
+  end
+
+  # Users
+  resources :users, :except => [:index, :new] do
+    resources :tokens, :only => [:index]
   end
 
   # Invitations
