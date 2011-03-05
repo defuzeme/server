@@ -12,10 +12,20 @@ class SessionsController < ApplicationController
       # protection if user resubmits an earlier form using back
       # button. Uncomment if you understand the tradeoffs.
       # reset_session
-      self.current_user = user
-      new_cookie_flag = (params[:remember_me] == "1")
-      handle_remember_cookie! new_cookie_flag
-      redirect_back_or_default(dashboard_path, :notice => "Logged in successfully")
+      respond_to do |format|
+        format.html do
+          # login on web site
+          self.current_user = user
+          new_cookie_flag = (params[:remember_me] == "1")
+          handle_remember_cookie! new_cookie_flag
+          redirect_back_or_default(dashboard_path, :notice => "Logged in successfully")
+        end
+        format.any(:json, :xml) do
+          # login using client api return a new token
+          token = user.tokens.create
+          render request.format.to_sym => token
+        end
+      end
     else
       note_failed_signin
       @login       = params[:login]

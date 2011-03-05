@@ -43,7 +43,7 @@ class Invitation < ActiveRecord::Base
   scope :ordered, :order => 'accepted_at DESC nulls last, opened_at DESC nulls last, sent_at DESC nulls last'
   scope :pending, :conditions => {:accepted_at => nil}
   
-  before_validation :generate_token, :on => :create
+  before_validation :generate_token!, :on => :create
   before_create :assign_radio
   after_create :charge_creator
   
@@ -70,7 +70,7 @@ class Invitation < ActiveRecord::Base
   end
   
   # generate a random unique token
-  def generate_token length = TOKEN_LENGTH
+  def generate_token! length = TOKEN_LENGTH
     begin
       self.token = rand(36**length).to_s(36)
     end while Invitation.find_by_token(self.token)

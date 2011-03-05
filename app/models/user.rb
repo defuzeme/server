@@ -10,6 +10,7 @@
 #  email                     :string(50)
 #  first_name                :string(40)
 #  id                        :integer       not null, primary key
+#  invitations_left          :integer
 #  last_name                 :string(40)
 #  login                     :string(50)
 #  radio_id                  :integer
@@ -27,6 +28,7 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
 
   INVITATIONS_PER_USER = 5
+  LOGIN_FORMAT = /[a-z0-9\-_]+/i
 
   attr_accessor :invitation_code
 
@@ -34,7 +36,7 @@ class User < ActiveRecord::Base
     :presence   => true,
     :uniqueness => true,
     :length     => { :within => 3..50 },
-    :format     => { :with => /[a-z0-9\-_]+/i }
+    :format     => { :with => LOGIN_FORMAT }
 
   validates :first_name, :last_name,
     :format     => { :with => Authentication.name_regex },
@@ -49,6 +51,7 @@ class User < ActiveRecord::Base
 
   belongs_to :radio
   has_many :invitations, :foreign_key => :creator_id, :dependent => :nullify
+  has_many :tokens, :dependent => :destroy
   has_one :invitation, :foreign_key => :new_user_id, :dependent => :nullify
 
   before_create :make_activation_code
