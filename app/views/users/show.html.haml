@@ -6,6 +6,11 @@
     .block
       .name= @user.name
   .right
-    .block
-      %h3= t '.my_invitations'
-      = render :partial => 'invitations/invitations', :locals => {:invitations => current_user.invitations}
+    - if @user == current_user
+      .block
+        %h3= t '.my_invitations'
+        = render :partial => 'invitations/invitations', :locals => {:invitations => current_user.invitations}
+      .block
+        %h3= t '.api_tokens'
+        = render :partial => 'tokens/tokens', :locals => {:tokens => @user.tokens}
+

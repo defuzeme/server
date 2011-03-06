@@ -11,7 +11,7 @@ class InvitationTest < ActiveSupport::TestCase
   test "should generate token" do
     u = users :quentin
     i = create_invitation :creator => u
-    assert_match /[a-z][0-9]+/i, i.token, "Bad token"
+    assert_match /[a-z0-9]+/i, i.token, "Bad token"
   end
 
   test "can't invite same person twice" do

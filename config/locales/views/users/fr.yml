@@ -2,6 +2,7 @@ fr:
   users:
     show:
       my_invitations: "Mes invitations"
+      api_tokens: "Clefs API"
     new:
       title: Inscrivez vous maintenant pour essayer defuze.me (sur invitation)
     edit:

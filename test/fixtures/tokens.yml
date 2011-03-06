@@ -18,8 +18,21 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+quentin:
+  user_id: 1
+  token: 8fKowu723Xvbkw9J
+  expires_at: <%= 1.month.from_now.to_s :db  %>
+  created_at: <%= 1.month.ago.to_s :db  %>
+  last_use_at: <%= 2.days.ago.to_s :db  %>
+  machine:
+    hostname: QuentinLaptop
+    os: Windows 7
+
+quentin_expired:
+  user_id: 1
+  token: 8fKowu723Xvbkw9Z
+  expires_at: <%= 1.month.ago.to_s :db  %>
+  created_at: <%= 3.month.ago.to_s :db  %>
+  machine:
+    hostname: QuentinLaptop
+    os: Windows XP
