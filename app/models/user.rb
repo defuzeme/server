@@ -102,6 +102,17 @@ class User < ActiveRecord::Base
     u && u.authenticated?(password) ? u : nil
   end
 
+  def attributes
+    { :login => login,
+      :name => name,
+      :email => email }
+  end
+
+  def dashboard
+    { :user => attributes,
+      :radio => radio.attributes }
+  end
+
   def login=(value)
     write_attribute :login, (value ? value.downcase : nil)
   end

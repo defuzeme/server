@@ -69,7 +69,7 @@ class SessionsControllerTest < ActionController::TestCase
   test 'should generate token using json api' do
     post :create, :login => 'quentin', :password => 'monkey', :format => :json
     assert_response :success
-    t = Token.last
+    t = Token.order(:created_at).last
     assert_equal response.json['token'], t.token, "bad token returned"
     assert_not_nil response.json['created_at'], "no creation date"
     assert_not_nil response.json['expires_at'], "no expiration date"
@@ -80,7 +80,7 @@ class SessionsControllerTest < ActionController::TestCase
   test 'should generate token using xml api' do
     post :create, :login => 'quentin', :password => 'monkey', :format => :xml
     assert_response :success
-    t = Token.last
+    t = Token.order(:created_at).last
     assert_equal response.xml['token']['token'], t.token, "bad token returned"
     assert_not_nil response.xml['token']['created_at'], "no creation date"
     assert_not_nil response.xml['token']['expires_at'], "no expiration date"

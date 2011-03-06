@@ -16,7 +16,12 @@ class HomeController < ApplicationController
   end
 
   def dashboard
-    render :layout => 'application'
+    respond_to do |format|
+      format.html { render :layout => 'application' }
+      format.any(:json, :xml) do
+        render request.format.to_sym => current_user.dashboard
+      end
+    end
   end
 
   def admin

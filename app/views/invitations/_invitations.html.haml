@@ -11,7 +11,7 @@
       %th= Invitation.human_attribute_name :name
       %th= Invitation.human_attribute_name :status
   %tbody
-    - for invitation in current_user.invitations.ordered
+    - for invitation in invitations.ordered
       %tr{:class => cycle('odd', 'even')}
         %td
           - if invitation.new_user_id.present?

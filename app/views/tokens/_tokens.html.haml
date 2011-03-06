@@ -1,0 +1,13 @@
+%table
+  %thead
+    %tr
+      %th= Token.human_attribute_name :token
+      %th= Token.human_attribute_name :expires_at
+      %th= Token.human_attribute_name :last_use_at
+  %tbody
+    - for token in tokens.valid.order('last_use_at desc').limit(10)
+      %tr{:class => cycle('odd', 'even')}
+        %td= token.token
+        %td= l(token.expires_at, :format => :short)
+        %td= l(token.last_use_at, :format => :short)
+

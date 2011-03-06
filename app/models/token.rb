@@ -14,8 +14,11 @@
 
 class Token < ActiveRecord::Base
   TOKEN_LENGTH = 16
-  TOKEN_FORMAT = /[a-z0-9\-_]+/i
+  TOKEN_FORMAT = /[a-z0-9]{#{TOKEN_LENGTH}}/i
   TOKEN_VALIDITY = 2.months
+  UPDATE_TIMEFRAME = 5.minutes            # min delay between last_use_at field updates
+
+  serialize :machine
 
   validates :token,
     :presence => true,
@@ -25,7 +28,8 @@ class Token < ActiveRecord::Base
 
   validates_presence_of :user, :expires_at, :last_use_at
 
-  serialize :machine
+  scope :valid, lambda {{:conditions => ['expires_at >= ?', Time.now]}}
+  scope :expired, lambda {{:conditions => ['expires_at < ?', Time.now]}}
 
   belongs_to :user
 
@@ -37,6 +41,17 @@ class Token < ActiveRecord::Base
       'expires_at' => expires_at,
       'created_at' => created_at
     }
+  end
+
+  def self.authenticate api_token
+    if tok = valid.find_by_token(api_token)
+      tok.update_attribute :last_use_at, Time.now if tok.last_use_at < UPDATE_TIMEFRAME.ago
+      tok
+    end
+  end
+
+  def expired?
+    expires_at < Time.now
   end
 
   def initialize!

@@ -16,6 +16,7 @@ en:
       user: User
       radio: Radio
       invitation: Invitation
+      token: Token
     attributes:
       user:
         activated_at: Activation date
@@ -32,6 +33,10 @@ en:
           am: AM
       invitation:
         link_radio: "Link to my radio"
+      token:
+        token: Token
+        expires_at: Expiration
+        last_use_at: Last use
     errors:
       messages:
         already_registered: "user already registered"

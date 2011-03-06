@@ -2,6 +2,7 @@ en:
   users:
     show:
       my_invitations: "My invitations"
+      api_tokens: "API tokens"
     new:
       title: Sign up now to try defuze.me (invitation only)
     edit:

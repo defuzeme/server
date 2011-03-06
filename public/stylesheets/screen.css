@@ -471,7 +471,7 @@ footer {
   font-size: 0.9em;
   padding-bottom: 1em;
   text-align: center;
-  text-shadow: 0 -1px 0.1em #1a1a1a; }
+  text-shadow: 0 -1px 0 #1a1a1a; }
   footer a {
     display: inline-block;
     border-left: 1px solid #777777;
