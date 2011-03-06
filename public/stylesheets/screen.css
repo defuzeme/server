@@ -451,19 +451,19 @@ nav .item {
     nav .item.active a {
       color: white; }
   nav .item.home a {
-    background-image: url(../images/icons/32/home.png); }
+    background-image: url(../images/icons/32/house.png); }
   nav .item.contact a {
     background-image: url(../images/icons/32/contact.png); }
   nav .item.overview a {
-    background-image: url(../images/icons/32/gear.png); }
+    background-image: url(../images/icons/32/presentation.png); }
   nav .item.dashboard a {
     background-image: url(../images/icons/32/board.png); }
   nav .item.my-radio a {
     background-image: url(../images/icons/32/microphone.png); }
   nav .item.my-profile a {
-    background-image: url(../images/icons/32/edit_group.png); }
+    background-image: url(../images/icons/32/id_card.png); }
   nav .item.admin a {
-    background-image: url(../images/icons/32/password.png); }
+    background-image: url(../images/icons/32/preferences.png); }
 
 footer {
   display: block;
