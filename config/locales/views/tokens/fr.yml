@@ -1,3 +1,5 @@
 fr:
   tokens:
+    tokens:
+      expired: "Cette clef a expiré, vous ne pourrez plus l'utiliser"
     show:

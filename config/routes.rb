@@ -19,7 +19,7 @@ DefuzeMe::Application.routes.draw do
 
   # Users
   resources :users, :except => [:index, :new] do
-    resources :tokens, :only => [:index]
+    resources :tokens
   end
 
   # Invitations

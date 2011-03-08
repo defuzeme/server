@@ -4,10 +4,17 @@
       %th= Token.human_attribute_name :token
       %th= Token.human_attribute_name :expires_at
       %th= Token.human_attribute_name :last_use_at
+      %th
   %tbody
-    - for token in tokens.valid.order('last_use_at desc').limit(10)
-      %tr{:class => cycle('odd', 'even')}
-        %td= token.token
+    - for token in tokens.order('last_use_at desc').limit(5)
+      %tr{:class => cycle('odd', 'even') + (token.expired? ? ' expired' : '')}
+        %td.token
+          - if token.expired?
+            = token.token
+          - else
+            = link_to token.token, [@user, token]
         %td= l(token.expires_at, :format => :short)
         %td= l(token.last_use_at, :format => :short)
-
+        %td
+          - if token.expired?
+            = image_tag 'icons/16/warning.png', :title => t('.expired')
