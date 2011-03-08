@@ -1,3 +1,5 @@
 en:
   tokens:
+    tokens:
+      expired: "This token has expired, you can't use it any more"
     show:

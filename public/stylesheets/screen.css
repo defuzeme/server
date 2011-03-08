@@ -249,8 +249,13 @@ table {
     line-height: 2em; }
     table td img {
       vertical-align: middle; }
+  table td.token {
+    text-transform: uppercase;
+    font-size: 0.8em; }
   table tr.even td {
     background-color: #333333; }
+  table tr.expired td {
+    color: #7b7b7b; }
 
 header {
   display: block;
