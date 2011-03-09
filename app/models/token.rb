@@ -53,6 +53,14 @@ class Token < ActiveRecord::Base
   def expired?
     expires_at < Time.now
   end
+  
+  def expire_now!
+    update_attribute :expires_at, Time.now
+  end
+
+  def editable_by? user
+    user and (user_id == user.id or user.admin?)
+  end
 
   def initialize!
     generate_token!

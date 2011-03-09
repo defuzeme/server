@@ -58,35 +58,32 @@ cite
 .actions a,
 .actions input,
 input.button,
-a.button
+a.button,
+input[type=submit]
   display: block
   @include gradient_background($actions)
-  @include box-shadow(0px 0px 1px darken($back, 20))
-  text-shadow: 0 -1px 0px darken($actions, 15)
+  @include box-shadow(0px 0px 3px black)
+  text-shadow: 0 -1px 0px darken($actions, 10)
   color: white
   font-weight: bold
-  padding: 0px 0.5em
-  border: 1px solid $actions
+  padding: 0px 0.7em
   cursor: pointer
-  @include button_up($actions) 
   line-height: 2em
+  border: none
   &:hover
     color: white
-    @include gradient_background($apple)
-    text-shadow: 0 -1px 0px darken($apple, 10)
+    @include gradient_background(lighten($actions, 15))
     @include button_up($apple)
-    @include box-shadow(0px 0px 5px lighten($apple, 5))
+    @include box-shadow(0px 0px 5px lighten($actions, 20))
     &.important
       @include gradient_background($red)
-      text-shadow: 0 -1px 0px darken($red, 10)
-      @include button_up($red)
-      @include box-shadow(0px 0px 5px lighten($red, 5))
+      text-shadow: 0 -1px 0px darken($red, 15)
+      @include box-shadow(0px 0px 5px lighten($red, 10))
   &:active
     color: white
     @include back_gradient_background($apple)
-    text-shadow: 0 -1px 0px darken($apple, 10)
-    @include button_down($apple)
-    @include box-shadow(0px 0px 2px darken($back, 30))
+    text-shadow: 0 -1px 0px darken($apple, 15)
+    @include box-shadow(0px 0px 2px darken($actions, 30))
     &.important
       @include back_gradient_background($red)
       text-shadow: 0 -1px 0px darken($red, 10)
@@ -180,7 +177,12 @@ form
       @include button_up($error)
       &:focus
         @include box-shadow(0 0 9px -1px $error)
-    
+  &.button_to
+    padding: 0
+    display: inline-block
+    input
+      width: auto
+      float: none
 table
   width: 100%
   border-spacing: 0
@@ -202,8 +204,6 @@ table
     img
       vertical-align: middle
   td.token
-    text-transform: uppercase
-    font-size: 0.8em
   tr.even td
     background-color: lighten($main, 5)
   tr.expired td

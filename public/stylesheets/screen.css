@@ -56,64 +56,65 @@ cite {
 .actions a,
 .actions input,
 input.button,
-a.button {
+a.button,
+input[type=submit] {
   display: block;
-  background: #777777;
-  background-image: -moz-linear-gradient(top, #9d9d9d, #777777);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9d9d9d), to(#777777));
-  -webkit-box-shadow: 0px 0px 1px black;
-  box-shadow: 0px 0px 1px black;
-  -moz-box-shadow: 0px 0px 1px black;
-  text-shadow: 0 -1px 0px #515151;
+  background: #555555;
+  background-image: -moz-linear-gradient(top, #7b7b7b, #555555);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7b7b7b), to(#555555));
+  -webkit-box-shadow: 0px 0px 3px black;
+  box-shadow: 0px 0px 3px black;
+  -moz-box-shadow: 0px 0px 3px black;
+  text-shadow: 0 -1px 0px #3b3b3b;
   color: white;
   font-weight: bold;
-  padding: 0px 0.5em;
-  border: 1px solid #777777;
+  padding: 0px 0.7em;
   cursor: pointer;
-  border-color: #777777 #5e5e5e #5e5e5e #777777;
-  line-height: 2em; }
+  line-height: 2em;
+  border: none; }
   .actions a:hover,
   .actions input:hover,
   input.button:hover,
-  a.button:hover {
+  a.button:hover,
+  input[type=submit]:hover {
     color: white;
-    background: #88c833;
-    background-image: -moz-linear-gradient(top, #abda6e, #88c833);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#abda6e), to(#88c833));
-    text-shadow: 0 -1px 0px #6c9f29;
+    background: #7b7b7b;
+    background-image: -moz-linear-gradient(top, #a2a2a2, #7b7b7b);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a2a2a2), to(#7b7b7b));
     border-color: #88c833 #6c9f29 #6c9f29 #88c833;
-    -webkit-box-shadow: 0px 0px 5px #94d045;
-    box-shadow: 0px 0px 5px #94d045;
-    -moz-box-shadow: 0px 0px 5px #94d045; }
+    -webkit-box-shadow: 0px 0px 5px #888888;
+    box-shadow: 0px 0px 5px #888888;
+    -moz-box-shadow: 0px 0px 5px #888888; }
     .actions a:hover.important,
     .actions input:hover.important,
     input.button:hover.important,
-    a.button:hover.important {
+    a.button:hover.important,
+    input[type=submit]:hover.important {
       background: #ee5533;
       background-image: -moz-linear-gradient(top, #f4907a, #ee5533);
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f4907a), to(#ee5533));
-      text-shadow: 0 -1px 0px #dc3712;
-      border-color: #ee5533 #dc3712 #dc3712 #ee5533;
-      -webkit-box-shadow: 0px 0px 5px #f0694b;
-      box-shadow: 0px 0px 5px #f0694b;
-      -moz-box-shadow: 0px 0px 5px #f0694b; }
+      text-shadow: 0 -1px 0px #c43110;
+      -webkit-box-shadow: 0px 0px 5px #f27c62;
+      box-shadow: 0px 0px 5px #f27c62;
+      -moz-box-shadow: 0px 0px 5px #f27c62; }
   .actions a:active,
   .actions input:active,
   input.button:active,
-  a.button:active {
+  a.button:active,
+  input[type=submit]:active {
     color: white;
     background: #7ab42e;
     background-image: -moz-linear-gradient(top, #88c833, #a0d559);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#88c833), to(#a0d559));
-    text-shadow: 0 -1px 0px #6c9f29;
-    border-color: #6c9f29 #6c9f29 #6c9f29 #6c9f29;
-    -webkit-box-shadow: 0px 0px 2px black;
-    box-shadow: 0px 0px 2px black;
-    -moz-box-shadow: 0px 0px 2px black; }
+    text-shadow: 0 -1px 0px #5f8b23;
+    -webkit-box-shadow: 0px 0px 2px #080808;
+    box-shadow: 0px 0px 2px #080808;
+    -moz-box-shadow: 0px 0px 2px #080808; }
     .actions a:active.important,
     .actions input:active.important,
     input.button:active.important,
-    a.button:active.important {
+    a.button:active.important,
+    input[type=submit]:active.important {
       background: #ec411b;
       background-image: -moz-linear-gradient(top, #ee5533, #f27c62);
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ee5533), to(#f27c62));
@@ -226,6 +227,12 @@ form {
       -webkit-box-shadow: 0 0 9px -1px #ee5533;
       box-shadow: 0 0 9px -1px #ee5533;
       -moz-box-shadow: 0 0 9px -1px #ee5533; }
+  form.button_to {
+    padding: 0;
+    display: inline-block; }
+    form.button_to input {
+      width: auto;
+      float: none; }
 
 table {
   width: 100%;
@@ -249,9 +256,6 @@ table {
     line-height: 2em; }
     table td img {
       vertical-align: middle; }
-  table td.token {
-    text-transform: uppercase;
-    font-size: 0.8em; }
   table tr.even td {
     background-color: #333333; }
   table tr.expired td {
@@ -404,10 +408,10 @@ header {
   line-height: 2em;
   font-size: 0.9em;
   border-bottom: 1px solid #262626;
-  background: #777777;
-  background-image: -moz-linear-gradient(top, #9d9d9d, #777777);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#9d9d9d), to(#777777));
-  text-shadow: 0 -1px 1px #515151;
+  background: #555555;
+  background-image: -moz-linear-gradient(top, #7b7b7b, #555555);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7b7b7b), to(#555555));
+  text-shadow: 0 -1px 1px #2f2f2f;
   color: white; }
   #breadcrumb ul li {
     float: left; }
@@ -530,7 +534,7 @@ a.new-radio, a.join-radio {
     min-height: 3em;
     line-height: 1.4em;
     margin: 0.5em 0;
-    text-shadow: 0 1px 1px #b7b7b7; }
+    text-shadow: 0 1px 1px #959595; }
 
 a.new-radio h4 {
   background: url(../images/icons/microphone.png) left center no-repeat; }
