@@ -1,0 +1,16 @@
+%h2= t '.title'
+.block
+  %dl
+    %dt= Token.human_attribute_name :token
+    %dd= @token.token
+    %dt= Token.human_attribute_name :created_at
+    %dd= l @token.created_at
+    %dt= Token.human_attribute_name :last_use_at
+    %dd= l @token.last_use_at
+    %dt= Token.human_attribute_name :expires_at
+    %dd
+      = l @token.expires_at
+      - if not @token.expired?
+        = button_to t('.expire'), [:expire, @token.user, @token], :method => :put
+    %dt= Token.human_attribute_name :machine
+    %dd= @token.machine

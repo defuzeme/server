@@ -23,3 +23,5 @@ fr:
   license: Licence
   contact: Contact
   eip: Epitech Innovative Projects
+  alerts:
+    token_expired: "Votre clef est maintenant expiré et ne pourra plus être utilisée"

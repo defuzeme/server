@@ -3,3 +3,5 @@ en:
     tokens:
       expired: "This token has expired, you can't use it any more"
     show:
+      title: "API token"
+      expire: "Invalidate this API token now"

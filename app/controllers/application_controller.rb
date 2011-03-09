@@ -44,7 +44,8 @@ class ApplicationController < ActionController::Base
   {
     :user => :login,
     :radio => :permalink,
-    :invitation => :token
+    :invitation => :token,
+    :token => :token
   }.each do |model, field|
     define_method "load_#{model}" do
       # get the concerned model

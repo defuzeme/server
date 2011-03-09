@@ -3,3 +3,5 @@ fr:
     tokens:
       expired: "Cette clef a expiré, vous ne pourrez plus l'utiliser"
     show:
+      title: "Clef API"
+      expire: "Invalider cette clef maintenant"

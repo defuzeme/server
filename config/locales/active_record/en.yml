@@ -1,6 +1,7 @@
 en:
   attributes:
     admin: Administrator
+    created_at: Creation date
     description: Description
     email: Email
     first_name: First name
