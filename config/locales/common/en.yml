@@ -23,5 +23,6 @@ en:
   license: License
   contact: Contact
   eip: Epitech Innovative Projects
+  radio: Radio
   alerts:
     token_expired: "Your token is not expired and can't be used any more"

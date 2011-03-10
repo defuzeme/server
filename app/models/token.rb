@@ -75,6 +75,6 @@ class Token < ActiveRecord::Base
   end
   
   def to_param
-    token
+    token.to_s
   end
 end
