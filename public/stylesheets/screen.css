@@ -389,7 +389,7 @@ header {
     font-size: 0.9em;
     margin: 0 0 1em 1em; }
   #main > .actions {
-    margin: 0.5em 0.5em 0 0; }
+    margin: 0.5em 10px 0 0; }
   #main form .actions {
     float: none;
     font-size: 1em;
@@ -497,15 +497,16 @@ footer {
     padding-left: 2em; }
 
 .radio {
-  background: transparent url(../images/icons/microphone.png) left center no-repeat;
-  min-height: 48px;
-  padding-left: 55px; }
+  background: transparent url(../images/icons/32/microphone.png) 0 5px no-repeat;
+  min-height: 48px; }
   .radio .name {
-    font-size: 1.2em; }
+    font-size: 1.2em;
+    margin-left: 40px; }
   .radio .description {
     margin-top: 0.3em;
     text-align: justify; }
   .radio .freq {
+    margin-left: 40px;
     margin-top: 0.3em;
     font-weight: bold; }
 

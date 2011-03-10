@@ -5,28 +5,29 @@
 - else
   = t('.no_more_invitations')
 
-%table
-  %thead
-    %tr
-      %th= Invitation.human_attribute_name :name
-      %th= Invitation.human_attribute_name :status
-  %tbody
-    - for invitation in invitations.ordered
-      %tr{:class => cycle('odd', 'even')}
-        %td
-          - if invitation.new_user_id.present?
-            = link_to invitation.new_user.name, invitation.new_user
-          - else
-            = invitation.email
-        %td
-          - if invitation.sent_at.nil?
-            = image_tag 'icons/16/email_inactive.png', :title => t('email-soon', :scope => [:invitations, :status])
-          - else
-            = image_tag 'icons/16/email_go.png', :title => t('email-sent', :scope => [:invitations, :status], :sent_at => l(invitation.sent_at))
-          - if invitation.opened_at.present?
-            = image_tag 'icons/16/email_open.png', :title => t('opened', :scope => [:invitations, :status], :opened_at => l(invitation.opened_at))
-          - if invitation.accepted_at.present?
-            = image_tag 'icons/16/accept.png', :title => t('accepted', :scope => [:invitations, :status], :accepted_at => l(invitation.accepted_at))
-          - if invitation.radio.present?
-            = image_tag 'icons/16/house_link.png', :title => t('linked', :scope => [:invitations, :status])
+- if invitations.any?
+  %table
+    %thead
+      %tr
+        %th= Invitation.human_attribute_name :name
+        %th= Invitation.human_attribute_name :status
+    %tbody
+      - for invitation in invitations.ordered
+        %tr{:class => cycle('odd', 'even')}
+          %td
+            - if invitation.new_user_id.present?
+              = link_to invitation.new_user.name, invitation.new_user
+            - else
+              = invitation.email
+          %td
+            - if invitation.sent_at.nil?
+              = image_tag 'icons/16/email_inactive.png', :title => t('email-soon', :scope => [:invitations, :status])
+            - else
+              = image_tag 'icons/16/email_go.png', :title => t('email-sent', :scope => [:invitations, :status], :sent_at => l(invitation.sent_at))
+            - if invitation.opened_at.present?
+              = image_tag 'icons/16/email_open.png', :title => t('opened', :scope => [:invitations, :status], :opened_at => l(invitation.opened_at))
+            - if invitation.accepted_at.present?
+              = image_tag 'icons/16/accept.png', :title => t('accepted', :scope => [:invitations, :status], :accepted_at => l(invitation.accepted_at))
+            - if invitation.radio.present?
+              = image_tag 'icons/16/house_link.png', :title => t('linked', :scope => [:invitations, :status])
 
