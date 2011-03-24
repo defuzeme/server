@@ -88,6 +88,11 @@ class SessionsControllerTest < ActionController::TestCase
     assert_nil response.xml['token']['id'], "id should not be sent"
   end
 
+  test 'should not generate token using bad credentials' do
+    post :create, :login => 'quentin', :format => :json
+    assert_response :unauthorized
+  end
+
   protected
     def auth_token(token)
       CGI::Cookie.new('name' => 'auth_token', 'value' => token)
