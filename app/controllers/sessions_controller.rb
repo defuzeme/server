@@ -28,9 +28,16 @@ class SessionsController < ApplicationController
       end
     else
       note_failed_signin
-      @login       = params[:login]
-      @remember_me = params[:remember_me]
-      render :action => 'new'
+      respond_to do |format|
+        format.html do
+          @login       = params[:login]
+          @remember_me = params[:remember_me]
+          render :action => 'new'
+        end
+        format.any(:json, :xml) do
+          unauthorized
+        end
+      end
     end
   end
 
