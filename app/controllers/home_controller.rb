@@ -15,6 +15,9 @@ class HomeController < ApplicationController
   def contact
   end
 
+  def download
+  end
+
   def dashboard
     respond_to do |format|
       format.html { render :layout => 'application' }

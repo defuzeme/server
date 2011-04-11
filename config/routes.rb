@@ -31,6 +31,7 @@ DefuzeMe::Application.routes.draw do
   match 'license' => 'home#license', :as => :license
   match 'overview' => 'home#overview', :as => :overview
   match 'contact' => 'home#contact', :as => :contact
+  match 'download' => 'home#download', :as => :download
 
   # Admin panel
   match 'admin' => 'home#admin', :as => :admin
