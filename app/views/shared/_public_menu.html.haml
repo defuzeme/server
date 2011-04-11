@@ -5,6 +5,9 @@
   .item.overview{:class => (controller_name == 'home' and action_name == 'overview' ? 'active' : '')}
     = link_to overview_path do
       = t('menu.overview')
+  .item.download{:class => (controller_name == 'home' and action_name == 'download' ? 'active' : '')}
+    = link_to download_path do
+      = t('menu.download')
   .item.contact{:class => (controller_name == 'home' and action_name == 'contact' ? 'active' : '')}
     = link_to contact_path do
       = t('menu.contact')

@@ -6,6 +6,12 @@ en:
     dashboard:
       title: "Dashboard"
       my_radio: "My radio"
+    download:
+      title: "Download"
+      not_available: "The client software and mobile app are not available yet for public download<br /><br />Thank you for your patience."
+      keep_informed: "Keep informed:"
+      client: "Client software"
+      mobile_app: "Mobile application"
     no_radio_yet:
       title: "Welcome on defuze.me! There's just 1 step left to the end. You can:"
       new_radio:

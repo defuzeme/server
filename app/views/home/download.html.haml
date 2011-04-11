@@ -1,0 +1,19 @@
+.intro
+  %h2= t('.title')
+  %p= t('.not_available').html_safe
+  %p
+    = image_tag 'icons/32/twitter.png'
+    = t('.keep_informed')
+    = link_to 'http://twitter.com/defuzeme', 'http://twitter.com/defuzeme'
+  #download
+    .client
+      %h3= t('.client')
+      .windows
+      .linux
+      .macos
+    .mobile
+      %h3= t('.mobile_app')
+      .android
+      .ios
+    .clear
+

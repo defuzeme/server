@@ -465,6 +465,8 @@ nav .item {
     background-image: url(../images/icons/32/contact.png); }
   nav .item.overview a {
     background-image: url(../images/icons/32/presentation.png); }
+  nav .item.download a {
+    background-image: url(../images/icons/32/download.png); }
   nav .item.dashboard a {
     background-image: url(../images/icons/32/board.png); }
   nav .item.my-radio a {
@@ -601,3 +603,27 @@ div#carousel-images {
       div#carousel-images ul li img {
         border: 5px solid white;
         border-radius: 3px; }
+
+#download {
+  margin: 1em 0 3em 0; }
+  #download .client, #download .mobile {
+    float: left; }
+    #download .client h3, #download .mobile h3 {
+      text-align: center;
+      line-height: 2.5em;
+      border-bottom: 1px solid #333333;
+      margin: 0 10px 1em 10px; }
+    #download .client > div, #download .mobile > div {
+      min-height: 90px;
+      width: 90px;
+      margin: 0 10px;
+      float: left;
+      background: transparent url("../images/download.png") top center no-repeat; }
+  #download .mobile .ios {
+    background-position: center -90px; }
+  #download .client .windows {
+    background-position: center -180px; }
+  #download .client .linux {
+    background-position: center -270px; }
+  #download .client .macos {
+    background-position: center -360px; }
