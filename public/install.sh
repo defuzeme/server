@@ -9,7 +9,7 @@ git clone bigbourin@git.rootbox.fr:defuzeme.git
 export PATH="$PATH:/var/lib/gems/1.8/bin"
 
 cd defuzeme
-sudo gem install --no-rdoc --no-ri rake bundler thin sqlite3-ruby
+sudo gem install --no-rdoc --no-ri rake bundler thin
 
 cat <<EOF >> Gemfile
 gem 'mysql2'
