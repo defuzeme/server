@@ -38,7 +38,7 @@ test:
   database: defuzeme_test
 EOF
 
-sudo su postgres createuser -s labeip
+sudo -u postgres createuser -s labeip
 
 rake db:create
 RAILS_ENV=mysql rake db:create
