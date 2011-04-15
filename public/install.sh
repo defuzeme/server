@@ -1,15 +1,17 @@
 #!/bin/sh
 
 sudo apt-get update
-sudo apt-get install -y git-core ruby1.8 rubygems1.8 postgresql-server-dev-8.4 mysql-server sqlite3 libsqlite3-dev rake libmysql-ruby1.8 libmysqlclient-dev
+sudo apt-get install -y git-core
 
 rm -Rf defuzeme
 git clone bigbourin@git.rootbox.fr:defuzeme.git
 
+sudo apt-get install -y ruby1.8 rubygems1.8 postgresql-server-dev-8.4 mysql-server sqlite3 libsqlite3-dev rake libmysql-ruby1.8 libmysqlclient-dev
+
 export PATH="$PATH:/var/lib/gems/1.8/bin"
 
 cd defuzeme
-sudo gem install --no-rdoc --no-ri rake bundler thin
+sudo gem install --no-rdoc --no-ri rake bundler
 
 cat <<EOF >> Gemfile
 gem 'mysql2'
@@ -17,6 +19,8 @@ gem 'sqlite3'
 EOF
 
 bundle install
+
+sudo gem install --no-rdoc --no-ri thin
 
 cat <<EOF > config/database.yml
 development:
