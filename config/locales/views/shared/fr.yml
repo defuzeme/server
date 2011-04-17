@@ -1,5 +1,18 @@
 fr:
   shared:
     delete:
-      are_you_sure: Êtes vous vraiment sûr de vouloir supprimer %{wants_to} ?
+      are_you_sure: Êtes-vous vraiment sûr de vouloir supprimer %{wants_to} ?
       radios: cette radio
+    error:
+      unauthorized:
+        title: Accès restreint
+        blurb: Vous devez être connecté pour accéder à cette partie du site.
+      forbidden:
+        title: Accès interdit
+        blurb: Vous n'avez pas l'autorisation d'accéder à cette partie du site.
+      not_found:
+        title: Introuvable
+        blurb: La page à laquelle vous tentez d'accéder n'existe pas.
+      server_error:
+        title: Erreur interne
+        blurb: Nous sommes désolés, mais quelque chose s'est mal passé. Nous avons été informés de cette erreur et nous allons regarder sous peu.
