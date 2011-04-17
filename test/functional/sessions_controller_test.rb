@@ -91,6 +91,8 @@ class SessionsControllerTest < ActionController::TestCase
   test 'should not generate token using bad credentials' do
     post :create, :login => 'quentin', :format => :json
     assert_response :unauthorized
+    assert_equal 401, response.json['code']
+    assert_equal 'unauthorized', response.json['error']
   end
 
   protected

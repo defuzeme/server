@@ -17,7 +17,14 @@ class ApplicationController < ActionController::Base
     module_eval "
       def #{name}
         @error, @code = '#{name}', #{code}
-        render :template => 'shared/error', :layout => 'alert', :status => #{code}
+        respond_to do |format|
+          format.html do
+            render :template => 'shared/error', :layout => 'alert', :status => #{code}
+          end
+          format.any(:json, :xml) do
+            render :template => 'shared/error', :status => #{code}
+          end
+        end
       end"
   end
   
