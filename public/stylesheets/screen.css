@@ -4,7 +4,8 @@ body {
   padding: 0;
   text-align: center;
   color: #cccccc;
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.4em;
   font-family: Helvetica, Sans, Arial; }
 
 #wrapper {
@@ -52,6 +53,18 @@ cite {
   margin: 10px; }
   .block h2 {
     padding-left: 0; }
+
+dl dd {
+  margin: 0.3em 0 1em 0; }
+dl.icons dt {
+  color: white;
+  background: transparent url(../images/icons/16/info.png) left bottom no-repeat;
+  line-height: 17px;
+  padding-left: 22px; }
+  dl.icons dt.signal {
+    background-image: url(../images/icons/16/transmit.png); }
+  dl.icons dt.website {
+    background-image: url(../images/icons/16/link.png); }
 
 .actions a,
 .actions input,
@@ -244,7 +257,7 @@ table {
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a0d559), to(#7ab42e));
     text-shadow: 0 -1px 1px #5f8b23;
     color: white;
-    padding: 4px 8px;
+    padding: 0.3em 8px;
     border-right: 1px solid #6c9f29;
     border-left: 1px solid #abda6e; }
     table th:last-child {
@@ -390,7 +403,7 @@ header {
     font-size: 0.9em;
     margin: 0 0 1em 1em; }
   #main > .actions {
-    margin: 0.5em 10px 0 0; }
+    margin: 0.3em 10px 0 0; }
   #main form .actions {
     float: none;
     font-size: 1em;
@@ -520,7 +533,9 @@ footer {
   .radio .freq {
     margin-left: 40px;
     margin-top: 0.3em;
-    font-weight: bold; }
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em; }
 
 a.new-radio, a.join-radio {
   display: block;

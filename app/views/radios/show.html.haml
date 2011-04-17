@@ -7,13 +7,19 @@
   .left
     .block
       %h3= t 'details'
-      %dl
-        %dt= Radio.human_attribute_name :description
+      %dl.icons
+        %dt.description= Radio.human_attribute_name :description
         %dd= @radio.description
-        %dt= Radio.human_attribute_name :website
-        %dd= auto_link(@radio.website)
-        %dt= Radio.human_attribute_name :frequency
-        %dd= @radio.frequency_band
+        %dt.website= Radio.human_attribute_name :website
+        - if @radio.website.present?
+          %dd= auto_link(@radio.website)
+        - else
+          %dd= t('not_filled').html_safe
+        %dt.signal= Radio.human_attribute_name :frequency
+        - if @radio.frequency.present?
+          %dd= @radio.frequency_band
+        - else
+          %dd= t('not_filled').html_safe
   .right
     .block
       %h3= t 'members'

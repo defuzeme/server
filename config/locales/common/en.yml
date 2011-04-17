@@ -10,6 +10,7 @@ en:
   'yes': 'Yes'
   'no': 'No'
   no_wrong: No, take me back to the previous page
+  not_filled: <em>Not filled yet</em>
   menu:
     home: Home
     overview: Overview
