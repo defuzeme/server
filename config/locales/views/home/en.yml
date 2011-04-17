@@ -1,8 +1,12 @@
 en:
   home:
     index:
-      comming: "Defuze.me is coming soon ... stay tuned:"
-      follow_us: "Follow us on twitter!"
+      blurb: "<p>Providing radios with an innovative broadcasting software featuring an intuitive interface, defuze.me is designed to be compatible with modern technologies, especially touch screens and tablets.</p><p>It also combines full audio capabilities with powerful automation and scheduling. Furthermore, a web service, permanently linked to the software, brings a social dimension by allowing listeners to interact with the radio. To do so, several tools are proposed to the radio allowing them to get informations on their live schedule, and share them on their website. The software can also be remotely controlled by a mobile application for tablets and netbooks.</p><p>Finally, running on all major operating systems, it easily fits in your existing system. Modern and efficient, defuze.me offer a brand new solution to the world of radio automation softwares.</p>"
+    overview:
+      titles:
+        software: The software
+        website: The website
+        mobile: The mobile application
     dashboard:
       title: "Dashboard"
       my_radio: "My radio"
