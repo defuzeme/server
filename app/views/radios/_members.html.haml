@@ -3,10 +3,9 @@
     %tr
       %th= User.human_attribute_name :login
       %th= User.human_attribute_name :name
-      %th
   %tbody
     - for member in @radio.users
       %tr{:class => cycle('odd', 'even')}
         %td= link_to member.login, member
         %td= member.name
-        %td
+
