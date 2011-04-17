@@ -4,7 +4,7 @@
   %body
     #wrapper.alert
       %header
-        = link_to dashboard_path, :class => :logo do
+        = link_to root_path, :class => :logo do
           %h1
             %span Defuze.me
         #version
@@ -12,8 +12,6 @@
             admin
           - else
             alphα
-        #language-selector
-          = render :partial => 'shared/language_selector'
         .clear
       #content
         #main

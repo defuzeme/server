@@ -330,9 +330,10 @@ header {
   clear: both; }
   #content .flash {
     color: white;
+    font-weight: bold;
     line-height: 30px;
-    padding-left: 0.5em;
-    text-shadow: 0 -1px 1px #51771e;
+    padding-left: 0.8em;
+    text-shadow: 0 -1px 0px #51771e;
     margin-bottom: 1em;
     background: #7ab42e;
     background-image: -moz-linear-gradient(top, #a0d559, #7ab42e);
@@ -351,7 +352,7 @@ header {
       background: #dc3712;
       background-image: -moz-linear-gradient(top, #f0694b, #dc3712);
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f0694b), to(#dc3712));
-      text-shadow: 0 -1px 1px #7e1f0a; }
+      text-shadow: 0 -1px 0px #ad2b0e; }
 
 #main {
   border: 1px solid #333333;
@@ -475,6 +476,15 @@ nav .item {
     background-image: url(../images/icons/32/id_card.png); }
   nav .item.admin a {
     background-image: url(../images/icons/32/preferences.png); }
+
+.error {
+  background: transparent url(../images/icons/32/warning.png) 448px 2px no-repeat; }
+  .error.unauthorized {
+    background-image: url(../images/icons/32/door.png); }
+  .error.forbidden {
+    background-image: url(../images/icons/32/no_entry.png); }
+  .error.not_found {
+    background-image: url(../images/icons/32/sign_post.png); }
 
 footer {
   display: block;

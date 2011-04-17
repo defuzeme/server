@@ -12,11 +12,17 @@ class ApplicationController < ActionController::Base
   # HTML Status
   { :unauthorized => 401,
     :forbidden => 403,
-    :not_found => 404 }.each do |name, code|
+    :not_found => 404,
+    :server_error => 500 }.each do |name, code|
     module_eval "
       def #{name}
-        render :text => '#{name.to_s.humanize}', :status => #{code}
+        @error, @code = '#{name}', #{code}
+        render :template => 'shared/error', :layout => 'alert', :status => #{code}
       end"
+  end
+  
+  unless Rails.application.config.consider_all_requests_local
+    rescue_from Exception, :with => :server_error
   end
 
   # Filters
@@ -84,7 +90,7 @@ class ApplicationController < ActionController::Base
   def get_request_hostname
     $host = request.env['HTTP_HOST'] if request.env['HTTP_HOST'].present?
   end
-  
+
   def auto_layout
     if logged_in?
       'application'

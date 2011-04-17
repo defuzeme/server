@@ -3,3 +3,16 @@ en:
     delete:
       are_you_sure: Are you sure you really want to remove %{wants_to}?
       radios: this radio
+    error:
+      unauthorized:
+        title: Unauthorized
+        blurb: You must log in to access this part of the website.
+      forbidden:
+        title: Forbidden
+        blurb: You're not allowed to access this part of the website.
+      not_found:
+        title: Not found
+        blurb: The page you're looking for could not be found.
+      server_error:
+        title: Internal server error
+        blurb: We're sorry, but something went wrong. We've been notified about this issue and we'll take a look at it shortly.
