@@ -7,6 +7,14 @@ en:
         software: The software
         website: The website
         mobile: The mobile application
+      carousel:
+        software: The software
+        website: The website
+        mobile: The mobile application
+      blurbs:
+        software: "<p>The client software is the ideal tool to manage radio broadcast.</p><p>Indeed, it allows to easily import audio files from any local or remote storage and manipulate them into the software's library.</p><p>Playlists are created through a cutting-edge rule-based system which allows fine-grained classification and speed up tracks finding.</p><p>Furthermore, the output is fully configurable thanks to a mixer module. A schedule allows to delay records playback.</p><p>The user interface is both flexible and simple.</p>"
+        website: "<p>For any information or question about defuze.me, visit <a href=\"http://defuze.me\">http://defuze.me</a>.</p><p>The website also allows any user to create his radio's public page, remotely manage his broadcast schedule, generate statistic reports, etc. All done through a secure access.</p><p>You can easily integrate your broadcast data to your website or blog, using the web-service we offer.</p>"
+        mobile: "<p>The mobile application is another part of defuze.me software bundle, allowing to remotely control the main software. It features a clean user interface to manage your playing queue, modify your schedule, browse your library and control the live broadcast.</p><p>Available for iOS and Android, this application works on most of current tablets.</p>"
     dashboard:
       title: "Dashboard"
       my_radio: "My radio"
