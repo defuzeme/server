@@ -7,6 +7,14 @@ fr:
         software: Le logiciel
         website: Le site Internet
         mobile: L'application mobile
+      carousel:
+        software: Application client
+        website: Un site internet pour gérer votre planning de diffusion ou que vous soyez.
+        mobile: Une application mobile pour contrôler votre radio sans rester devant votre ordinateur.
+      blurbs:
+        software: "<p>Le logiciel client est l'outil idéal pour gérer simplement des flux de diffusion radio.</p><p>En effet, il permet une importation facile de fichiers audio à partir de n'importe quel espace de stockage, pour les rendre disponibles dans la bibliothèque du logiciel.</p><p>La création et la gestion de listes de lecture se fait grâce à un système de règles très avancé qui permet également une classification très fine des pistes audio, afin de trouver avec une grande réactivité les morceaux recherchés.</p><p>De plus, la gestion de la liste de diffusion est entièrement configurable grâce à un module de mixage de qualité. Un planning de diffusion offre la possibilité de lecture d'enregistrements en différé.</p><p>Son interface est donc à la fois flexible et simple d'utilisation. Elle permet également de configurer tous les paramètres techniques de la diffusion radio.</p>"
+        website: "<p>Vous souhaitez des renseignements sur defuze.me ? Le site <a href=\"http://defuze.me\">http://defuze.me</a> répondra à toutes vos questions grâce à son portail de présentation !</p><p>De plus, le site permet à chaque radio de créer sa propre page publique, de gérer son planning de diffusion et de bénéficier de rapports de publicité, le tout via un accès sécurisé.</p><p>Si vous souhaitez intégrer vos données simplement à votre site web ou à votre blog, c'est possible grâce au service web que nous mettons à votre disposition !</p>"
+        mobile: "<p>Un changement de dernière minute ou besoin d'un contrôle à distance ? L'application mobile est là pour ça !</p><p>L'application mobile est une composante de la suite logiciel defuze.me, permettant de contrôler le logiciel client à distance. Elle offre une interface simplifiée et adaptée au monde de la mobilité et la possibilité de visualiser l'ensemble de la bibliothèque, ainsi qu'un accès aux contrôles essentiels de l'application client.</p><p>Disponible pour iOS et Android, cette application fonctionnera sur la plupart des tablettes disponibles sur le marché.</p>"
     dashboard:
       title: "Panneau de contrôle"
       my_radio: "Ma radio"
