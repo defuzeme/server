@@ -35,4 +35,10 @@ module ApplicationHelper
     end
     auto_field :select, f, field, options
   end
+  
+  def javascript *args
+    content_for :head do
+      javascript_include_tag *args
+    end
+  end
 end
