@@ -1,7 +1,22 @@
 en:
   home:
     index:
-      blurb: "<p>Providing radios with an innovative broadcasting software featuring an intuitive interface, defuze.me is designed to be compatible with modern technologies, especially touch screens and tablets.</p><p>It also combines full audio capabilities with powerful automation and scheduling. Furthermore, a web service, permanently linked to the software, brings a social dimension by allowing listeners to interact with the radio. To do so, several tools are proposed to the radio allowing them to get informations on their live schedule, and share them on their website. The software can also be remotely controlled by a mobile application for tablets and netbooks.</p><p>Finally, running on all major operating systems, it easily fits in your existing system. Modern and efficient, defuze.me offer a brand new solution to the world of radio automation softwares.</p>"
+      tagline: Defuze.me is an innovative broadcast software. It brings to your radio a full set of audio capabilities and powerful automation tools.
+      reliability: Whichever kind of radio you're running, the most advanced radio automation software won't let you down. Ever.
+      features:
+        intro: "Defuze.me is all about:"
+        technologies:
+          title: Cutting-edge technology
+          blurb: The intuitive interface speed up your work and is always at your fingertips on your touch screen or tablet
+        social:
+          title: Social interactions
+          blurb: Interacting with listeners has never been so easy. Update your website and twitter in real-time and get instant feeback and suggestions
+        remote:
+          title: Remote control
+          blurb: Control the broadcast from anywhere in the world. The web-based control and mobile application make your life easier.
+        integration:
+          title: Easy integration
+          blurb: Defuze.me runs on all major operating system and easily fits in your existing configuration.
     overview:
       titles:
         software: The software

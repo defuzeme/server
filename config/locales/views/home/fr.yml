@@ -1,7 +1,22 @@
 fr:
   home:
     index:
-      blurb: "<p>Mettant à disposition des stations de radio un support de diffusion innovant proposant une interface intuitive, defuze.me est conçu pour être compatible avec les technologies modernes, notamment avec les écrans et tablettes tactiles.</p><p>Il associe également des fonctionnalités audio complètes à une automatisation et une planification avancées. En outre, un service web en liaison permanente avec le logiciel apporte une dimension sociale en permettant aux auditeurs d'interagir avec la radio. Pour ce faire, plusieurs interfaces sont proposées aux radios et leur permettent de récupérer des informations sur les programmes diffusés, pour ensuite les partager sur leur site web. Par ailleurs, le logiciel est contrôlable à distance au moyen d'une application mobile pour tablettes tactiles et netbooks.</p><p>Enfin, compatible avec l'ensemble des principaux systèmes d'exploitation, il s'intègre aisément à toutes les plates-formes existantes. Moderne et efficace, defuze.me propose une solution innovante dans le domaine des logiciels de diffusion radio.</p>"
+      tagline: Defuze.me is an innovative broadcast software. It brings to your radio a full set of audio capabilities and powerful automation tools.
+      reliability: Whichever kind of radio you're running, the most advanced radio automation software won't let you down. Ever.
+      features:
+        intro: "Defuze.me is all about:"
+        technologies:
+          title: Cutting-edge technology
+          blurb: The intuitive interface speed up your work and is always at your fingertips on your touch screen or tablet
+        social:
+          title: Social interactions
+          blurb: Interacting with listeners has never been so easy. Update your website and twitter in real-time and get instant feeback and suggestions
+        remote:
+          title: Remote control
+          blurb: Control the broadcast from anywhere in the world. The web-based control and mobile application make your life easier.
+        integration:
+          title: Easy integration
+          blurb: Defuze.me runs on all major operating system and easily fits in your existing configuration.
     overview:
       titles:
         software: Le logiciel
