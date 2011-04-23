@@ -5,7 +5,7 @@
     = image_tag 'mosaic2.jpg'
     \=
     = image_tag 'mosaic3.jpg'
-  %h2.tagline= t('.tagline')
+  %h2.tagline= t('.tagline').html_safe
   .block
     %h3= t('.features.intro')
     %ul.features
@@ -14,5 +14,5 @@
           %h4= t(".features.#{technology}.title")
           %details= t(".features.#{technology}.blurb")
       %li.clear
-    %p.reliability= t('.reliability')
+    %p.reliability= t('.reliability').html_safe
 

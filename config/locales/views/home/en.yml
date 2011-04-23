@@ -1,8 +1,8 @@
 en:
   home:
     index:
-      tagline: Defuze.me is an innovative broadcast software. It brings to your radio a full set of audio capabilities and powerful automation tools.
-      reliability: Whichever kind of radio you're running, the most advanced radio automation software won't let you down. Ever.
+      tagline: Defuze.me is an innovative <strong>broadcast software</strong>. It brings to your radio a full set of audio capabilities and <strong>powerful automation</strong> tools.
+      reliability: Whichever kind of radio you're running, <strong>the most advanced radio automation software won't let you down. Ever.</strong>
       features:
         intro: "Defuze.me is all about:"
         technologies:

@@ -38,8 +38,8 @@ img {
   display: block !important; }
 
 h2 {
-  padding: 0.3em 10px;
-  margin: 0;
+  padding: 0.3em 0;
+  margin: 0 10px;
   color: #88c833;
   border-bottom: 1px solid #333333; }
 
