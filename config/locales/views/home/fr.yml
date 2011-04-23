@@ -12,11 +12,11 @@ fr:
           title: Des interactions sociales
           blurb: Communiquer avec les auditeurs n'a jamais été aussi simple. Publiez sur votre site web ou twitter en temps réel et recevez des avis et suggestions.
         remote:
-          title: Le contrôle a distance
-          blurb: Contrôlez votre flux où que vous soyez. L'interface web et l'application mobile vous rendent la vie plus facile.
+          title: Le contrôle à distance
+          blurb: Contrôlez votre radio où que vous soyez. L'interface web et l'application mobile vous rendent la vie plus facile.
         integration:
           title: Une intégration simple
-          blurb: Defuze.me fonctionne sur tout les principaux systèmes d'exploitation et s'adapte aisément à votre configuration existante.
+          blurb: Defuze.me fonctionne sur tous les principaux systèmes d'exploitation et s'adapte aisément à votre configuration existante.
     overview:
       titles:
         software: Le logiciel
