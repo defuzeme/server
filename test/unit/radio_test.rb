@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class RadioTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
   test "should create radio" do
     assert_difference 'Radio.count' do
       radio = create_radio
