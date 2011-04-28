@@ -18,18 +18,19 @@ en:
           title: Easy integration
           blurb: Defuze.me runs on all major operating system and easily fits in your existing configuration.
     overview:
+      intro: "Defuze.me features:"
       titles:
-        software: The software
-        website: The website
-        mobile: The mobile application
+        software: The software application
+        website: The web service
+        mobile: The tablet app
       carousel:
-        software: The software
-        website: The website
-        mobile: The mobile application
+        software: The software application
+        website: The web service
+        mobile: The tablet app
       blurbs:
-        software: "<p>The client software is the ideal tool to manage radio broadcast.</p><p>Indeed, it allows to easily import audio files from any local or remote storage and manipulate them into the software's library.</p><p>Playlists are created through a cutting-edge rule-based system which allows fine-grained classification and speed up tracks finding.</p><p>Furthermore, the output is fully configurable thanks to a mixer module. A schedule allows to delay records playback.</p><p>The user interface is both flexible and simple.</p>"
-        website: "<p>For any information or question about defuze.me, visit <a href=\"http://defuze.me\">http://defuze.me</a>.</p><p>The website also allows any user to create his radio's public page, remotely manage his broadcast schedule, generate statistic reports, etc. All done through a secure access.</p><p>You can easily integrate your broadcast data to your website or blog, using the web-service we offer.</p>"
-        mobile: "<p>The mobile application is another part of defuze.me software bundle, allowing to remotely control the main software. It features a clean user interface to manage your playing queue, modify your schedule, browse your library and control the live broadcast.</p><p>Available for iOS and Android, this application works on most of current tablets.</p>"
+        software: "<p>Running on your computer, it is the main tool to manage your radio broadcast. Import and export from anywhere, social integration, full mixer and advanced scheduling are include beyond <a href=''>many other</a>.</p>"
+        website: "<p>Manage your radio and monitor the activity from anywhere in the world. Statistics, schedueling, blog and <a href=''>more</a> are accesible from your radio account on <a href='http://defuze.me'>http://defuze.me</a></p>"
+        mobile: "<p>Gives you the power to remotely control your radio broadcast, from both your iPad or Android tablet. <a href=''>Discover more about the tablet app functionalities</a>.</p>"
     dashboard:
       title: "Dashboard"
       my_radio: "My radio"

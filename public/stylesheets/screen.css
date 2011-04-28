@@ -71,6 +71,11 @@ cite {
   .block h2 {
     padding-left: 0; }
 
+img.right {
+  clear: both;
+  float: right;
+  margin: 1em 0 1em 2em; }
+
 dl dd {
   margin: 0.3em 0 1em 0; }
 dl.icons dt {
@@ -111,6 +116,38 @@ ul.features {
       background-image: url(../images/icons/32/iPad.png); }
     ul.features li.integration {
       background-image: url(../images/icons/32/magic.png); }
+
+div.fancy-monitor, div.fancy-tablet {
+  clear: both;
+  width: 150px;
+  position: relative;
+  float: right;
+  margin: 0.5em 0 1em 2em; }
+  div.fancy-monitor div.overlay, div.fancy-tablet div.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px; }
+
+div.fancy-monitor {
+  height: 123px; }
+  div.fancy-monitor div.overlay {
+    height: 123px;
+    background: transparent url("../images/overlay/monitor_150.png"); }
+  div.fancy-monitor img {
+    margin: 6px 0px 0px 7px;
+    width: 138px;
+    height: 78px; }
+
+div.fancy-tablet {
+  height: 110px; }
+  div.fancy-tablet div.overlay {
+    height: 110px;
+    background: transparent url("../images/overlay/tablet_150.png"); }
+  div.fancy-tablet img {
+    margin: 14px 0px 0px 13px;
+    width: 125px;
+    height: 79px; }
 
 p.reliability {
   background: transparent url(../images/icons/32/clock.png) 0 center no-repeat;
@@ -436,8 +473,9 @@ header {
     margin: 2em auto;
     width: 550px; }
     #main .intro > p {
-      text-align: justify;
       padding: 0 10px; }
+    #main .intro p {
+      text-align: justify; }
     #main .intro .mozaic {
       padding: 0;
       text-align: center;
@@ -624,8 +662,7 @@ a.join-radio h4 {
 div#carousel {
   height: 265px;
   width: 515px;
-  margin: 0 auto;
-  margin-top: 15px;
+  margin: 15px auto 2em auto;
   text-align: center;
   position: relative; }
   div#carousel img#slide-left,

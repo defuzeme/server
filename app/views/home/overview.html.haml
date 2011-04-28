@@ -1,6 +1,6 @@
 - javascript 'carousel'
 
-.intro
+.intro.overview
   #carousel
     = image_tag 'carousel/slide-left.png', :id => 'slide-left' 
     = image_tag 'carousel/slide-right.png', :id => 'slide-right' 
@@ -16,11 +16,14 @@
         %li
           = image_tag 'carousel/image3.jpg', :class => 'carousel' 
           %span= t('.carousel.mobile')
-
-  %h2= t('.titles.software')
-  = t('.blurbs.software').html_safe
-  %h2= t('.titles.website')
-  = t('.blurbs.website').html_safe
-  %h2= t('.titles.mobile')
-  = t('.blurbs.mobile').html_safe
+  %h2= t('.intro')
+  .block
+    = fancy_monitor
+    %h3= t('.titles.software')
+    = t('.blurbs.software').html_safe
+    = fancy_tablet
+    %h3= t('.titles.mobile')
+    = t('.blurbs.mobile').html_safe
+    %h3= t('.titles.website')
+    = t('.blurbs.website').html_safe
 
