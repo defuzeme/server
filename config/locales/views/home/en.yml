@@ -41,9 +41,8 @@ en:
       mobile_app: "Mobile application"
     contact:
       title: Contact
-      blurb: "Please send any comments and suggestions by e-mail. Stay tuned, follow us on Twitter."
-      email: "Contact us by e-mail:"
-      twitter: "Follow us on twitter:"
+      email: "Send any comments and suggestions by e-mail:"
+      twitter: "Stay tuned, follow us on Twitter:"
     no_radio_yet:
       title: "Welcome on defuze.me! There's just 1 step left to the end. You can:"
       new_radio:
