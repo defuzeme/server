@@ -41,9 +41,8 @@ fr:
       mobile_app: "Application mobile"
     contact:
       title: Contact
-      blurb: "Si vous souhaitez nous faire part de vos remarques et suggestions, n'hésitez pas à nous contacter par e-mail. Si vous souhaitez vous tenir au courant des nouveautés, suivez-nous sur twitter."
-      email: "Contactez-nous par e-mail :"
-      twitter: "Suivez-nous sur twitter :"
+      email: "Envoyez-nous vos remarques par e-mail :"
+      twitter: "Restez à l'écoute, suivez-nous sur twitter :"
     no_radio_yet:
       title: "Bienvenue sur defuze.me ! Vous êtes à une étape de la fin. vous pouvez:"
       new_radio:
