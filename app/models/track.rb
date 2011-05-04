@@ -24,9 +24,7 @@ class Track < ActiveRecord::Base
     :numericality => {:greater_than => 0}
   validates :year,
     :numericality => {
-      :only_integer => true,
-      :greater_than => 1700,
-      :less_than => Date.today.year + 5,
+      :only_integer => true
     }
 
   # fetch existing track by name, artist & album

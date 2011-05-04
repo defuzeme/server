@@ -52,14 +52,7 @@ class TrackTest < ActiveSupport::TestCase
     end
   end
   
-  test "don't create track with invalid year" do
-    assert_no_difference 'Track.count' do
-      create_track :year => 1700
-      create_track :year => 2030
-    end
-  end
-  
-  test "create track if on parameter different" do
+  test "duplicate track if one parameter different" do
     create_track
     assert_difference 'Track.count' do
       create_track :name => 'toto'
