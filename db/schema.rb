@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110305155914) do
+ActiveRecord::Schema.define(:version => 20110423184127) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "creator_id"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(:version => 20110305155914) do
   add_index "invitations", ["new_user_id"], :name => "index_invitations_on_new_user_id"
   add_index "invitations", ["radio_id"], :name => "index_invitations_on_radio_id"
   add_index "invitations", ["token"], :name => "index_invitations_on_token"
+
+  create_table "queue_elems", :force => true do |t|
+    t.integer  "track_id"
+    t.integer  "radio_id"
+    t.integer  "position"
+    t.datetime "played_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "radios", :force => true do |t|
     t.string   "name"
@@ -55,6 +64,17 @@ ActiveRecord::Schema.define(:version => 20110305155914) do
   end
 
   add_index "tokens", ["token"], :name => "index_tokens_on_token"
+
+  create_table "tracks", :force => true do |t|
+    t.string   "name"
+    t.string   "artist"
+    t.string   "album"
+    t.integer  "year"
+    t.string   "genre"
+    t.float    "duration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 50

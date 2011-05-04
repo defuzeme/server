@@ -39,6 +39,7 @@ class Radio < ActiveRecord::Base
   
   has_many :users, :dependent => :nullify
   has_many :invitations, :dependent => :nullify
+  has_many :queue_elems, :dependent => :destroy
   
   before_validation :generate_permalink
   after_validation :report_permalink_uniqueness
