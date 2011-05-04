@@ -13,20 +13,25 @@
 #  year       :integer
 #
 
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+uprising:
+  name: Uprising
+  artist: Muse
+  album: The Resistance
+  year: 2009
+  genre: Alternative Rock
+  duration: 304
 
-one:
-  name: MyString
-  artist: MyString
-  album: MyString
-  year: 1
-  genre: MyString
-  duration: 1.5
-
-two:
-  name: MyString
-  artist: MyString
-  album: MyString
-  year: 1
-  genre: MyString
-  duration: 1.5
+whish_i_could:
+  name: Wish I could
+  artist: Norah Jones
+  album: Not Too Late
+  year: 2007
+  genre: Jazz doux
+  duration: 258
+  
+train:
+  name: Long Train Runnin'
+  artist: Doobie Brothers
+  album: The very best of
+  genre: Rock/Funk
+  duration: 204
