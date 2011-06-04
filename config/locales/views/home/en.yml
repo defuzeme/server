@@ -7,7 +7,7 @@ en:
         intro: "Defuze.me is all about:"
         technologies:
           title: Cutting-edge technology
-          blurb: The intuitive interface speed up your work and is always at your fingertips on your touch screen or tablet.
+          blurb: The intuitive interface speeds up your work and is always at your fingertips on your touch screen or tablet.
         social:
           title: Social interactions
           blurb: Interacting with listeners has never been so easy. Update your website and twitter in real-time and get instant feeback and suggestions.
@@ -20,11 +20,11 @@ en:
     overview:
       intro: "Defuze.me features:"
       titles:
-        software: The software application
+        software: The desktop application
         website: The web service
         mobile: The tablet app
       carousel:
-        software: The software application
+        software: The desktop application
         website: The web service
         mobile: The tablet app
       blurbs:
@@ -36,9 +36,9 @@ en:
       my_radio: "My radio"
     download:
       title: "Download"
-      not_available: "The client software and mobile app are not available yet for public download<br /><br />Thank you for your patience."
-      keep_informed: "Keep informed:"
-      client: "Client software"
+      not_available: "The desktop and mobile applications are not available yet for public download.<br /><br />Thank you for your patience."
+      keep_informed: "Stay tuned:"
+      client: "Desktop application"
       mobile_app: "Mobile application"
     contact:
       title: Contact
