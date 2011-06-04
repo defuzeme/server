@@ -32,6 +32,7 @@ DefuzeMe::Application.routes.draw do
   match 'overview' => 'home#overview', :as => :overview
   match 'contact' => 'home#contact', :as => :contact
   match 'download' => 'home#download', :as => :download
+  match 'faq' => 'home#faq', :as => :faq
 
   # Admin panel
   match 'admin' => 'home#admin', :as => :admin

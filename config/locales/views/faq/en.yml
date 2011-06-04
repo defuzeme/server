@@ -1,0 +1,40 @@
+en:
+  home:
+    faq:
+      title: Frequently asked questions
+      general:
+        title: General points
+        what_is_defuzeme:
+          question: What is Defuze.me ?
+          answer: "Defuze.me is a radio broadcasting software designed to give an intuitive management of playing queue and a planning appropriate for radios.<br />Defuze.me is also a web service which allows radios to easily get currently broadcasting tracks back to display them on their website. An administrator interface allows a distant radio planning, and a mobile application for tablets allows a remote control of your radio."
+        who_is_defuzeme_for:
+          question: Who is Defuze.me intended for ?
+          answer: "Defuze.me is intended for terrestrial radios and smaller internet radios. The software fits to professionals and private individuals."
+        who_manage_defuzeme:
+          question: Who manage Defuze.me ?
+          answer: "Defuze.me is currently managed by seven students from Epitech (an IT school) as part of the EIP (Epitech Innovative Project), a final project assignment of two years. They belongs to the class of 2012:<ul><li>Adrien Jarthon (project manager)</li><li>Athéna Calmettes</li><li>Jocelyn De La Rosa</li><li>François Gaillard</li><li>Alexandre Moore</li><li>Luc Pérès</li><li>Arnaud Sellier</li></ul>"
+      accessibility_updates:
+        title: Accessibility & Updates
+        is_it_charged:
+          question: Is Defuze.me charged ? How much ? How to get it ?
+          answer: "The Defuze.me software is not free and is available by visiting our download page <a href=\"/download\">defuze.me/download</a>, or by contacting us at this address : <a href=\"mailto:team@defuze.me\">team@defuze.me</a>.<br />Defuze.me is flexible thanks to our plug-in system. You can easily define which services you want, so Defuze.me will fully respond to your request. Defuze.me's team will valuate the price of your software and your monthly subscription for your selected services."
+        trial_version:
+          question: Is there a trial version of Defuze.me ?
+          answer: "Yes, a trial version of Defuze.me is available for a limited duration."
+        updates:
+          question: Is there updates ? are they free ? how to get them ?
+          answer: "Software updates are regularly provided in order to improve Defuze.me to best answer your requests. A visible notification appears as soon as a new update is available for Defuze.me. These updates are free for each Defuze.me subscribers."
+      compatibility:
+        title: Compatibility
+        compatible_os:
+          question: Which are the compatible operating systems ?
+          answer: "Defuze.me software is compatible with different operating systems :<ul><li>Windows XP and newer (32 and 64 bits)</li><li>Mac OSX</li><li>Linux (32 and 64 bits) with integration for KDE 4.5+ & Gnome 2.3+</li></ul>The mobile application is compatible with:<ul><li>iOS 4 and newer</li><li>Android 1.6 and newer</li></ul>"
+        compatible_databases:
+          question: Which are the compatible databases ?
+          answer: "You don't have to worry about any database compatibility problem. Indeed, the client has its own SQLite database."
+      miscellaneous:
+        title: Miscellaneous
+        provided_languages:
+          question: Which languages are provided ?
+          answer: "English (en/en_US) and French (fr/fr_FR) translations are supplied by default.<br />Other languages will be available via plug-ins. A new language can be added just with a new file, without requiring a software restart."
+
