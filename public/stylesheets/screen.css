@@ -100,7 +100,7 @@ ul.features {
     background-position: 100% 0.2em; }
     ul.features li h4 {
       padding-right: 10px; }
-    ul.features li details {
+    ul.features li p {
       display: block;
       font-size: 0.9em;
       text-align: justify; }

@@ -12,7 +12,7 @@
       - for technology in %w(technologies social remote integration)
         %li{:class => technology}
           %h4= t(".features.#{technology}.title")
-          %details= t(".features.#{technology}.blurb")
+          %p= t(".features.#{technology}.blurb")
       %li.clear
     %p.reliability= t('.reliability').html_safe
 
