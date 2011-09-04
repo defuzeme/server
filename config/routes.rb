@@ -5,7 +5,6 @@ DefuzeMe::Application.routes.draw do
   # User signup & login
   resource :session, :only => [:create]
   match 'signup' => 'users#new', :as => :signup
-  match 'register' => 'users#create', :as => :register
   match 'login' => 'sessions#new', :as => :login
   match 'logout' => 'sessions#destroy', :as => :logout
   match 'activate/:activation_code' => 'users#activate', :as => :activate, :activation_code => nil

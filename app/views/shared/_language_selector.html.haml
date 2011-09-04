@@ -1,2 +1,8 @@
+- action = if params[:action] == 'create'
+  - 'new'
+- elsif params[:action] == 'update'
+  - 'edit'
+- else
+  - params[:action]
 - for lang in I18n.available_locales - [I18n.locale]
-  = link_to t(:switch, :scope => :locales, :locale => lang), url_for(request.query_parameters.merge :locale => lang), :class => lang
+  = link_to t(:switch, :scope => :locales, :locale => lang), url_for(request.query_parameters.merge(:locale => lang, :action => action)), :class => lang
