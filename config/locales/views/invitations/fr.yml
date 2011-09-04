@@ -7,13 +7,13 @@ fr:
       message: "Voici le message de %{name} : <cite>%{message}</cite>"
     invitations:
       invitations_left:
-        one: "Vous pouvez encore inviter une personne a rejoindre defuze.me !"
-        other: "Vous pouvez encore inviter %{count} personnes a rejoindre defuze.me !"
+        one: "Vous pouvez encore inviter une personne à rejoindre defuze.me !"
+        other: "Vous pouvez encore inviter %{count} personnes à rejoindre defuze.me !"
       no_more_invitations: "Vous avez utilisé toutes vos invitations disponibles."
       invite: "Inviter quelqu'un"
     status:
-      email-soon: "L'email d'invitation n'a pas encoré été envoyé"
-      email-sent: "Email envoyé le %{sent_at}"
-      opened: "L'invitation a été consulté le %{opened_at}"
-      accepted: "L'invitation a été accepté le %{accepted_at}"
-      linked: "Cet utilisateur et/sera un membre de ma radio"
+      email-soon: "L'e-mail d'invitation n'a pas encoré été envoyé"
+      email-sent: "E-mail envoyé le %{sent_at}"
+      opened: "L'invitation a été consultée le %{opened_at}"
+      accepted: "L'invitation a été acceptée le %{accepted_at}"
+      linked: "Cet utilisateur est/sera un membre de ma radio"

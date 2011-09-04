@@ -3,7 +3,7 @@ fr:
     admin: Administrateur
     created_at: Date de création
     description: Description
-    email: Email
+    email: E-mail
     first_name: Prénom
     last_name: Nom
     login: Identifiant
