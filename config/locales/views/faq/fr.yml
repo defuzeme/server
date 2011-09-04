@@ -1,7 +1,7 @@
 fr:
   home:
     faq:
-      title: Questions fréquements posées
+      title: Questions fréquemment posées
       general:
         title: Généralités
         what_is_defuzeme:
@@ -17,7 +17,7 @@ fr:
         title: Accessibilité & Mises à jour
         is_it_charged:
           question: La suite logicielle Defuze.me est-elle payante ? A quel prix ? Comment y accéder ?
-          answer: "La suite logicielle est payante et est accessible sur notre page de téléchargement <a href=\"/download\">defuze.me/download</a>, ou en nous contactant à cette adresse : <a href=\"mailto:team@defuze.me\">team@defuze.me</a>.<br />Les logiciels étant flexibles grâce à notre système de Plug-ins, vous pourrez définir quels services vous seront fournis afin que Defuze.me réponde pleinement et uniquement à votre demande. L’équipe Defuze.me évaluera en fonction de cela le prix de la suite logicielle qui vous sera proposée, ainsi que le prix de votre abonnement mensuel aux services que vous aurez définis."
+          answer: "La suite logicielle est payante et est accessible sur notre page de téléchargement <a href=\"/download\">defuze.me/download</a>, ou en nous contactant à cette adresse : <a href=\"mailto:team@defuze.me\">team@defuze.me</a>.<br />Les logiciels étant flexibles grâce à notre système de plugins, vous pourrez définir quels services vous seront fournis afin que Defuze.me réponde pleinement et uniquement à votre demande. L’équipe Defuze.me évaluera en fonction de cela le prix de la suite logicielle qui vous sera proposée, ainsi que le prix de votre abonnement mensuel aux services que vous aurez définis."
         trial_version:
           question: Existe-t-il une version d'essai de la suite logicielle Defuze.me ?
           answer: "Une version d'essai à durée limitée existe."
@@ -27,14 +27,14 @@ fr:
       compatibility:
         title: Compatibilité
         compatible_os:
-          question: La suite logicielle Defuze.me est compatible avec quels systèmes ?
+          question: Avec quels systèmes la suite logicielle Defuze.me est-elle compatible ?
           answer: "Le logiciel client sera compatible avec différents systèmes :<ul><li>Windows XP et supérieur (32 et 64 bits) ;</li><li>Mac OSX ;</li><li>Linux (32 et 64 bits) avec intégration pour KDE 4.5+ & Gnome 2.3+</li></ul>L'application mobile sera aussi compatible avec différentes plates-formes :<ul><li>iOS 4 et supérieur ;</li><li>Android 1.6 et supérieur.</li></ul>"
         compatible_databases:
-          question: La suite logicielle Defuze.me est compatible avec quelles bases de données ?
+          question: Avec quelles bases de données la suite logicielle Defuze.me est-elle compatible ?
           answer: "Vous n'aurez aucun problème de compatibilité au niveau de la base de données. En effet, le client dispose de sa propre base de données de type SQL Lite."
       miscellaneous:
         title: Divers
         provided_languages:
-          question: Quels langages sont supportés ?
-          answer: "Les traductions anglaises (en/en_US) et françaises (fr/fr_FR) seront fournies par défaut.<br />D'autres langages seront disponibles via des plug-ins. L'ajout éventuel de traductions pourra être effectué par un simple ajout de fichiers, sans nécessiter le redémarrage du logiciel."
+          question: Dans quelles langues les logiciels sont-ils disponibles ?
+          answer: "Les traductions anglaise (en/en_US) et française (fr/fr_FR) seront fournies par défaut.<br />D'autres langues seront disponibles via des plugins. L'ajout éventuel de traductions pourra être effectué par un simple ajout de fichiers, sans nécessiter le redémarrage du logiciel."
 

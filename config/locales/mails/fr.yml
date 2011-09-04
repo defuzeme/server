@@ -4,5 +4,5 @@ fr:
       blurb: "Vous avez été invité par %{creator} pour rejoindre defuze.me."
       join_radio: "À la demande de la personne qui vous invite, votre compte sera automatiquement lié a sa radio nommée : %{radio}"
       your_invitation_code: "Voici votre code d'invitation : %{code}"
-      how_to_join: "Vous pouvez rejoindre defuze.me en rentrant ce code lors de votre inscription, ou tout simplement en cliquant sur le lien ci-dessous:"
+      how_to_join: "Vous pouvez rejoindre defuze.me en rentrant ce code lors de votre inscription, ou tout simplement en cliquant sur le lien ci-dessous :"
       message: "Voici le message de %{name} : %{message}"

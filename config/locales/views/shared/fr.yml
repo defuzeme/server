@@ -15,4 +15,4 @@ fr:
         blurb: La page à laquelle vous tentez d'accéder n'existe pas.
       server_error:
         title: Erreur interne
-        blurb: Nous sommes désolés, mais quelque chose s'est mal passé. Nous avons été informés de cette erreur et nous allons regarder sous peu.
+        blurb: Nous sommes désolés, mais quelque chose s'est mal passé. Nous avons été informés de cette erreur et nous allons y remédier sous peu.

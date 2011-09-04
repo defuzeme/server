@@ -1,6 +1,6 @@
 fr:
   locales:
-    switch: Basculer en Français
+    switch: Basculer en français
     current: Français
     en: Anglais
     fr: Français
@@ -25,7 +25,7 @@ fr:
   license: Licence
   contact: Contact
   faq: FAQ
-  eip: Epitech Innovative Projects
+  eip: Epitech Innovative Project
   radio: Radio
   alerts:
-    token_expired: "Votre clef est maintenant expiré et ne pourra plus être utilisée"
+    token_expired: "Votre clef a maintenant expiré et ne pourra plus être utilisée."
