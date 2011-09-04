@@ -20,8 +20,6 @@ EOF
 
 bundle install
 
-sudo gem install --no-rdoc --no-ri thin
-
 cat <<EOF > config/database.yml
 development:
   adapter: postgresql
@@ -56,6 +54,6 @@ RAILS_ENV=sqlite rake db:seed
 
 killall thin
 
-thin start -e development -d -p 3000 --pid tmp/pids/thin0.pid
-thin start -e mysql -d -p 3001 --pid tmp/pids/thin1.pid
-thin start -e sqlite -d -p 3002 --pid tmp/pids/thin2.pid
+bundle exec thin start -e development -d -p 3000 --pid tmp/pids/thin0.pid
+bundle exec thin start -e mysql -d -p 3001 --pid tmp/pids/thin1.pid
+bundle exec thin start -e sqlite -d -p 3002 --pid tmp/pids/thin2.pid
