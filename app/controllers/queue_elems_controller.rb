@@ -8,26 +8,6 @@ class QueueElemsController < ApplicationController
     @queue_elems = @radio.queue_elems.includes(:track)
   end
   
-  def show
-    respond_with @user
-  end
-
-  def new
-    respond_with(@user = User.new)
-  end
-  
-  def edit
-    respond_with @user
-  end
- 
-  def update
-    @user.update_attributes(params[:user])
-    respond_with(@user, :location => @user)
-  end
-  
-  def create
-  end
-
 protected
   
   def authorization_required

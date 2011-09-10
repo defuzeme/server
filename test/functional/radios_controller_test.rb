@@ -89,10 +89,74 @@ class RadiosControllerTest < ActionController::TestCase
       assert_response :forbidden
     end
   end
+  
+  test 'should update play queue' do
+    queue_elems = [
+      { :position => 1,
+        :played_at => Time.now,
+        :kind => 'QueueTrack',
+        :track_attributes => {
+          :name => 'Test song',
+          :artist => 'Test artist',
+          :year => 2042,
+          :duration => 13}},
+      { :position => 2,
+        :played_at => 3.minutes.from_now,
+        :kind => 'QueueTrack',
+        :track_attributes => {
+          :name => 'Last Friday Night',
+          :artist => 'Katy Perry',
+          :duration => 250}}]
+    u = users :quentin
+    login_as u
+    assert_difference 'Track.count', 2 do
+      put :update, :id => u.radio.to_param, :radio => {:queue_elems_attributes => queue_elems}, :format => :json
+      assert_response :success
+      assert u.radio.queue_elems.count >= 2, 'no queue elems created';
+      assert_equal 2, u.radio.queue_elems.count, 'initial element not destroyed';
+    end
+  end
+  
+  test 'global queue update should empty the queue' do
+    u = users :quentin
+    login_as u
+    create_queue_elem
+    assert_difference 'u.radio.queue_elems.count', -1 do
+      put :update, :id => u.radio.to_param, :radio => {:queue_elems_attributes => []}, :format => :json
+      assert_response :success
+    end
+  end
+  
+  test 'queue update do not duplicate track' do
+    queue_elems = [
+      { :position => 1,
+        :played_at => Time.now,
+        :kind => 'QueueTrack',
+        :track_attributes => {
+          :name => 'Long Train Runnin\'',
+          :artist => 'Doobie Brothers',
+          :album => 'The very best of'}}]
+    u = users :quentin
+    login_as u
+    create_queue_elem
+    assert_no_difference 'Track.count' do
+      put :update, :id => u.radio.to_param, :radio => {:queue_elems_attributes => queue_elems}, :format => :json
+      assert_response :success
+    end
+  end
 
   protected
 
   def create_radio(options = {})
     post :create, :radio => { :name => 'Rire & Chansons', :frequency => 98.2 }.merge(options)
+  end
+  
+  def create_queue_elem(options = {})
+    t = QueueElem.new({
+      :radio => radios(:rfm),
+      :track => tracks(:train),
+    }.merge(options))
+    t.save
+    t
   end
 end

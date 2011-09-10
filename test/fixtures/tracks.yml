@@ -2,21 +2,24 @@
 #
 # Table name: tracks
 #
-#  album      :string(255)
-#  artist     :string(255)
-#  created_at :datetime
-#  duration   :float
-#  genre      :string(255)
-#  id         :integer       not null, primary key
-#  name       :string(255)
-#  updated_at :datetime
-#  year       :integer
+#  album        :string(255)
+#  album_artist :string(255)
+#  artist       :string(255)
+#  created_at   :datetime
+#  duration     :integer
+#  genre        :string(255)
+#  id           :integer       not null, primary key
+#  name         :string(255)
+#  properties   :text
+#  updated_at   :datetime
+#  year         :integer
 #
 
 uprising:
   name: Uprising
   artist: Muse
   album: The Resistance
+  album_artist: Muse
   year: 2009
   genre: Alternative Rock
   duration: 304
