@@ -1,13 +1,9 @@
 class CreateTracks < ActiveRecord::Migration
   def self.up
     create_table :tracks do |t|
-      t.string :name
-      t.string :artist
-      t.string :album
-      t.integer :year
-      t.string :genre
-      t.float :duration
-
+      t.string :name, :artist, :album, :album_artist, :genre
+      t.integer :year, :duration
+      t.text :properties
       t.timestamps
     end
   end

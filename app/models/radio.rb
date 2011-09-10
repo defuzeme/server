@@ -41,6 +41,8 @@ class Radio < ActiveRecord::Base
   has_many :invitations, :dependent => :nullify
   has_many :queue_elems, :dependent => :destroy
   
+  accepts_nested_attributes_for :queue_elems
+  
   before_validation :generate_permalink
   after_validation :report_permalink_uniqueness
   
@@ -54,6 +56,12 @@ class Radio < ActiveRecord::Base
   
   def frequency_band
     "#{frequency} MHz #{band_key.to_s.upcase}"
+  end
+  
+  # Clean queue on global update
+  def queue_elems_attributes= arg
+    queue_elems.destroy_all
+    assign_nested_attributes_for_collection_association(:queue_elems, arg)
   end
   
   protected

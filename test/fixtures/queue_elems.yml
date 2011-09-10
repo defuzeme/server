@@ -6,19 +6,11 @@
 #  id         :integer       not null, primary key
 #  played_at  :datetime
 #  position   :integer
+#  properties :text
 #  radio_id   :integer
 #  track_id   :integer
+#  type       :string(255)
 #  updated_at :datetime
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  track: 
-  position: 1
-  played_at: 2011-04-23 20:41:27
-
-two:
-  track: 
-  position: 1
-  played_at: 2011-04-23 20:41:27

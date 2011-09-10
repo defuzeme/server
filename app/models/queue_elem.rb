@@ -6,8 +6,10 @@
 #  id         :integer       not null, primary key
 #  played_at  :datetime
 #  position   :integer
+#  properties :text
 #  radio_id   :integer
 #  track_id   :integer
+#  type       :string(255)
 #  updated_at :datetime
 #
 
@@ -15,6 +17,7 @@ class QueueElem < ActiveRecord::Base
   belongs_to :track
   belongs_to :radio
 
+  serialize :properties
   acts_as_list :scope => :radio
   
   validates_presence_of :track, :radio
@@ -36,6 +39,10 @@ class QueueElem < ActiveRecord::Base
 
   def editable_by? user
     user and radio.editable_by? user
+  end
+
+  def track_attributes= args
+    self.track = Track.fetch args
   end
   
   # return a scope to elems of the same radio

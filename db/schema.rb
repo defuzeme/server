@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20110423184127) do
   create_table "queue_elems", :force => true do |t|
     t.integer  "track_id"
     t.integer  "radio_id"
+    t.string   "kind"
+    t.text     "properties"
     t.integer  "position"
     t.datetime "played_at"
     t.datetime "created_at"
@@ -69,9 +71,11 @@ ActiveRecord::Schema.define(:version => 20110423184127) do
     t.string   "name"
     t.string   "artist"
     t.string   "album"
-    t.integer  "year"
+    t.string   "album_artist"
     t.string   "genre"
-    t.float    "duration"
+    t.integer  "year"
+    t.integer  "duration"
+    t.text     "properties"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
