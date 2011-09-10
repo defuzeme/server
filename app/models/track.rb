@@ -22,10 +22,6 @@ class Track < ActiveRecord::Base
   validates :duration,
     :presence => true,
     :numericality => {:greater_than => 0}
-  validates :year,
-    :numericality => {
-      :only_integer => true
-    }
 
   # fetch existing track by name, artist & album
   def self.fetch args = {}

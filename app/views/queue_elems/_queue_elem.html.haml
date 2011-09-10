@@ -1,2 +1,2 @@
-.time= queue_elem.played_at
+%time= l(queue_elem.played_at, :format => :time)
 = render queue_elem.track

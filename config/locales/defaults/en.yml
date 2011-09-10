@@ -2,3 +2,4 @@ en:
   time:
     formats:
       default: "%a, %d %b %Y %H:%M"
+      queue: "%H:%M:%S"
