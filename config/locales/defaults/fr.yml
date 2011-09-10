@@ -26,6 +26,7 @@ fr:
       long: "%A %d %B %Y %H:%M:%S %Z"
       long_ordinal: "%A %d %B %Y %H:%M:%S %Z"
       only_second: "%S"
+      queue: "%H:%M:%S"
     am: 'am'
     pm: 'pm'
 
