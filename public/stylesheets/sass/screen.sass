@@ -548,18 +548,23 @@ ol.queue
   li
     display: block
     margin-bottom: 0.5em
-    padding-left: 50px
+    padding-left: 55px
     position: relative
     time
       position: absolute
-      padding: 0.2em 0
-      width: 50px
-      text-align: center
       left: 0
+      top: 0.7em
+      padding: 0 12px 0 0
+      width: 50px
+      height: 25px
+      line-height: 24px
+      font-size: 0.8em
+      font-weight: bold
+      text-align: center
       display: block
-      background-color: $orange
-      color: black
-      text-shadow: none
+      background: transparent url(../images/tag.png) left top no-repeat
+      color: darken($orange, 35)
+      text-shadow: 0px 1px lighten($orange, 30)
 
 .error
   background: transparent url(../images/icons/32/warning.png) ($alert-width - 52px) 0px no-repeat
