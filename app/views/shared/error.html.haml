@@ -1,4 +1,5 @@
 %div{:class => [:block, :error, @error].join(' ')}
   %h2= t(".#@error.title", :default => @error.to_s.humanize)
-  %p= t(".#@error.blurb")
-  = link_to t(:back), :back
+  .block
+    %p= t(".#@error.blurb")
+    = link_to t(:back), :back

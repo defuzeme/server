@@ -12,7 +12,7 @@
         %dd= @radio.description
         %dt.website= Radio.human_attribute_name :website
         - if @radio.website.present?
-          %dd= auto_link(@radio.website)
+          %dd!= auto_link(@radio.website)
         - else
           %dd= t('not_filled').html_safe
         %dt.signal= Radio.human_attribute_name :frequency

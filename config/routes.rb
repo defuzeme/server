@@ -14,6 +14,7 @@ DefuzeMe::Application.routes.draw do
   match 'dashboard' => 'home#dashboard'
   resources :radios, :except => :index do
     get :delete, :on => :member
+    resources :queue_elems, :path => 'queue'
   end
 
   # Users

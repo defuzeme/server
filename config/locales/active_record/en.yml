@@ -28,10 +28,9 @@ en:
         remember_me: Remember me
       radio:
         band: Band
+        band_fm: FM
+        band_am: AM
         frequency: Frequency
-        bands:
-          fm: FM
-          am: AM
       invitation:
         link_radio: "Link to my radio"
       token:

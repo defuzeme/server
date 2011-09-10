@@ -1,0 +1,6 @@
+%h2= t('.title')
+
+.block
+  %ol.queue
+    - for elem in @queue_elems
+      %li= render elem
