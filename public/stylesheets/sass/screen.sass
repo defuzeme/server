@@ -504,13 +504,53 @@ nav
       background-image: url(../images/icons/32/board.png)
     &.my-radio a
       background-image: url(../images/icons/32/microphone.png)
+    &.play_queue a
+      background-image: url(../images/icons/32/note.png)
     &.my-profile a
       background-image: url(../images/icons/32/id_card.png)
     &.admin a
       background-image: url(../images/icons/32/preferences.png)
 
+.track
+  user-select: none
+  -webkit-user-select: none
+  cursor: pointer
+  background-color: rgba(255,255,255,0.1)
+  padding: 0.5em 1em
+  .song
+    float: left
+    width: 50%
+    .title
+      color: white
+      font-size: 1.3em
+      line-height: 1.4em
+    .artist
+  .album
+    float: left
+    width: 40%
+    line-height: 1.2em
+    padding-top: 5px
+    img
+      float: left
+      margin-top: -7px
+      margin-right: 5px
+  .duration
+    float: left
+    width: 10%
+    padding-top: 5px
+    text-align: right
+  &:hover
+    background-color: darken($apple, 30)
+
+ol.queue
+  padding: 0
+  margin: 0
+  li
+    display: block
+    margin-bottom: 0.5em
+
 .error
-  background: transparent url(../images/icons/32/warning.png) ($alert-width - 52px) 2px no-repeat
+  background: transparent url(../images/icons/32/warning.png) ($alert-width - 52px) 0px no-repeat
   &.unauthorized
     background-image: url(../images/icons/32/door.png)
   &.forbidden

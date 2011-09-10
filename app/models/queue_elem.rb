@@ -20,7 +20,7 @@ class QueueElem < ActiveRecord::Base
   validates_presence_of :track, :radio
   
   scope :played, :conditions => {:position => nil}
-  scope :queued, :conditions => {:played_at => nil}
+  scope :queued, :conditions => 'position IS NOT NULL'
   
   # Return the first list element (position = 1)
   def self.current
@@ -32,6 +32,10 @@ class QueueElem < ActiveRecord::Base
   def pop! date = Time.now - track.duration
     self.played_at = date
     remove_from_list
+  end
+
+  def editable_by? user
+    user and radio.editable_by? user
   end
   
   # return a scope to elems of the same radio

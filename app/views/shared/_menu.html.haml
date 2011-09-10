@@ -4,7 +4,9 @@
       = t('menu.dashboard')
   - if current_user.radio?
     .item.my-radio{:class => (controller_name == 'radios' ? 'active' : '')}
-      = link_to t('menu.my_radio'), radio_path(current_user.radio)
+      = link_to t('menu.my_radio'), current_user.radio
+    .item.play_queue{:class => (controller_name == 'queue_elems' ? 'active' : '')}
+      = link_to t('menu.play_queue'), [current_user.radio, :queue_elems]
   .item.my-profile{:class => (controller_name == 'users' ? 'active' : '')}
     = link_to t('menu.my_profile'), current_user
   - if current_user.admin?

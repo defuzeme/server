@@ -41,4 +41,8 @@ module ApplicationHelper
       javascript_include_tag *args
     end
   end
+  
+  def in_min_sec duration
+    "#{(duration/60).floor}:#{(duration%60).floor}"
+  end
 end

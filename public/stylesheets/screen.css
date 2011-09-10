@@ -574,13 +574,52 @@ nav .item {
     background-image: url(../images/icons/32/board.png); }
   nav .item.my-radio a {
     background-image: url(../images/icons/32/microphone.png); }
+  nav .item.play_queue a {
+    background-image: url(../images/icons/32/note.png); }
   nav .item.my-profile a {
     background-image: url(../images/icons/32/id_card.png); }
   nav .item.admin a {
     background-image: url(../images/icons/32/preferences.png); }
 
+.track {
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5em 1em; }
+  .track .song {
+    float: left;
+    width: 50%; }
+    .track .song .title {
+      color: white;
+      font-size: 1.3em;
+      line-height: 1.4em; }
+  .track .album {
+    float: left;
+    width: 40%;
+    line-height: 1.2em;
+    padding-top: 5px; }
+    .track .album img {
+      float: left;
+      margin-top: -7px;
+      margin-right: 5px; }
+  .track .duration {
+    float: left;
+    width: 10%;
+    padding-top: 5px;
+    text-align: right; }
+  .track:hover {
+    background-color: #354e14; }
+
+ol.queue {
+  padding: 0;
+  margin: 0; }
+  ol.queue li {
+    display: block;
+    margin-bottom: 0.5em; }
+
 .error {
-  background: transparent url(../images/icons/32/warning.png) 448px 2px no-repeat; }
+  background: transparent url(../images/icons/32/warning.png) 448px 0px no-repeat; }
   .error.unauthorized {
     background-image: url(../images/icons/32/door.png); }
   .error.forbidden {

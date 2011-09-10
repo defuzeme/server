@@ -89,7 +89,7 @@ module Defuzeme
       module_eval "
         def self.#{field.to_s.pluralize}
           #{constant_name}.map do |value|
-            I18n.t value, :scope => [:activerecord, :attributes, :#{name.underscore}, :#{field.to_s.pluralize}], :default => value
+            I18n.t '#{field}_' + value.to_s, :scope => [:activerecord, :attributes, :#{name.underscore}], :default => value
           end
         end
 
