@@ -4,12 +4,12 @@
 #
 #  created_at :datetime
 #  id         :integer       not null, primary key
-#  played_at  :datetime
+#  kind       :string(255)
+#  play_at    :datetime
 #  position   :integer
 #  properties :text
 #  radio_id   :integer
 #  track_id   :integer
-#  type       :string(255)
 #  updated_at :datetime
 #
 
