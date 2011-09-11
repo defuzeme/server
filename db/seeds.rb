@@ -36,17 +36,17 @@ radio.users = User.all
 puts "Creating audio tracks"
 
 Track.destroy_all
-track_1 = Track.create!(:name => 'Last Friday Night', :artist => 'Katy Perry', :album => 'Teenage Dream', :year => 2010, :genre => 'pop', :duration => 230);
-track_2 = Track.create!(:name => 'Talkin Bout A Revolution', :artist => 'Tracy Chapman', :album => 'The Collection', :year => 2001, :genre => 'rock', :duration => 160);
-track_3 = Track.create!(:name => 'Charlies Groove', :artist => 'New Jersey Kings', :album => 'Party to the Bus Stop', :year => 1996, :genre => 'Funk', :duration => 323);
-track_4 = Track.create!(:name => 'Beast', :artist => 'Galactic', :album => 'Ruckus', :year => 2003, :genre => 'rock', :duration => 169);
-track_5 = Track.create!(:name => 'Pastime Paradise', :artist => 'Youngblood Brass Band', :album => 'Unlearn', :year => 2001, :genre => 'Jazz-Hop', :duration => 370);
-track_6 = Track.create!(:name => 'Map of the Problematique', :artist => 'Muse', :album => 'Black Holes and Revelations', :year => 2006, :genre => 'Rock', :duration => 258);
-track_7 = Track.create!(:name => 'Dezzerd', :artist => 'Daft Punk', :album => 'Tron Legacy OST', :year => 2010, :genre => 'Soundtrack', :duration => 104);
-track_8 = Track.create!(:name => 'The Good Life', :artist => 'Bobby Darin', :album => 'Matchstick Men', :year => 2003, :genre => 'Soundtrack', :duration => 143);
-track_9 = Track.create!(:name => 'Le Freak', :artist => 'Chic', :genre => 'Disco', :duration => 280);
-track_10 = Track.create!(:name => 'Teenage Dream', :artist => 'Katy Perry', :album => 'Teenage Dream', :year => 2010, :genre => 'pop', :duration => 228);
-track_11 = Track.create!(:name => 'California Gurls', :artist => 'Katy Perry', :album => 'Teenage Dream', :year => 2010, :genre => 'pop', :duration => 236);
+track_1 = Track.create!(:title => 'Last Friday Night', :artist => 'Katy Perry', :album => 'Teenage Dream', :year => 2010, :genre => 'pop', :duration => 230);
+track_2 = Track.create!(:title => 'Talkin Bout A Revolution', :artist => 'Tracy Chapman', :album => 'The Collection', :year => 2001, :genre => 'rock', :duration => 160);
+track_3 = Track.create!(:title => 'Charlies Groove', :artist => 'New Jersey Kings', :album => 'Party to the Bus Stop', :year => 1996, :genre => 'Funk', :duration => 323);
+track_4 = Track.create!(:title => 'Beast', :artist => 'Galactic', :album => 'Ruckus', :year => 2003, :genre => 'rock', :duration => 169);
+track_5 = Track.create!(:title => 'Pastime Paradise', :artist => 'Youngblood Brass Band', :album => 'Unlearn', :year => 2001, :genre => 'Jazz-Hop', :duration => 370);
+track_6 = Track.create!(:title => 'Map of the Problematique', :artist => 'Muse', :album => 'Black Holes and Revelations', :year => 2006, :genre => 'Rock', :duration => 258);
+track_7 = Track.create!(:title => 'Dezzerd', :artist => 'Daft Punk', :album => 'Tron Legacy OST', :year => 2010, :genre => 'Soundtrack', :duration => 104);
+track_8 = Track.create!(:title => 'The Good Life', :artist => 'Bobby Darin', :album => 'Matchstick Men', :year => 2003, :genre => 'Soundtrack', :duration => 143);
+track_9 = Track.create!(:title => 'Le Freak', :artist => 'Chic', :genre => 'Disco', :duration => 280);
+track_10 = Track.create!(:title => 'Teenage Dream', :artist => 'Katy Perry', :album => 'Teenage Dream', :year => 2010, :genre => 'pop', :duration => 228);
+track_11 = Track.create!(:title => 'California Gurls', :artist => 'Katy Perry', :album => 'Teenage Dream', :year => 2010, :genre => 'pop', :duration => 236);
 
 puts "Filling play queue"
 

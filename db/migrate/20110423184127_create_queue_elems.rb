@@ -5,7 +5,7 @@ class CreateQueueElems < ActiveRecord::Migration
       t.string :kind
       t.text :properties
       t.integer :position
-      t.datetime :played_at
+      t.datetime :play_at
       t.timestamps
     end
   end

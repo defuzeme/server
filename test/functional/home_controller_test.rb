@@ -70,7 +70,7 @@ class HomeControllerTest < ActionController::TestCase
   test "valid header api token should access dashboard page" do
     u = users(:quentin)
     t = u.tokens.valid.first
-    @request.env['API-Token'] = t.token
+    @request.env['HTTP_API_TOKEN'] = t.token
     get :dashboard, :format => :xml
     assert_response :success
     assert_not_nil response.xml['hash']['user']

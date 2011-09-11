@@ -1,2 +1,8 @@
-%time= l(queue_elem.played_at, :format => :time)
-= render queue_elem.track
+%time
+  - if queue_elem.play_at.present?
+    = l(queue_elem.play_at, :format => :time)
+- if queue_elem.track
+  = render queue_elem.track
+- else
+  .track
+    Error loading track info

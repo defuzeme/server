@@ -9,8 +9,10 @@
 #  duration     :integer
 #  genre        :string(255)
 #  id           :integer       not null, primary key
-#  name         :string(255)
 #  properties   :text
+#  title        :string(255)
+#  track        :integer
+#  uid          :integer
 #  updated_at   :datetime
 #  year         :integer
 #
@@ -18,17 +20,14 @@
 class Track < ActiveRecord::Base
   has_many :queue_elems
   
-  validates :name,
+  validates :title,
     :presence => true,
     :uniqueness => {:scope => [:artist, :album]}
-  validates :duration,
-    :presence => true,
-    :numericality => {:greater_than => 0}
 
   serialize :properties
 
   # fetch existing track by name, artist & album
   def self.fetch args = {}
-    find_or_create_by_name_and_album_and_artist(args)
+    find_or_create_by_title_and_album_and_artist(args)
   end
 end

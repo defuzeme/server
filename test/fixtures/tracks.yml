@@ -9,8 +9,10 @@
 #  duration     :integer
 #  genre        :string(255)
 #  id           :integer       not null, primary key
-#  name         :string(255)
 #  properties   :text
+#  title        :string(255)
+#  track        :integer
+#  uid          :integer
 #  updated_at   :datetime
 #  year         :integer
 #

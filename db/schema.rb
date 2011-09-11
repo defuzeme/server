@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20110423184127) do
     t.string   "kind"
     t.text     "properties"
     t.integer  "position"
-    t.datetime "played_at"
+    t.datetime "play_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,13 +68,15 @@ ActiveRecord::Schema.define(:version => 20110423184127) do
   add_index "tokens", ["token"], :name => "index_tokens_on_token"
 
   create_table "tracks", :force => true do |t|
-    t.string   "name"
+    t.string   "title"
     t.string   "artist"
     t.string   "album"
     t.string   "album_artist"
     t.string   "genre"
     t.integer  "year"
     t.integer  "duration"
+    t.integer  "track"
+    t.integer  "uid"
     t.text     "properties"
     t.datetime "created_at"
     t.datetime "updated_at"

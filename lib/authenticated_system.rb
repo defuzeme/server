@@ -102,9 +102,8 @@ module AuthenticatedSystem
     #
     # Login
     #
-
     def api_token
-      params[:api_token] || request.env['API-Token']
+      params[:api_token] || request.env['HTTP_API_TOKEN']
     end
 
     def login_from_token
