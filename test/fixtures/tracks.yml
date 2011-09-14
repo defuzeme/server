@@ -18,7 +18,7 @@
 #
 
 uprising:
-  name: Uprising
+  title: Uprising
   artist: Muse
   album: The Resistance
   album_artist: Muse
@@ -27,7 +27,7 @@ uprising:
   duration: 304
 
 whish_i_could:
-  name: Wish I could
+  title: Wish I could
   artist: Norah Jones
   album: Not Too Late
   year: 2007
@@ -35,7 +35,7 @@ whish_i_could:
   duration: 258
   
 train:
-  name: Long Train Runnin'
+  title: Long Train Runnin'
   artist: Doobie Brothers
   album: The very best of
   genre: Rock/Funk

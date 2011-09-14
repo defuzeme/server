@@ -25,7 +25,7 @@ class QueueElemTest < ActiveSupport::TestCase
     first, second, third = create_many_elems 3
     first.pop!
     assert_nil first.position
-    assert_not_nil first.played_at
+    assert_not_nil first.play_at
     assert_equal 1, second.reload.position
     assert_equal 2, third.reload.position
   end
@@ -33,7 +33,7 @@ class QueueElemTest < ActiveSupport::TestCase
   test "fetch radio's current track" do
     current = create_queue_elem
     after = create_queue_elem
-    before = create_queue_elem(:played_at => 5.minutes.ago)
+    before = create_queue_elem(:play_at => 5.minutes.ago)
     radio = current.radio
     assert_equal current, radio.queue_elems.current
   end

@@ -58,11 +58,12 @@ class ApplicationController < ActionController::Base
     :user => :login,
     :radio => :permalink,
     :invitation => :token,
-    :token => :token
+    :token => :token,
+    :queue_elem => :position
   }.each do |model, field|
     define_method "load_#{model}" do
       # get the concerned model
-      klass = model.to_s.capitalize.constantize
+      klass = model.to_s.camelize.constantize
       # get the parameter value
       param = params[:"#{model}_id"] || params[:id]
       # fetch and store the object

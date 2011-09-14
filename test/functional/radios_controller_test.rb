@@ -93,18 +93,18 @@ class RadiosControllerTest < ActionController::TestCase
   test 'should update play queue' do
     queue_elems = [
       { :position => 1,
-        :played_at => Time.now,
+        :play_at => Time.now,
         :kind => 'QueueTrack',
         :track_attributes => {
-          :name => 'Test song',
+          :title => 'Test song',
           :artist => 'Test artist',
           :year => 2042,
           :duration => 13}},
       { :position => 2,
-        :played_at => 3.minutes.from_now,
+        :play_at => 3.minutes.from_now,
         :kind => 'QueueTrack',
         :track_attributes => {
-          :name => 'Last Friday Night',
+          :title => 'Last Friday Night',
           :artist => 'Katy Perry',
           :duration => 250}}]
     u = users :quentin
@@ -130,10 +130,10 @@ class RadiosControllerTest < ActionController::TestCase
   test 'queue update do not duplicate track' do
     queue_elems = [
       { :position => 1,
-        :played_at => Time.now,
+        :play_at => Time.now,
         :kind => 'QueueTrack',
         :track_attributes => {
-          :name => 'Long Train Runnin\'',
+          :title => 'Long Train Runnin\'',
           :artist => 'Doobie Brothers',
           :album => 'The very best of'}}]
     u = users :quentin

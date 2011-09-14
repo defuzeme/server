@@ -33,7 +33,7 @@ class QueueElem < ActiveRecord::Base
   # Remove the track from the playing queue,
   # and store the playing date for the historic
   def pop! date = Time.now - track.duration
-    self.played_at = date
+    self.play_at = date
     remove_from_list
   end
 
