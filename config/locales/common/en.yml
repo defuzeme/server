@@ -29,4 +29,4 @@ en:
   eip: Epitech Innovative Projects
   radio: Radio
   alerts:
-    token_expired: "Your token is not expired and can't be used any more"
+    token_expired: "Your token is now expired and can't be used any more"
