@@ -45,6 +45,13 @@ class QueueElem < ActiveRecord::Base
     self.track = Track.fetch args
   end
   
+  def to_html
+    ActionView::Base.new(Rails.configuration.paths.app.views.first).render(
+      :partial => 'queue_elems/queue_elem', :format => :html,
+      :locals => { :queue_elem => self }
+    )
+  end
+  
   # return a scope to elems of the same radio
   def friends
     self.class.where(:radio_id => radio_id)

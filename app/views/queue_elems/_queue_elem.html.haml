@@ -2,7 +2,7 @@
   - if queue_elem.play_at.present?
     = l(queue_elem.play_at, :format => :time)
 - if queue_elem.track
-  = render queue_elem.track
+  = render :partial => 'tracks/track', :locals => {:track => queue_elem.track}
 - else
   .track
     Error loading track info
