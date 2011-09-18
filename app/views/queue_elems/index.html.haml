@@ -1,6 +1,7 @@
+- javascript 'swfobject', 'FABridge', 'web_socket'
+
 %h2= t('.title')
 
 .block
   %ol.queue
-    - for elem in @queue_elems
-      %li= render elem
+    = render :partial => 'queue_elems', :locals => {:queue_elems => @queue_elems}

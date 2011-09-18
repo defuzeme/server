@@ -15,3 +15,9 @@ module ActiveRecord
     end
   end
 end
+
+class Integer  
+  def to_min_sec
+    "#{(self/60).floor}:#{(self%60).floor}"
+  end
+end

@@ -15,3 +15,20 @@ window.addEvent('domready', function() {
     })
   })
 })*/
+
+$(document).ready(function() {
+  var queue = $("ol.queue");
+  if (queue.length)
+  {
+    var Socket = "MozWebSocket" in window ? MozWebSocket : WebSocket;
+    var ws = new Socket("ws://" + window.location.hostname + ":8080/");
+    ws.onmessage = function(evt) { 
+      queue.empty();
+      queue.append(evt.data);
+    };
+    ws.onclose = function() { };
+    ws.onopen = function() {
+      alert("connected...");
+    };
+  };
+})

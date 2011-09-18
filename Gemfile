@@ -9,4 +9,5 @@ gem 'sass'
 gem 'routing-filter'
 gem 'json'
 gem 'thin'
-
+gem 'em-websocket'
+gem 'em-http-request'
