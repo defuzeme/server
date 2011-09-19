@@ -566,6 +566,18 @@ ol.queue
       color: darken($orange, 35)
       text-shadow: 0px 1px lighten($orange, 30)
 
+.status
+  float: right
+  height: 20px
+  line-height: 20px
+  margin: 0.4em 10px 0 0
+  padding-right: 22px
+  background: transparent url(../images/icons/16/sync.gif) right center no-repeat
+  &.sync
+    background: transparent url(../images/icons/16/load.gif) right center no-repeat
+  &.error
+    background: transparent url(../images/icons/16/warning.png) right center no-repeat
+
 .error
   background: transparent url(../images/icons/32/warning.png) ($alert-width - 52px) 0px no-repeat
   &.unauthorized
