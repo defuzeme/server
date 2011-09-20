@@ -18,6 +18,6 @@ end
 
 class Integer  
   def to_min_sec
-    "#{(self/60).floor}:#{(self%60).floor}"
+    "%02d:%02d" % [(self/60).floor, (self%60).floor]
   end
 end
