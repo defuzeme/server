@@ -41,11 +41,12 @@ class QueueElemsControllerTest < ActionController::TestCase
     queue_elem = QUEUE_ELEM
     u = users :quentin
     login_as u
-    assert_difference 'u.radio.queue_elems.count', 1 do
-      post :create, :radio_id => u.radio.to_param, :queue_elem => queue_elem
+    assert_difference 'elem.position', 1 do
+      assert_difference 'u.radio.queue_elems.count', 1 do
+        post :create, :radio_id => u.radio.to_param, :queue_elem => queue_elem
+      end
+      elem.reload
     end
-    elem.reload
-    assert_equal 2, elem.position, "Existing not shifted"
   end
 
   protected

@@ -5,7 +5,7 @@ class QueueElemsController < ApplicationController
   before_filter :authorization_required
   
   def index
-    @queue_elems = @radio.queue_elems.includes(:track)
+    @queue_elems = @radio.queue_elems.order(:position).includes(:track)
   end
   
   def create
