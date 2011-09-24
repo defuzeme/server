@@ -65,7 +65,7 @@ radio.queue_elems.create!(:position => 11, :track => track_11);
 
 t = Time.now
 QueueElem.order(:position).all.each do |elem|
-  elem.update_attribute :played_at, t
+  elem.update_attribute :play_at, t
   t += elem.track.duration
 end
 
