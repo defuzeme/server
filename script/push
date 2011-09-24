@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd `dirname $0`/..
+exec bundle exec ruby1.8 script/push.rb
