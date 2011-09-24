@@ -635,6 +635,18 @@ ol.queue {
       color: #4d3300;
       text-shadow: 0px 1px #ffdd99; }
 
+.status {
+  float: right;
+  height: 20px;
+  line-height: 20px;
+  margin: 0.4em 10px 0 0;
+  padding-right: 22px;
+  background: transparent url(../images/icons/16/sync.gif) right center no-repeat; }
+  .status.sync {
+    background: transparent url(../images/icons/16/load.gif) right center no-repeat; }
+  .status.error {
+    background: transparent url(../images/icons/16/warning.png) right center no-repeat; }
+
 .error {
   background: transparent url(../images/icons/32/warning.png) 448px 0px no-repeat; }
   .error.unauthorized {

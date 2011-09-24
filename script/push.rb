@@ -3,7 +3,7 @@ require 'em-websocket'
 
 @channel = EM::Channel.new
 
-EventMachine::WebSocket.start(:host => "0.0.0.0", :port => 8080, :debug => true) do |ws|
+EventMachine::WebSocket.start(:host => "0.0.0.0", :port => 8080) do |ws|
   ws.onopen do
     # Handle new client
     sid = @channel.subscribe { |msg| ws.send msg }

@@ -20,15 +20,35 @@ $(document).ready(function() {
   var queue = $("ol.queue");
   if (queue.length)
   {
+    var status = $("<div class=\"status sync\">Connecting to push server</div>");
+    $("div#main").prepend(status);
+    var timer;
     var Socket = "MozWebSocket" in window ? MozWebSocket : WebSocket;
     var ws = new Socket("ws://" + window.location.hostname + ":8080/");
     ws.onmessage = function(evt) { 
+      status.text("Syncing...");
+      status.addClass("sync");
+      if (timer) {
+        clearTimeout(timer);
+        timer = null
+      }
+      timer = setTimeout(function() {
+        status.removeClass("sync");
+        var d = new Date;
+        status.text("Synced at " + d.toLocaleTimeString());
+      }, 2000)
       queue.empty();
       queue.append(evt.data);
     };
     ws.onclose = function() { };
     ws.onopen = function() {
-      alert("connected...");
+      status.text("Connected to push server");
+      status.removeClass("sync")
     };
+    ws.onclose = function(e) {
+      status.text("Can't connect to push server");
+      status.removeClass("sync")
+      status.addClass("error")    
+    }
   };
 })
