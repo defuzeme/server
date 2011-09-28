@@ -14,7 +14,7 @@ class QueueElemObserver < ActiveRecord::Observer
 
   def send_queue queue_elem
     return if not EventMachine::reactor_running?
-    http = EventMachine::HttpRequest.new("ws://localhost:8080/").get :timeout => 0
+    http = EventMachine::HttpRequest.new("ws://localhost:8080/push?radio=#{queue_elem.radio_id}").get :timeout => 0
     http.errback do
       puts "WebSocket error"
     end

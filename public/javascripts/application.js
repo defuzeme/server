@@ -24,7 +24,7 @@ $(document).ready(function() {
     $("div#main").prepend(status);
     var timer;
     var Socket = "MozWebSocket" in window ? MozWebSocket : WebSocket;
-    var ws = new Socket("ws://" + window.location.hostname + ":8080/");
+    var ws = new Socket("ws://" + window.location.hostname + ":8080/subscribe?radio=" + queue.data("radio-id"));
     ws.onmessage = function(evt) { 
       status.text("Syncing...");
       status.addClass("sync");
@@ -43,7 +43,7 @@ $(document).ready(function() {
     ws.onclose = function() { };
     ws.onopen = function() {
       status.text("Connected to push server");
-      status.removeClass("sync")
+      status.removeClass("sync");
     };
     ws.onclose = function(e) {
       status.text("Can't connect to push server");
