@@ -3,5 +3,5 @@
 %h2= t('.title')
 
 .block
-  %ol.queue
+  %ol.queue{'data-radio-id' => @radio.id}
     = render :partial => 'queue_elems', :locals => {:queue_elems => @queue_elems}
