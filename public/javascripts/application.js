@@ -40,7 +40,6 @@ $(document).ready(function() {
       queue.empty();
       queue.append(evt.data);
     };
-    ws.onclose = function() { };
     ws.onopen = function() {
       status.text("Connected to push server");
       status.removeClass("sync");
