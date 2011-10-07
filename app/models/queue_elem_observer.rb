@@ -20,7 +20,7 @@ class QueueElemObserver < ActiveRecord::Observer
     end
     http.callback do
       queue = queue_elem.friends.order(:position).includes(:track)
-#        puts "send_queue #{queue}"
+#      puts "send_queue #{queue}"
       http.send "<li>" + queue.map {|e| e.to_html}.join("</li><li>") + "</li>"
       http.close_connection_after_writing
     end
