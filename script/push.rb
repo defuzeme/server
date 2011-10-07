@@ -8,9 +8,13 @@ EventMachine::WebSocket.start(:host => "0.0.0.0", :port => 8080) do |ws|
     radio = ws.request['query']['radio'].to_i if ws.request['query']['radio']
     # Create or fetch channel
     channel = (@channels[radio] ||= EM::Channel.new)
+    puts "new client #{ws}"
 
     # Handle new client
-    sid = channel.subscribe { |msg| ws.send msg }
+    sid = channel.subscribe do |msg|
+      puts "send to #{ws}: #{msg}"
+      ws.send msg
+    end
 
     # Send messages to all clients
     ws.onmessage do |msg|
@@ -19,6 +23,7 @@ EventMachine::WebSocket.start(:host => "0.0.0.0", :port => 8080) do |ws|
 
     # Remove from channel if disconnected
     ws.onclose do
+      puts "onclose, unsubscribe #{ws}"
       channel.unsubscribe(sid)
     end
     
