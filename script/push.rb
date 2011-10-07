@@ -1,5 +1,5 @@
-require 'rubygems'
-require 'em-websocket'
+#require 'rubygems'
+require 'vendor/gems/em-websocket/lib/em-websocket'
 
 @channels = {}
 

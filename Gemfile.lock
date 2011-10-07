@@ -36,9 +36,6 @@ GEM
       addressable (>= 2.0.0)
       escape_utils
       eventmachine (>= 0.12.9)
-    em-websocket (0.3.1)
-      addressable (>= 2.1.1)
-      eventmachine (>= 0.12.9)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     escape_utils (0.2.4)
@@ -93,7 +90,6 @@ PLATFORMS
 
 DEPENDENCIES
   em-http-request
-  em-websocket
   haml
   json
   pg
