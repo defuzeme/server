@@ -585,8 +585,8 @@ nav .item {
   user-select: none;
   -webkit-user-select: none;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 0.5em 1em; }
+  background-color: rgba(54, 54, 54, 0.8);
+  padding: 6px 12px; }
   .track .song {
     float: left;
     width: 50%; }
@@ -609,7 +609,8 @@ nav .item {
     padding-top: 5px;
     text-align: right; }
   .track:hover {
-    background-color: #354e14; }
+    border: 2px solid #aaaaaa;
+    padding: 4px 10px; }
 
 ol.queue {
   padding: 0;
@@ -634,6 +635,11 @@ ol.queue {
       background: transparent url(../images/tag.png) left top no-repeat;
       color: #4d3300;
       text-shadow: 0px 1px #ffdd99; }
+  ol.queue li.ui-placeholder {
+    height: 3em;
+    padding: 6px 0;
+    border: 2px solid #88c833;
+    background-color: rgba(136, 200, 51, 0.1); }
 
 .status {
   float: right;
