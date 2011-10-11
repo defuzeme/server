@@ -13,18 +13,6 @@ class QueueElemObserver < ActiveRecord::Observer
   end
 
   def send_queue queue_elem
-    return if not EventMachine::reactor_running?
-    http = EventMachine::HttpRequest.new("ws://localhost:8080/push?radio=#{queue_elem.radio_id}").get :timeout => 0
-    http.errback do
-      puts "WebSocket error: #{http.error}"
-    end
-    http.callback do
-      queue = queue_elem.friends.order(:position).includes(:track)
-#      puts "send_queue #{queue}"
-      http.send "<li>" + queue.map {|e| e.to_html}.join("</li><li>") + "</li>"
-      http.close_connection_after_writing
-    end
-    http.stream do |msg|
-    end
+
   end
 end

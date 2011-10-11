@@ -515,8 +515,8 @@ nav
   user-select: none
   -webkit-user-select: none
   cursor: pointer
-  background-color: rgba(255,255,255,0.1)
-  padding: 0.5em 1em
+  background-color: rgba(54,54,54,0.8)
+  padding: 6px 12px
   .song
     float: left
     width: 50%
@@ -540,7 +540,8 @@ nav
     padding-top: 5px
     text-align: right
   &:hover
-    background-color: darken($apple, 30)
+    border: 2px solid #aaa
+    padding: 4px 10px
 
 ol.queue
   padding: 0
@@ -565,6 +566,11 @@ ol.queue
       background: transparent url(../images/tag.png) left top no-repeat
       color: darken($orange, 35)
       text-shadow: 0px 1px lighten($orange, 30)
+  li.ui-placeholder
+    height: 3em
+    padding: 6px 0
+    border: 2px solid $apple
+    background-color: transparentize($apple, 0.9)
 
 .status
   float: right

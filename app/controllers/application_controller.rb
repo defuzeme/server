@@ -56,7 +56,6 @@ class ApplicationController < ActionController::Base
   # Auto loaders
   {
     :user => :login,
-    :radio => :permalink,
     :invitation => :token,
     :token => :token,
     :queue_elem => :position
@@ -71,6 +70,16 @@ class ApplicationController < ActionController::Base
       # return it
       instance_variable_get("@#{model}") || not_found
     end
+  end
+  
+  def load_radio
+    param = params[:radio_id] || params[:id]
+    if param == "my" and current_user
+      @radio = current_user.radio
+    else
+      @radio = Radio.find_by_permalink(param)
+    end
+    @radio || not_found
   end
   
   def delete

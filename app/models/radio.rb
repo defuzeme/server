@@ -12,6 +12,8 @@
 #  updated_at  :datetime
 #  website     :string(255)
 #
+require 'eventmachine'
+require 'em-http-request'
 
 class Radio < ActiveRecord::Base
   extend Defuzeme::Enum
@@ -62,6 +64,38 @@ class Radio < ActiveRecord::Base
   def queue_elems_attributes= arg
     queue_elems.destroy_all
     assign_nested_attributes_for_collection_association(:queue_elems, arg)
+    push_queue!
+  end
+  
+  def reorder_queue elems
+    pos_hash = queue_elems.find(elems).inject({}) {|h, e| h[e.id] = e.position; h}
+    # Map each positions with it's offset from original position
+    diff = elems.each_with_index.map do |p, i|
+      (i + 1) - pos_hash[p]
+    end
+    # Find who moved
+    moved = 0
+    diff.each_with_index do |d, i|
+      moved = i if d.abs > diff[moved].abs
+    end
+    if elem = queue_elems.find(elems[moved])
+      elem.insert_at moved + 1
+    end
+  end
+  
+  def push_queue!
+    return if not EventMachine::reactor_running?
+    http = EventMachine::HttpRequest.new("ws://localhost:8080/push?radio=#{id}").get :timeout => 0
+    http.errback do
+      puts "WebSocket error: #{http.error}"
+    end
+    http.callback do
+      queue = queue_elems.order(:position).includes(:track)
+      http.send queue.map {|e| e.to_html}.join()
+      http.close_connection_after_writing
+    end
+    http.stream do |msg|
+    end
   end
   
   protected

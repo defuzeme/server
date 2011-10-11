@@ -12,12 +12,21 @@ class QueueElemsController < ApplicationController
     @queue_elem = @radio.queue_elems.new(params[:queue_elem])
     @queue_elem.position = nil
     @queue_elem.insert_at(params[:queue_elem][:position])
+    @radio.push_queue!
     respond_with @queue_elem, :location => [@radio, :queue_elems]
   end
   
   def destroy
     @queue_elem.destroy
+    @radio.push_queue!
     redirect_to [@radio, :queue_elems]
+  end
+  
+  def reorder
+    elems = params['elem'].map &:to_i
+    @radio.reorder_queue elems
+    @radio.push_queue!
+    render :nothing => true
   end
   
 protected

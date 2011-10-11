@@ -50,4 +50,24 @@ $(document).ready(function() {
       status.addClass("error")    
     }
   };
+  
+  queue.sortable({
+    placeholder: "ui-placeholder",
+    update: function(event, ui) {
+      var order = queue.sortable("serialize");
+      $.ajax({
+        type: "PUT",
+        url: "/radios/my/queue/reorder",
+        data: order,
+        success: function(msg){
+        },
+        complete: function(){  
+        },
+        error: function(jqXHR, textStatus, errorThrown)
+        {
+        }
+      });
+    }
+	});
+	queue.disableSelection();
 })
