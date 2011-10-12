@@ -21,12 +21,12 @@ fr:
       intro: "Defuze.me c'est :"
       titles:
         software: Un logiciel pour votre ordinateur
-        website: Un service web
+        website: Un site/service web
         mobile: Une application pour tablette
       carousel:
-        software: Application client
-        website: Un site internet pour gérer votre planning de diffusion où que vous soyez.
-        mobile: Une application mobile pour contrôler votre radio sans rester devant votre ordinateur.
+        software: Le logiciel principal
+        website: Le site/service web
+        mobile: L'application mobile
       blurbs:
         software: "<p>Le principal point d'accès au management de votre radio. L'importation et l'exportation depuis n'importe quelle source, l'interaction avec twitter et Lastfm, le mixer complet et l'outil de planification avancée sont quelques-unes des fonctionnalités incluses.</p>"
         website: "<p>Organisez et surveillez l'activité de votre radio n'importe où dans le monde. Les statistiques, la planification, le blog et plus encore sont accessibles depuis votre compte sur <a href=\"http://defuze.me\">http://defuze.me</a></p>"
