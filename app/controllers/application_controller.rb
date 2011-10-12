@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
     module_eval "
       def #{name}
         @error, @code = '#{name}', #{code}
+        store_location if @code == 401
         respond_to do |format|
           format.html do
             render :template => 'shared/error', :layout => 'alert', :status => #{code}
