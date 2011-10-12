@@ -25,8 +25,8 @@ en:
         mobile: The tablet app
       carousel:
         software: The desktop application
-        website: The web service
-        mobile: The tablet app
+        website: The web site
+        mobile: The tablet application
       blurbs:
         software: "<p>Running on your computer, it is the main tool to manage your radio broadcast. Import and export from anywhere, social integration, full mixer and advanced scheduling are include beyond <a href=''>many other</a>.</p>"
         website: "<p>Manage your radio and monitor the activity from anywhere in the world. Statistics, schedueling, blog and <a href=''>more</a> are accesible from your radio account on <a href='http://defuze.me'>http://defuze.me</a></p>"
