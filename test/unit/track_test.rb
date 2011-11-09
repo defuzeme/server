@@ -22,7 +22,7 @@ class TrackTest < ActiveSupport::TestCase
     t1 = create_track
     t2 = nil
     search = t1.attributes
-    search[:title] = 'toto'
+    search['title'] = 'toto'
     assert_difference 'Track.count' do
       t2 = Track.fetch search
     end
