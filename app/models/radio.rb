@@ -79,19 +79,39 @@ class Radio < ActiveRecord::Base
       moved = i if d.abs > diff[moved].abs
     end
     if elem = queue_elems.find(elems[moved])
+      old = elem.position
       elem.insert_at moved + 1
+      push_to_client! :move => {:position => old, :newPosition => elem.position, :type => elem.kind, :track => elem.track}
     end
   end
   
   def push_queue!
+    push_queue_to_web!
+  end
+  
+  def push_queue_to_web!
     return if not EventMachine::reactor_running?
-    http = EventMachine::HttpRequest.new("ws://localhost:8080/push?radio=#{id}").get :timeout => 0
+    http = EventMachine::HttpRequest.new("ws://localhost:8080/push/#{id}/web").get :timeout => 0
     http.errback do
       puts "WebSocket error: #{http.error}"
     end
     http.callback do
       queue = queue_elems.order(:position).includes(:track)
       http.send queue.map {|e| e.to_html}.join()
+      http.close_connection_after_writing
+    end
+    http.stream do |msg|
+    end
+  end
+
+  def push_to_client! data
+    return if not EventMachine::reactor_running?
+    http = EventMachine::HttpRequest.new("ws://localhost:8080/push/#{id}/client").get :timeout => 0
+    http.errback do
+      puts "WebSocket error: #{http.error}"
+    end
+    http.callback do
+      http.send data.to_json
       http.close_connection_after_writing
     end
     http.stream do |msg|
