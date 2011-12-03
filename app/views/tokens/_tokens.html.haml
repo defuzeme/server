@@ -5,7 +5,7 @@
       %th= Token.human_attribute_name :last_use_at
       %th= Token.human_attribute_name :expires_at
   %tbody
-    - for token in tokens.order('expires_at desc').limit(5)
+    - for token in tokens.order('last_use_at desc').limit(5)
       %tr{:class => cycle('odd', 'even') + (token.expired? ? ' expired' : '')}
         %td.token
           - if token.expired?
