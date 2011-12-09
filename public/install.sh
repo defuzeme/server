@@ -14,7 +14,7 @@ cd defuzeme
 sudo gem install --no-rdoc --no-ri rake bundler
 
 cat <<EOF >> Gemfile
-gem 'mysql2'
+#gem 'mysql2'
 gem 'sqlite3'
 EOF
 
@@ -42,18 +42,18 @@ EOF
 
 sudo -u postgres createuser -s labeip
 
-rake db:create
-RAILS_ENV=mysql rake db:create
-RAILS_ENV=sqlite rake db:create
-rake db:migrate
-RAILS_ENV=mysql rake db:migrate
-RAILS_ENV=sqlite rake db:migrate
-rake db:seed
-RAILS_ENV=mysql rake db:seed
-RAILS_ENV=sqlite rake db:seed
+bundle exec rake db:create
+bundle exec RAILS_ENV=mysql rake db:create
+bundle exec RAILS_ENV=sqlite rake db:create
+bundle exec rake db:migrate
+bundle exec RAILS_ENV=mysql rake db:migrate
+bundle exec RAILS_ENV=sqlite rake db:migrate
+bundle exec rake db:seed
+bundle exec RAILS_ENV=mysql rake db:seed
+bundle exec RAILS_ENV=sqlite rake db:seed
 
 killall thin
 
 bundle exec thin start -e development -d -p 3000 --pid tmp/pids/thin0.pid
-bundle exec thin start -e mysql -d -p 3001 --pid tmp/pids/thin1.pid
-bundle exec thin start -e sqlite -d -p 3002 --pid tmp/pids/thin2.pid
+bundle exec RAILS_ENV=mysql thin start -e mysql -d -p 3001 --pid tmp/pids/thin1.pid
+bundle exec RAILS_ENV=sqlite thin start -e sqlite -d -p 3002 --pid tmp/pids/thin2.pid
