@@ -43,17 +43,17 @@ EOF
 sudo -u postgres createuser -s labeip
 
 bundle exec rake db:create
-bundle exec RAILS_ENV=mysql rake db:create
-bundle exec RAILS_ENV=sqlite rake db:create
+bundle exec rake db:create RAILS_ENV=mysql
+bundle exec rake db:create RAILS_ENV=sqlite
 bundle exec rake db:migrate
-bundle exec RAILS_ENV=mysql rake db:migrate
-bundle exec RAILS_ENV=sqlite rake db:migrate
+bundle exec rake db:migrate RAILS_ENV=mysql
+bundle exec rake db:migrate RAILS_ENV=sqlite
 bundle exec rake db:seed
-bundle exec RAILS_ENV=mysql rake db:seed
-bundle exec RAILS_ENV=sqlite rake db:seed
+bundle exec rake db:seed RAILS_ENV=mysql
+bundle exec rake db:seed RAILS_ENV=sqlite
 
-killall thin
+pkill -f thin
 
 bundle exec thin start -e development -d -p 3000 --pid tmp/pids/thin0.pid
-bundle exec RAILS_ENV=mysql thin start -e mysql -d -p 3001 --pid tmp/pids/thin1.pid
-bundle exec RAILS_ENV=sqlite thin start -e sqlite -d -p 3002 --pid tmp/pids/thin2.pid
+bundle exec thin start -e mysql -d -p 3001 --pid tmp/pids/thin1.pid
+bundle exec thin start -e sqlite -d -p 3002 --pid tmp/pids/thin2.pid
