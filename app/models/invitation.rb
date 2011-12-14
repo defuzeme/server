@@ -25,7 +25,7 @@ class Invitation < ActiveRecord::Base
             :presence => true,
             :length => { :within => 8..30 },
             :uniqueness => true,
-            :format => { :with => /[a-z][0-9]+/i }
+            :format => { :with => /[a-z0-9]+/i }
 
   validates :email,
             :presence   => true,

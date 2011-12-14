@@ -39,8 +39,13 @@ class Token < ActiveRecord::Base
     { 'token' => token,
       'machine' => machine,
       'expires_at' => expires_at,
-      'created_at' => created_at
+      'created_at' => created_at,
+      'radio' => radio
     }
+  end
+
+  def radio
+    user.radio if user.present?
   end
 
   def self.authenticate api_token

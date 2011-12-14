@@ -5,10 +5,10 @@ require 'vendor/gems/em-websocket/lib/em-websocket'
 
 EventMachine::WebSocket.start(:host => "0.0.0.0", :port => 8080) do |ws|
   ws.onopen do
-    radio = ws.request['query']['radio'].to_i if ws.request['query']['radio']
+    radio = ws.request['path']
     # Create or fetch channel
     channel = (@channels[radio] ||= EM::Channel.new)
-    puts "new client #{ws}"
+    puts "new client #{ws} on #{radio}"
 
     # Handle new client
     sid = channel.subscribe do |msg|
