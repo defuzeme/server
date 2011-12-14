@@ -67,9 +67,10 @@ class SessionsControllerTest < ActionController::TestCase
   end
   
   test 'should generate token using json api' do
+    u = users :quentin
     post :create, :login => 'quentin', :password => 'monkey', :format => :json
     assert_response :success
-    t = Token.order(:created_at).last
+    t = u.tokens.order(:created_at).last
     assert_equal response.json['token'], t.token, "bad token returned"
     assert_not_nil response.json['created_at'], "no creation date"
     assert_not_nil response.json['expires_at'], "no expiration date"
@@ -93,6 +94,15 @@ class SessionsControllerTest < ActionController::TestCase
     assert_response :unauthorized
     assert_equal 401, response.json['code']
     assert_equal 'unauthorized', response.json['error']
+  end
+  
+  test 'should return radio info using json api' do
+    u = users :quentin
+    radio = u.radio
+    post :create, :login => 'quentin', :password => 'monkey', :format => :json
+    assert_response :success
+    assert_not_nil response.json['radio']
+    assert_equal radio.id, response.json['radio']['id']
   end
 
   protected

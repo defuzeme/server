@@ -9,9 +9,7 @@ class QueueElemsController < ApplicationController
   end
   
   def create
-    @queue_elem = @radio.queue_elems.new(params[:queue_elem])
-    @queue_elem.position = nil
-    @queue_elem.insert_at(params[:queue_elem][:position])
+    @queue_elem = @radio.queue_elems.create(params[:queue_elem])
     @radio.push_queue!
     respond_with @queue_elem, :location => [@radio, :queue_elems]
   end

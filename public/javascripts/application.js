@@ -24,7 +24,7 @@ $(document).ready(function() {
     $("div#main").prepend(status);
     var timer;
     var Socket = "MozWebSocket" in window ? MozWebSocket : WebSocket;
-    var ws = new Socket("ws://" + window.location.hostname + ":8080/subscribe?radio=" + queue.data("radio-id"));
+    var ws = new Socket("ws://" + window.location.hostname + ":8080/push/" + queue.data("radio-id")+ "/web");
     ws.onmessage = function(evt) { 
       status.text("Syncing...");
       status.addClass("sync");
