@@ -15,7 +15,7 @@ def create_admin login, email, first_name, last_name
         :password_confirmation => 'd#ve7aS4')
   u.admin = true
   u.invitations_left = 20
-  u.save
+  u.save!
   u.activate!
 end
 
@@ -30,8 +30,11 @@ create_admin 'greys',     'moore.alexandre@gmail.com','Alexandre','Moore'
 puts "Creating demo radio"
 
 Radio.destroy_all
-radio = Radio.create(:name => 'Defuze.me demo radio', :website => 'defuze.me', :description => 'This radio is not phisically existing and is only used by defuze.me development team')
-radio.users = User.all
+radios = []
+User.all.each do |user|
+  radio = Radio.create!(:name => "Defuze.me #{user.login}\'s demo radio", :website => 'defuze.me', :description => 'This radio is not phisically existing and is only used by defuze.me development team', :users => [user])
+  radios << radio
+end
 
 puts "Creating audio tracks"
 
@@ -51,22 +54,24 @@ track_11 = Track.create!(:title => 'California Gurls', :artist => 'Katy Perry', 
 puts "Filling play queue"
 
 QueueElem.destroy_all
-radio.queue_elems.create!(:position => 1, :track => track_1);
-radio.queue_elems.create!(:position => 2, :track => track_3);
-radio.queue_elems.create!(:position => 3, :track => track_2);
-radio.queue_elems.create!(:position => 4, :track => track_6);
-radio.queue_elems.create!(:position => 5, :track => track_5);
-radio.queue_elems.create!(:position => 6, :track => track_4);
-radio.queue_elems.create!(:position => 7, :track => track_8);
-radio.queue_elems.create!(:position => 8, :track => track_7);
-radio.queue_elems.create!(:position => 9, :track => track_9);
-radio.queue_elems.create!(:position => 10, :track => track_10);
-radio.queue_elems.create!(:position => 11, :track => track_11);
+radios.each do |radio|
+  radio.queue_elems.create!(:position => 1, :track => track_1);
+  radio.queue_elems.create!(:position => 2, :track => track_3);
+  radio.queue_elems.create!(:position => 3, :track => track_2);
+  radio.queue_elems.create!(:position => 4, :track => track_6);
+  radio.queue_elems.create!(:position => 5, :track => track_5);
+  radio.queue_elems.create!(:position => 6, :track => track_4);
+  radio.queue_elems.create!(:position => 7, :track => track_8);
+  radio.queue_elems.create!(:position => 8, :track => track_7);
+  radio.queue_elems.create!(:position => 9, :track => track_9);
+  radio.queue_elems.create!(:position => 10, :track => track_10);
+  radio.queue_elems.create!(:position => 11, :track => track_11);
 
-t = Time.now
-QueueElem.order(:position).all.each do |elem|
-  elem.update_attribute :play_at, t
-  t += elem.track.duration
+  t = Time.now
+  radio.queue_elems.order(:position).all.each do |elem|
+    elem.update_attribute :play_at, t
+    t += elem.track.duration
+  end
 end
 
 puts "Clear invitations"
