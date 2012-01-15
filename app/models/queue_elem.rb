@@ -20,7 +20,7 @@ class QueueElem < ActiveRecord::Base
   serialize :properties
   acts_as_list :scope => :radio
   
-  validates_presence_of :track, :radio
+  validates_presence_of :radio
   
   scope :played, :conditions => {:position => nil}
   scope :queued, :conditions => 'position IS NOT NULL'
