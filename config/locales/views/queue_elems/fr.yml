@@ -2,3 +2,5 @@ fr:
   queue_elems:
     index:
       title: "File de lecture"
+    queue_break:
+      break: Pause jusqu'à %{until}

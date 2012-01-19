@@ -4,6 +4,8 @@
       = l(queue_elem.play_at, :format => :time)
   - if queue_elem.track
     = render :partial => 'tracks/track', :locals => {:track => queue_elem.track}
+  - elsif queue_elem.is_break?
+    = render :partial => 'queue_break', :locals => {:queue_elem => queue_elem}
   - else
     .track
       Error loading track info
