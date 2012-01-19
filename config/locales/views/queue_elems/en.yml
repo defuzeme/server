@@ -2,3 +2,5 @@ en:
   queue_elems:
     index:
       title: Play queue
+    queue_break:
+      break: Break until %{until}

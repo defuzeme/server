@@ -45,6 +45,10 @@ class QueueElem < ActiveRecord::Base
     self.track = Track.fetch args
   end
   
+  def is_break?
+    kind == "QueueBreak"
+  end
+  
   def to_html
     ActionView::Base.new(Rails.configuration.paths.app.views.first).render(
       :partial => 'queue_elems/queue_elem', :format => :html,

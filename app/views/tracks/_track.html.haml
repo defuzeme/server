@@ -3,7 +3,7 @@
     .title= track.title
     .artist= track.artist
   .album
-    %src{:src => '/images/icons/jewel_case.png', :alt => 'Jewel Case'}
+    %img{:src => '/images/icons/jewel_case.png', :alt => 'Jewel Case'}
     = track.album
   .duration= track.duration.to_min_sec
   .clear

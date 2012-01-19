@@ -1,7 +1,8 @@
 #download
   margin: 1em 0 3em 0
-  .client, .mobile
+  .client, .mobile, .source-code, .doc
     float: left
+    position: relative
     h3
       text-align: center
       line-height: 2.5em
@@ -13,14 +14,54 @@
       margin: 0 10px
       float: left
       background: transparent url("../images/download.png") top center no-repeat
+    aside.comming
+      position: absolute
+      background-color: transparentize($main, 0.5)
+      color: white
+      line-height: 150px
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      display: block
+      text-align: center
+  .source-code, .doc
+    a
+      display: block
+      margin: 0 10px
+      height: 48px
+      font-size: 0.9em
+      padding: 4px 0 0 50px
+      strong
+        font-size: 1.3em
+        font-weight: normal
+      em
+        font-style: normal
+        color: $color
+  .source-code
+    a
+      width: 175px
+      background: transparent url("/images/icons/box.png") top left no-repeat
+  .doc
+    a
+      width: 235px
+      background: transparent url("/images/icons/pdf.png") top left no-repeat
   .mobile
     .ios
       background-position: center -90px
   .client
+    clear: both
     .windows
       background-position: center -180px
     .linux
       background-position: center -270px
     .macos
       background-position: center -360px
+#main .intro p.github
+  background: transparent url("/images/icons/github.png") 5px center no-repeat
+  height: 46px
+  padding: 2px 0 0 65px
+  margin: 2em 0
+  a
+    font-size: 1.3em
 

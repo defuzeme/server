@@ -37,9 +37,15 @@ en:
     download:
       title: "Download"
       not_available: "The desktop and mobile applications are not available yet for public download.<br /><br />Thank you for your patience."
+      available: "Here you can download the latest version of defuze.me source code and documentation. Binary release and installers are comming soon."
       keep_informed: "Stay tuned:"
+      github: "Clone or fork defuze.me using github!"
+      source_code: "Source code snapshot"
+      doc: "Documentation"
       client: "Desktop application"
       mobile_app: "Mobile application"
+      doc_user: "User documentation"
+      doc_technical: "Technical documentation"
     contact:
       title: Contact
       email: "Send any comments and suggestions by e-mail:"

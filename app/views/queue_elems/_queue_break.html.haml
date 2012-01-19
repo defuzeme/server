@@ -1,0 +1,8 @@
+.track
+  .song
+    .title= t('.break', :until => l(Time.parse(queue_elem.properties['end']), :format => :break))
+    .artist
+  .album
+    %src{:src => '/images/icons/jewel_case.png', :alt => 'Jewel Case'}
+  .duration
+  .clear

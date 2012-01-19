@@ -37,9 +37,15 @@ fr:
     download:
       title: "Téléchargement"
       not_available: "Le logiciel client et l'application mobile ne sont pour l'instant pas disponibles au téléchargement public.<br /><br />Merci de votre patience."
+      available: "Vous pouvez télécharger ici la dernière version du code source et de la documentation de defuze.me. Les versions compilés et installables seront bientôt disponibles."
+      github: "Vous pouvez récupérer defuze.me via github!"
       keep_informed: "Restez informé :"
+      source_code: "Code source"
+      doc: "Documentation"
       client: "Logiciel client"
       mobile_app: "Application mobile"
+      doc_user: "Documentation utilisateur"
+      doc_technical: "Documentation technique"
     contact:
       title: Contact
       email: "Envoyez-nous vos remarques par e-mail :"

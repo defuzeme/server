@@ -1,11 +1,32 @@
 .intro
   %h2= t('.title')
-  %p= t('.not_available').html_safe
-  %p
-    = image_tag 'icons/32/twitter.png'
-    = t('.keep_informed')
-    = link_to 'twitter.com/defuzeme', 'http://twitter.com/defuzeme'
+  %p= t('.available').html_safe
+  -#%p.github
+    = t('.github')
+    %br
+    = link_to 'github.com/defuzeme', 'https://github.com/defuzeme'
   #download
+    .source-code
+      %h3= t('.source_code')
+      - name = 'defuzeme.zip'
+      - file = "/#{name}"
+      - path = 'public' + file
+      - if File.exists? path
+        = link_to file do
+          %strong= name
+          %br
+          %em #{l(File.ctime(path).to_date, :format => :long)} - #{number_to_human_size File.size(path)}
+    .doc
+      %h3= t('.doc')
+      - for doc in [:user, :technical]
+        - name = t(".doc_#{doc}")
+        - file = "/defuzeme_#{name.downcase.gsub(/\s+/, '_')}.pdf"
+        - path = 'public' + file
+        - if File.exists? path
+          = link_to file do
+            %strong= name
+            %br
+            %em #{l(File.ctime(path).to_date, :format => :long)} - #{number_to_human_size File.size(path)}
     .client
       %h3= t('.client')
       .windows
