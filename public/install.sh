@@ -1,10 +1,16 @@
 #!/bin/sh
 
+pkill -f thin
+pkill -f push
+
 sudo apt-get update
 sudo apt-get install -y git-core
 
 rm -Rf defuzeme
 git clone bigbourin@git.rootbox.fr:defuzeme.git
+
+git submodule init
+git submodule update
 
 sudo apt-get install -y ruby1.8 rubygems1.8 postgresql-server-dev-8.4 mysql-server sqlite3 libsqlite3-dev rake libmysql-ruby1.8 libmysqlclient-dev
 
@@ -52,8 +58,8 @@ bundle exec rake db:seed
 bundle exec rake db:seed RAILS_ENV=mysql
 bundle exec rake db:seed RAILS_ENV=sqlite
 
-pkill -f thin
-
 bundle exec thin start -e development -d -p 3000 --pid tmp/pids/thin0.pid
 bundle exec thin start -e mysql -d -p 3001 --pid tmp/pids/thin1.pid
 bundle exec thin start -e sqlite -d -p 3002 --pid tmp/pids/thin2.pid
+
+./script/push &
