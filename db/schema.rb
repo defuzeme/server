@@ -10,7 +10,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110423184127) do
+ActiveRecord::Schema.define(:version => 20120201112224) do
+
+  create_table "error_instances", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "error_id"
+    t.integer  "count",      :default => 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "error_translations", :force => true do |t|
+    t.integer  "error_id"
+    t.string   "locale"
+    t.text     "details"
+    t.string   "msg"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "error_translations", ["error_id"], :name => "index_error_translations_on_error_id"
+
+  create_table "errors", :force => true do |t|
+    t.string   "msg"
+    t.string   "file"
+    t.string   "module"
+    t.integer  "code"
+    t.integer  "line"
+    t.text     "details"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "invitations", :force => true do |t|
     t.integer  "creator_id"

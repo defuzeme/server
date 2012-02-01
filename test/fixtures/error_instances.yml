@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: error_instances
+#
+#  count      :integer       default(1)
+#  created_at :datetime
+#  error_id   :integer
+#  id         :integer       not null, primary key
+#  updated_at :datetime
+#  user_id    :integer
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+#  column: value
