@@ -1,0 +1,9 @@
+fr:
+  errors:
+    show:
+      title: "Support d'erreur %{code}"
+      blurb: "Vous êtes sur cette page car vous avez rencontrer cette erreur en utilisant defuze.me. Cette page essai de vous aider a comprendre ce qui arrive et comment le corriger."
+      details: "Voici quelques détails sur l'erreur rencontré:"
+      no_details: "Pas plus de détails pour l'instant"
+      solutions: "Comment résoudre ce problème"
+      no_solutions: "Aucune solution disponible pour l'instant, merci de nous <a href=\"%{contact}\">contacter</a> si necessaire"

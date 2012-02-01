@@ -1,5 +1,6 @@
 class ErrorsController < ApplicationController
   before_filter :load_error, :only => [:show, :edit, :update, :destroy, :delete]
+  layout 'public'
   
   def show
   end

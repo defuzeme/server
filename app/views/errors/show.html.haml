@@ -1,0 +1,9 @@
+.intro
+  %h2= t('.title', :code => @error.hex_code)
+  .block
+    %p= t('.blurb')
+    %p= t('.details')
+    %h3= @error.msg
+    %p= @error.details || t('.no_details')
+    %h3= t('.solutions')
+    %p= raw t('.no_solutions', :contact => contact_path)

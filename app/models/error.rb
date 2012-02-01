@@ -25,4 +25,8 @@ class Error < ActiveRecord::Base
   def self.find_by_hex_code hex
     find_by_code hex.to_i(16)
   end
+  
+  def hex_code
+    code.to_s(16).upcase
+  end
 end

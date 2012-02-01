@@ -1,0 +1,9 @@
+en:
+  errors:
+    show:
+      title: "Support page for error %{code}"
+      blurb: "You are here because you encountered this error while using defuze.me. This page intend to help you understand what happened and how you can fix it."
+      details: "Here are some details about the error you get:"
+      no_details: "This error has no detailed description"
+      solutions: "How to solve this problem"
+      no_solutions: "No solutions available yet, please <a href=\"%{contact}\">contact</a> us if needed"
