@@ -9,6 +9,6 @@ class ErrorsController < ApplicationController
   def load_error
     param = params[:"error_id"] || params[:id]
     @error = Error.find_by_hex_code param
-    @error | not_found
+    @error || not_found
   end
 end

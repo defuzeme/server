@@ -15,8 +15,7 @@ class ErrorInstance < ActiveRecord::Base
   validates_presence_of :user_id, :error_id
 
   validates :count,
-    :numericality => true,
-    :greater_than => 0
+    :numericality => {:greater_than => 0}
 
   belongs_to :user
   belongs_to :error
