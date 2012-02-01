@@ -6,6 +6,7 @@
 #  created_at :datetime
 #  error_id   :integer
 #  id         :integer       not null, primary key
+#  msg        :text
 #  updated_at :datetime
 #  user_id    :integer
 #

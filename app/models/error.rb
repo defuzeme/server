@@ -12,6 +12,21 @@
 #  msg        :string(255)
 #  updated_at :datetime
 #
+
+# == Schema Information
+#
+# Table name: errors
+#
+#  code       :integer
+#  created_at :datetime
+#  details    :text
+#  file       :string(255)
+#  id         :integer       not null, primary key
+#  line       :integer
+#  module     :string(255)
+#  msg        :string(255)
+#  updated_at :datetime
+#
 class Error < ActiveRecord::Base
   translates :msg, :details
   

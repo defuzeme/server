@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20120201112224) do
   create_table "error_instances", :force => true do |t|
     t.integer  "user_id"
     t.integer  "error_id"
+    t.text     "msg"
     t.integer  "count",      :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
