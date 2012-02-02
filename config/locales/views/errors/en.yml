@@ -6,4 +6,6 @@ en:
       details: "Here are some details about the error you get:"
       no_details: "This error has no detailed description"
       solutions: "How to solve this problem"
-      no_solutions: "No solutions available yet, please <a href=\"%{contact}\">contact</a> us if needed"
+      no_solutions: "No solutions available yet, please contact us if needed: %{contact}"
+    edit:
+      source_info: "%{mod} (%{file}:%{line})"

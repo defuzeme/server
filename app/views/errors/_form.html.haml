@@ -1,0 +1,7 @@
+= form_for @error do |f|
+  = auto_text_area f, :msg, :rows => 5
+  = auto_text_area f, :details, :rows => 15
+
+  .actions
+    = f.submit
+

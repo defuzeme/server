@@ -293,8 +293,6 @@ form {
       -moz-box-shadow: 0 0 9px -1px #88c833; }
   form input:-webkit-autofill {
     color: black; }
-  form textarea {
-    height: 4em; }
   form .checkbox {
     width: auto;
     height: auto;
