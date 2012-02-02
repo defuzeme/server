@@ -9,11 +9,6 @@
   :line: 112
   :msg: "Can't insert queueable: %1"
   :module: QueuePlugin
-5072391: 
-  :file: parameterizable.cpp
-  :line: 152
-  :msg: "Invalid parameter key: %1"
-  :module: ParamsCore
 206849: 
   :file: audiodecoder.cpp
   :line: 40
@@ -24,56 +19,16 @@
   :line: 50
   :msg: Can't update your database !
   :module: DbCore
-12439553: 
-  :file: modulefactory.cpp
-  :line: 27
-  :msg: "Cannot create a new Module: Factory not initialized."
-  :module: GuiCore
-12435714: 
-  :file: module.cpp
-  :line: 75
-  :msg: No widget for module.
-  :module: GuiCore
-277761: 
-  :file: plugins.cpp
-  :line: 54
-  :msg: "2 plugins added with the same name: %1"
-  :module: Base
 7621889: 
   :file: playlists.cpp
-  :line: 96
-  :msg: "Can't delete playlist: %1"
+  :line: 80
+  :msg: "Can't create playlist: %1"
   :module: PlaylistsPlugin
-5072386: 
-  :file: parameterizable.cpp
-  :line: 63
-  :msg: Missing information about a Parameterizable
-  :module: ParamsCore
-12451329: 
-  :file: gridelementmovewidget.cpp
-  :line: 25
-  :msg: Move widget parent must be a GridElement.
-  :module: GuiCore
-12737027: 
-  :file: playqueue.cpp
-  :line: 309
-  :msg: PlayQueue::add(Container *elem, int position) is not implemented yet
-  :module: QueuePlugin
 12729602: 
   :file: queueable.cpp
   :line: 126
   :msg: "Can't update queueable: %1"
   :module: QueuePlugin
-5096449: 
-  :file: paramscore.cpp
-  :line: 66
-  :msg: Can't register a Parameterizable (name is already used)
-  :module: ParamsCore
-5072392: 
-  :file: parameterizable.cpp
-  :line: 219
-  :msg: Cannot load default parameters
-  :module: ParamsCore
 206850: 
   :file: audiodecoder.cpp
   :line: 42
@@ -84,16 +39,11 @@
   :line: 116
   :msg: Initial migration outside bounds
   :module: DbCore
-12439554: 
-  :file: modulefactory.cpp
-  :line: 30
-  :msg: Cannot create a new Module.
-  :module: GuiCore
-5072387: 
-  :file: parameterizable.cpp
-  :line: 92
-  :msg: DB backend is missing
-  :module: ParamsCore
+7621890: 
+  :file: playlists.cpp
+  :line: 96
+  :msg: "Can't delete playlist: %1"
+  :module: PlaylistsPlugin
 8423169: 
   :file: audiotrack.cpp
   :line: 343
@@ -111,7 +61,7 @@
   :module: QueuePlugin
 5072393: 
   :file: parameterizable.cpp
-  :line: 231
+  :line: 225
   :msg: Invalid command line parameter
   :module: ParamsCore
 206851: 
@@ -119,21 +69,11 @@
   :line: 49
   :msg: "Unable to open the audio stream from: %1"
   :module: AudioCore
-10902019: 
-  :file: migration.cpp
-  :line: 118
-  :msg: Destination migration outside bounds
-  :module: DbCore
 5072388: 
   :file: parameterizable.cpp
-  :line: 104
+  :line: 101
   :msg: Cannot commit parameters to the database
   :module: ParamsCore
-12399873: 
-  :file: guicore.cpp
-  :line: 105
-  :msg: Cannot add module to unknown tab
-  :module: GuiCore
 8390401: 
   :file: source.cpp
   :line: 168
@@ -144,11 +84,6 @@
   :line: 146
   :msg: "Can't update queueable: %1"
   :module: QueuePlugin
-5072394: 
-  :file: parameterizable.cpp
-  :line: 240
-  :msg: DB backend is missing
-  :module: ParamsCore
 206852: 
   :file: audiodecoder.cpp
   :line: 95
@@ -159,11 +94,6 @@
   :line: 83
   :msg: "Invalid source : %1"
   :module: LibraryPlugin
-5072389: 
-  :file: parameterizable.cpp
-  :line: 122
-  :msg: "Undefined parameter: %1"
-  :module: ParamsCore
 10885889: 
   :file: dbcore.cpp
   :line: 85
@@ -189,33 +119,8 @@
   :line: 94
   :msg: "Can't load play queue: %1"
   :module: QueuePlugin
-5072390: 
-  :file: parameterizable.cpp
-  :line: 143
-  :msg: "Undefined public parameter: %1"
-  :module: ParamsCore
 10885890: 
   :file: dbcore.cpp
   :line: 168
-  :msg: "Can't store setting value: "
+  :msg: "Can't store setting value: %1"
   :module: DbCore
-12435713: 
-  :file: module.cpp
-  :line: 56
-  :msg: Can't create two modules with the same ID.
-  :module: GuiCore
-270593: 
-  :file: locker.cpp
-  :line: 49
-  :msg: Ressource '%1' is locked.
-  :module: Base
-5072385: 
-  :file: parameterizable.cpp
-  :line: 32
-  :msg: Missing information about a Parameterizable
-  :module: ParamsCore
-206854: 
-  :file: audiodecoder.cpp
-  :line: 156
-  :msg: Error while reading frame from file
-  :module: AudioCore

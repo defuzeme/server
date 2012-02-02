@@ -6,6 +6,7 @@ en:
       details: "Here are some details about the error you get:"
       no_details: "This error has no detailed description"
       solutions: "How to solve this problem"
+      solutions_blurb: "These are different solutions you can try to fix the problem. If no one helped, please contact us: %{contact}"
       no_solutions: "No solutions available yet, please contact us if needed: %{contact}"
     edit:
       source_info: "%{mod} (%{file}:%{line})"

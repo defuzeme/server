@@ -12,7 +12,7 @@
     %tbody
       - for solution in @solutions
         %tr{:class => cycle('odd', 'even')}
-          %td= solution.text
+          %td= simple_format solution.text
           %td
             - for error in solution.linked_errors
               = link_to error.hex_code, error

@@ -6,6 +6,7 @@ fr:
       details: "Voici quelques détails sur l'erreur rencontré:"
       no_details: "Pas plus de détails pour l'instant"
       solutions: "Comment résoudre ce problème"
-      no_solutions: "Aucune solution disponible pour l'instant, merci de nous contacter si necessaire: %{contact}"
+      solutions_blurb: "Voici différentes solutions que vous pouvez essayer pour régler le problème. Si le problème perciste, merci de nous contacter : %{contact}"
+      no_solutions: "Aucune solution disponible pour l'instant, merci de nous contacter si necessaire : %{contact}"
     edit:
       source_info: "%{mod} (%{file}:%{line})"

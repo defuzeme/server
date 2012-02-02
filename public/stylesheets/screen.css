@@ -63,6 +63,13 @@ ul {
   list-style: none;
   padding: 0; }
 
+ol li {
+  font-size: 2em;
+  color: #776655; }
+  ol li p {
+    font-size: 0.5em;
+    color: #bbbbbb; }
+
 cite {
   color: #776655; }
 
