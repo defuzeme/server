@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(:version => 20120202140243) do
   create_table "error_translations", :force => true do |t|
     t.integer  "error_id"
     t.string   "locale"
-    t.text     "details"
     t.string   "msg"
+    t.text     "details"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20120202140243) do
     t.datetime "updated_at"
   end
 
+  add_index "solution_translations", ["locale"], :name => "index_solution_translations_on_locale"
   add_index "solution_translations", ["solution_id"], :name => "index_solution_translations_on_solution_id"
 
   create_table "solutions", :force => true do |t|

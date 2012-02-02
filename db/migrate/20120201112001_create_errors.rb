@@ -6,11 +6,20 @@ class CreateErrors < ActiveRecord::Migration
       t.text    :details
       t.timestamps
     end
-    Error.create_translation_table! :msg => :string, :details => :text
+    create_table :error_translations do |t|
+      t.references :error
+      t.string    :locale, :msg
+      t.text      :details
+      t.timestamps
+    end
+    add_index :error_translations, :error_id, :name => 'index_error_translations_on_error_id'
+    #Error.create_translation_table! :msg => :string, :details => :text
   end
 
   def self.down
-    Error.drop_translation_table!
+    #Error.drop_translation_table!
+    remove_index :error_translations
+    drop_table :error_translations
     drop_table :errors
   end
 end

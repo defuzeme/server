@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/svenfuchs/globalize3.git
+  revision: 38d332b
+  specs:
+    globalize3 (0.2.0.beta8)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      paper_trail (~> 2)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -40,9 +49,6 @@ GEM
       abstract (>= 1.0.0)
     escape_utils (0.2.4)
     eventmachine (0.12.10)
-    globalize3 (0.1.0)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
     haml (3.1.3)
     i18n (0.5.0)
     json (1.5.4)
@@ -52,6 +58,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    paper_trail (2.6.0)
+      rails (~> 3)
     pg (0.11.0)
     polyglot (0.3.2)
     rack (1.2.3)
@@ -93,7 +101,7 @@ PLATFORMS
 
 DEPENDENCIES
   em-http-request
-  globalize3
+  globalize3!
   haml
   json
   pg
