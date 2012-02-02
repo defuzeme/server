@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: errors
+#
+#  code       :integer
+#  created_at :datetime
+#  details    :text
+#  file       :string(255)
+#  id         :integer       not null, primary key
+#  line       :integer
+#  module     :string(255)
+#  msg        :string(255)
+#  updated_at :datetime
+#
+
+# hexcode = A65A02
+migration:
+  code: 10902018
+  file: 'migration.cpp'
+  line: 109
+  module: 'DbCore'
+  msg: 'Initial migration outside bounds'
+  details: ''

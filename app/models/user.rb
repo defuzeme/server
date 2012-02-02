@@ -53,6 +53,7 @@ class User < ActiveRecord::Base
   has_many :invitations, :foreign_key => :creator_id, :dependent => :nullify
   has_many :tokens, :dependent => :destroy
   has_one :invitation, :foreign_key => :new_user_id, :dependent => :nullify
+  has_many :error_instances, :dependent => :destroy
 
   before_create :make_activation_code
   before_validation :set_default_values, :on => :create

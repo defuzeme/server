@@ -31,6 +31,12 @@ DefuzeMe::Application.routes.draw do
   # Invitations
   resources :invitations, :only => [:show, :new, :create]
 
+  # Support
+  scope "/support" do
+    resources :errors
+    resources :solutions
+  end
+
   # Static pages
   match 'license' => 'home#license', :as => :license
   match 'overview' => 'home#overview', :as => :overview

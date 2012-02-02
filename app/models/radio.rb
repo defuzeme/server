@@ -12,6 +12,21 @@
 #  updated_at  :datetime
 #  website     :string(255)
 #
+
+# == Schema Information
+#
+# Table name: radios
+#
+#  band        :integer
+#  created_at  :datetime
+#  description :text
+#  frequency   :float
+#  id          :integer       not null, primary key
+#  name        :string(255)
+#  permalink   :string(255)
+#  updated_at  :datetime
+#  website     :string(255)
+#
 require 'eventmachine'
 require 'em-http-request'
 

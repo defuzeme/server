@@ -12,4 +12,8 @@
   - if current_user.admin?
     .item.admin
       = link_to t('menu.administration'), admin_users_path
+    .item.admin
+      = link_to t('menu.errors'), errors_path
+    .item.admin
+      = link_to t('menu.solutions'), solutions_path
 

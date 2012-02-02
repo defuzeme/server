@@ -1,0 +1,20 @@
+.actions
+  = link_to t('new'), new_solution_path
+%h2= Solution.model_name.pluralize
+
+.block
+  %table
+    %thead
+      %tr
+        %th= Solution.human_attribute_name :text
+        %th= Solution.human_attribute_name :linked_errors
+        %th
+    %tbody
+      - for solution in @solutions
+        %tr{:class => cycle('odd', 'even')}
+          %td= simple_format solution.text
+          %td
+            - for error in solution.linked_errors
+              = link_to error.hex_code, error
+          %td
+            = link_to t(:edit), [:edit, solution]

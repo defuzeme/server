@@ -5,7 +5,7 @@
       - if current_user.radio?
         = auto_check_box f, :link_radio
     .right
-      = auto_text_area f, :message
+      = auto_text_area f, :message, :rows => 5
 
   .actions
     = f.submit

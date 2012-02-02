@@ -1,0 +1,126 @@
+--- 
+12737026: 
+  :file: playqueue.cpp
+  :line: 205
+  :msg: "Can't shift queue position: %1"
+  :module: QueuePlugin
+12729601: 
+  :file: queueable.cpp
+  :line: 112
+  :msg: "Can't insert queueable: %1"
+  :module: QueuePlugin
+206849: 
+  :file: audiodecoder.cpp
+  :line: 40
+  :msg: "Unable to open the audio file: %1"
+  :module: AudioCore
+10902017: 
+  :file: migration.cpp
+  :line: 50
+  :msg: Can't update your database !
+  :module: DbCore
+7621889: 
+  :file: playlists.cpp
+  :line: 80
+  :msg: "Can't create playlist: %1"
+  :module: PlaylistsPlugin
+12729602: 
+  :file: queueable.cpp
+  :line: 126
+  :msg: "Can't update queueable: %1"
+  :module: QueuePlugin
+206850: 
+  :file: audiodecoder.cpp
+  :line: 42
+  :msg: "Unable to find stream info in the file: %1"
+  :module: AudioCore
+10902018: 
+  :file: migration.cpp
+  :line: 116
+  :msg: Initial migration outside bounds
+  :module: DbCore
+7621890: 
+  :file: playlists.cpp
+  :line: 96
+  :msg: "Can't delete playlist: %1"
+  :module: PlaylistsPlugin
+8423169: 
+  :file: audiotrack.cpp
+  :line: 343
+  :msg: "Can't save audio track: %1"
+  :module: LibraryPlugin
+12737028: 
+  :file: playqueue.cpp
+  :line: 326
+  :msg: "Can't remove queueable: %1"
+  :module: QueuePlugin
+12729603: 
+  :file: queueable.cpp
+  :line: 136
+  :msg: "Can't remove queue element: %1"
+  :module: QueuePlugin
+5072393: 
+  :file: parameterizable.cpp
+  :line: 225
+  :msg: Invalid command line parameter
+  :module: ParamsCore
+206851: 
+  :file: audiodecoder.cpp
+  :line: 49
+  :msg: "Unable to open the audio stream from: %1"
+  :module: AudioCore
+5072388: 
+  :file: parameterizable.cpp
+  :line: 101
+  :msg: Cannot commit parameters to the database
+  :module: ParamsCore
+8390401: 
+  :file: source.cpp
+  :line: 168
+  :msg: "Can't merge source: %1"
+  :module: LibraryPlugin
+12729604: 
+  :file: queueable.cpp
+  :line: 146
+  :msg: "Can't update queueable: %1"
+  :module: QueuePlugin
+206852: 
+  :file: audiodecoder.cpp
+  :line: 95
+  :msg: Unsupported audio codec
+  :module: AudioCore
+8435969: 
+  :file: library.cpp
+  :line: 83
+  :msg: "Invalid source : %1"
+  :module: LibraryPlugin
+10885889: 
+  :file: dbcore.cpp
+  :line: 85
+  :msg: No database found, no backup available, can't create a new one, please check your persmissions!
+  :module: DbCore
+8390402: 
+  :file: source.cpp
+  :line: 191
+  :msg: "Cannot remove source: %1"
+  :module: LibraryPlugin
+206853: 
+  :file: audiodecoder.cpp
+  :line: 97
+  :msg: Can't open codec
+  :module: AudioCore
+8451073: 
+  :file: librarymodel.cpp
+  :line: 39
+  :msg: "Can't get AudioTracks from database: %1"
+  :module: LibraryPlugin
+12737025: 
+  :file: playqueue.cpp
+  :line: 94
+  :msg: "Can't load play queue: %1"
+  :module: QueuePlugin
+10885890: 
+  :file: dbcore.cpp
+  :line: 168
+  :msg: "Can't store setting value: %1"
+  :module: DbCore

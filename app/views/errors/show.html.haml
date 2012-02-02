@@ -1,0 +1,22 @@
+.intro
+  - if logged_in? and current_user.admin?
+    .actions
+      = link_to t('edit'), [:edit, @error]
+  %h2= t('.title', :code => @error.hex_code)
+  .block
+    %p= t('.blurb')
+    %p= t('.details')
+    %h3= @error.msg
+    - if @error.details.blank?
+      %p= t('.no_details')
+    - else
+      %p= @error.details
+    %h3= t('.solutions')
+    - if @error.solutions.empty?
+      %p= raw t('.no_solutions', :contact => mail_to('support@defuze.me'))
+    - else
+      %p= raw t('.solutions_blurb', :contact => mail_to('support@defuze.me'))
+      %ol
+        - for solution in @error.solutions
+          %li
+            = simple_format solution.text

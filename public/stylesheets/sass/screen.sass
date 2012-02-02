@@ -65,6 +65,14 @@ h4
 ul
   list-style: none
   padding: 0
+  
+ol
+  li
+    font-size: 2em
+    color: $brown
+    p
+      font-size: 0.5em
+      color: $color
 
 cite
   color: $brown
@@ -249,8 +257,6 @@ form
       @include box-shadow(0 0 9px -1px $apple)
   input:-webkit-autofill
     color: black
-  textarea
-    height: 4em
   .checkbox
     width: auto
     height: auto
@@ -289,6 +295,18 @@ form
     input
       width: auto
       float: none
+  ul, .split ul
+    li
+      label
+        width: auto
+        clear: none
+        display: inline
+        float: none
+      input
+        width: auto
+        display: inline
+        float: none
+  
 table
   width: 100%
   border-spacing: 0
