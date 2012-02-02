@@ -1,5 +1,5 @@
-.intro
-  %h2= t('errors.show.title', :code => @error.hex_code)
+%h2= t('errors.show.title', :code => @error.hex_code)
+.block
   %p
     %em= t('.source_info', :file => @error.file, :line => @error.line, :mod => @error.module)
   = render :partial => 'form'

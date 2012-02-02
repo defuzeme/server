@@ -1,0 +1,25 @@
+%h2= ::Error.model_name.pluralize
+
+.block
+  %table
+    %thead
+      %tr
+        %th= ::Error.human_attribute_name :code
+        %th= ::Error.human_attribute_name :module
+        %th= ::Error.human_attribute_name :file
+        %th= ::Error.human_attribute_name :msg
+        %th= ::Error.human_attribute_name :solutions
+        %th
+    %tbody
+      - for error in @errors
+        %tr{:class => cycle('odd', 'even')}
+          %td
+            = link_to error.hex_code, error
+          %td= error.module
+          %td= "#{error.file}:#{error.line}"
+          %td= error.msg
+          %td
+            - for solution in error.solutions
+              = link_to "#{solution.id}", [:edit, solution]
+          %td
+            = link_to t(:edit), [:edit, error]

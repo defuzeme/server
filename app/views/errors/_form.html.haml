@@ -1,7 +1,18 @@
 = form_for @error do |f|
-  = auto_text_area f, :msg, :rows => 5
-  = auto_text_area f, :details, :rows => 15
-
+  .split
+    .left
+      = auto_text_area f, :msg, :rows => 5
+      = auto_text_area f, :details, :rows => 15
+    .right
+      %h3 Solutions
+      = link_to t('add_solution'), new_solution_path
+      %ul
+        - for solution in Solution.all
+          %li
+            - id = "error_solution_#{solution.id}"
+            = check_box_tag 'error[solution_ids][]', solution.id, @error.solutions.include?(solution), :id => id
+            = label_tag id, solution.name
+            %br
   .actions
     = f.submit
 

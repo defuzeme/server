@@ -334,6 +334,15 @@ form {
     form.button_to input {
       width: auto;
       float: none; }
+  form ul li label, form .split ul li label {
+    width: auto;
+    clear: none;
+    display: inline;
+    float: none; }
+  form ul li input, form .split ul li input {
+    width: auto;
+    display: inline;
+    float: none; }
 
 table {
   width: 100%;

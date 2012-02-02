@@ -7,3 +7,5 @@ fr:
       no_details: "Pas plus de détails pour l'instant"
       solutions: "Comment résoudre ce problème"
       no_solutions: "Aucune solution disponible pour l'instant, merci de nous contacter si necessaire: %{contact}"
+    edit:
+      source_info: "%{mod} (%{file}:%{line})"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120201112224) do
+ActiveRecord::Schema.define(:version => 20120202140243) do
 
   create_table "error_instances", :force => true do |t|
     t.integer  "user_id"
@@ -42,6 +42,11 @@ ActiveRecord::Schema.define(:version => 20120201112224) do
     t.text     "details"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "errors_solutions", :id => false, :force => true do |t|
+    t.integer "error_id"
+    t.integer "solution_id"
   end
 
   create_table "invitations", :force => true do |t|
@@ -86,6 +91,23 @@ ActiveRecord::Schema.define(:version => 20120201112224) do
   end
 
   add_index "radios", ["permalink"], :name => "index_radios_on_permalink", :unique => true
+
+  create_table "solution_translations", :force => true do |t|
+    t.integer  "solution_id"
+    t.string   "locale"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "solution_translations", ["solution_id"], :name => "index_solution_translations_on_solution_id"
+
+  create_table "solutions", :force => true do |t|
+    t.integer  "error_id"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tokens", :force => true do |t|
     t.integer  "user_id"

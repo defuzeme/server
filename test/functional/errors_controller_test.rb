@@ -8,12 +8,12 @@ class ErrorsControllerTest < ActionController::TestCase
   
   test "guest can't edit error" do
     get :edit, :id => hex_code
-    assert_response :unauthorized
+    assert_response :forbidden
   end
   
   test "guest can't update error" do
     put :update, :id => hex_code, :error => {:msg => 'toto'}
-    assert_response :unauthorized
+    assert_response :forbidden
     assert_not_equal 'toto', error.msg
   end
 
@@ -68,7 +68,6 @@ class ErrorsControllerTest < ActionController::TestCase
     u = users :aaron
     login_as u
     instance = error_instances :aaron
-    puts instance.inspect
     assert_difference 'instance.count', 1 do
       assert_no_difference 'error.instances.count' do
         get :show, :id => hex_code, :report => 'run'

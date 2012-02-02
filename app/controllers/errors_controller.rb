@@ -1,8 +1,10 @@
 class ErrorsController < ApplicationController
-  before_filter :login_required, :except => [:show]
+  before_filter :admins_only, :except => [:show]
   before_filter :load_error, :only => [:show, :edit, :update, :destroy, :delete]
-  before_filter :authorization_required, :except => [:show]
-  layout 'public'
+
+  def index
+    @errors = Error.all
+  end
   
   def show
     if params[:report].present?
@@ -34,5 +36,13 @@ class ErrorsController < ApplicationController
   
   def authorization_required
     forbidden if not @error.editable_by? current_user
+  end
+  
+  def auto_layout
+    if params[:action] ==  'show'
+      'public'
+    else
+      'application'
+    end
   end
 end

@@ -34,6 +34,7 @@ DefuzeMe::Application.routes.draw do
   # Support
   scope "/support" do
     resources :errors
+    resources :solutions
   end
 
   # Static pages

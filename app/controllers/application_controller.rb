@@ -59,7 +59,8 @@ class ApplicationController < ActionController::Base
     :user => :login,
     :invitation => :token,
     :token => :token,
-    :queue_elem => :position
+    :queue_elem => :position,
+    :solution => :id
   }.each do |model, field|
     define_method "load_#{model}" do
       # get the concerned model

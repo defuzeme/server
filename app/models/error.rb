@@ -22,6 +22,7 @@ class Error < ActiveRecord::Base
     :numericality => {:less_than => 0xFFFFFF}
   
   has_many :instances, :class_name => 'ErrorInstance', :dependent => :destroy
+  has_and_belongs_to_many :solutions
   
   def editable_by? user
     user and user.admin?
