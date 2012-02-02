@@ -4,6 +4,18 @@ class ErrorsController < ApplicationController
   before_filter :authorization_required, :except => [:show]
   layout 'public'
   
+  def show
+    if params[:report].present?
+      instance = @error.instances.today.find_by_report_and_user_id(params[:report], current_user)
+      if instance
+        instance.increment! :count
+      else
+        @error.instances.create :report => params[:report], :user => current_user
+      end
+      redirect_to @error
+    end
+  end
+  
   def update
     if @error.update_attributes params[:error]
       redirect_to @error

@@ -7,6 +7,7 @@
 #  error_id   :integer
 #  id         :integer       not null, primary key
 #  msg        :text
+#  report     :string(255)
 #  updated_at :datetime
 #  user_id    :integer
 #
@@ -17,8 +18,14 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+guest:
+  error: migration
+  report: 'init'
+  created_at: <%= 1.day.ago %>
+
+aaron:
+  error: migration
+  report: 'run'
+  user_id: 2
+  created_at: <%= 1.second.ago %>
+  
