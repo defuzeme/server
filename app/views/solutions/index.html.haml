@@ -8,6 +8,7 @@
       %tr
         %th= Solution.human_attribute_name :text
         %th= Solution.human_attribute_name :linked_errors
+        %th= Solution.human_attribute_name :priority
         %th
     %tbody
       - for solution in @solutions
@@ -16,5 +17,5 @@
           %td
             - for error in solution.linked_errors
               = link_to error.hex_code, error
-          %td
-            = link_to t(:edit), [:edit, solution]
+          %td= solution.priority
+          %td= link_to t(:edit), [:edit, solution]

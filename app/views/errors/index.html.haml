@@ -17,7 +17,12 @@
             = link_to error.hex_code, error
           %td= error.module
           %td= "#{error.file}:#{error.line}"
-          %td= error.msg
+          %td
+            = error.msg
+            [
+            - error.translated_locales.each do |locale|
+              = image_tag "flags/#{locale}.gif"
+            ]
           %td
             - for solution in error.solutions
               = link_to "#{solution.id}", [:edit, solution]

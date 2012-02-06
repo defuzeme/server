@@ -1,4 +1,5 @@
 = form_for @solution do |f|
+  = auto_field :number_field, f, :priority
   = auto_text_area f, :text, :rows => 15
   .actions
     = f.submit

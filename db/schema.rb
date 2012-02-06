@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120202140243) do
+ActiveRecord::Schema.define(:version => 20120206144614) do
 
   create_table "error_instances", :force => true do |t|
     t.integer  "user_id"
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(:version => 20120202140243) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "priority",   :default => 5
   end
 
   create_table "tokens", :force => true do |t|
