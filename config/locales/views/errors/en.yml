@@ -2,11 +2,11 @@ en:
   errors:
     show:
       title: "Support page for error %{code}"
-      blurb: "You are here because you encountered this error while using defuze.me. This page intend to help you understand what happened and how you can fix it."
-      details: "Here are some details about the error you get:"
+      blurb: "You are here because you encountered this error while using defuze.me. This page intends to help you understand what happened and how you can fix it."
+      details: "Here are some details about the error you got:"
       no_details: "This error has no detailed description"
       solutions: "How to solve this problem"
-      solutions_blurb: "These are different solutions you can try to fix the problem. If no one helped, please contact us: %{contact}"
+      solutions_blurb: "Here are different solutions that could fix the problem. If it still doesn't work, please contact us: %{contact}"
       no_solutions: "No solutions available yet, please contact us if needed: %{contact}"
     edit:
       source_info: "%{mod} (%{file}:%{line})"
