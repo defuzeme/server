@@ -1,6 +1,8 @@
 = form_for @solution do |f|
   = auto_field :number_field, f, :priority
-  = auto_text_area f, :text, :rows => 15
+  = auto_text_area f, :text, :rows => 15 do
+    ↑ flavored with
+    = link_to 'textile', 'http://warpedvisions.org/projects/textile-cheat-sheet/'
   .actions
     = f.submit
 

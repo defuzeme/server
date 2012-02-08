@@ -59,7 +59,7 @@ h3
 h4
   color: white
   font-weight: normal
-  font-size: 1.1em
+  font-size: 1.2em
   margin: 0.5em 0
 
 ul
@@ -67,12 +67,20 @@ ul
   padding: 0
   
 ol
-  li
+  > li
     font-size: 2em
     color: $brown
-    p
+    div.solution
       font-size: 0.5em
       color: $color
+div.solution
+  ol
+    padding-left: 2em
+    li
+      font-size: 1em
+      color: $color
+      line-height: 1.7em
+        
 
 cite
   color: $brown
@@ -242,7 +250,11 @@ form
     width: 20%
     padding: 0.4em 0
     text-align: right
-  input, textarea, select, a
+  div.details
+    clear: both
+    margin-left: 20%
+    padding-left: 1em
+  input, textarea, select
     border: 1px solid $back
     background-color: lighten($main, 10) !important
     color: white
@@ -628,7 +640,7 @@ footer
     line-height: 0.8em
     height: 1em
 
-.license, .faq
+.license, .faq, .solution
   text-align: justify
   ul
     list-style: circle

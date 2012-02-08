@@ -18,11 +18,13 @@
           %td= error.module
           %td= "#{error.file}:#{error.line}"
           %td
-            = error.msg
-            [
-            - error.translated_locales.each do |locale|
-              = image_tag "flags/#{locale}.gif"
-            ]
+            %h4
+              = error.msg
+              [
+              - error.translated_locales.each do |locale|
+                = image_tag "flags/#{locale}.gif"
+              ]
+            = error.details
           %td
             - for solution in error.solutions
               = link_to "#{solution.id}", [:edit, solution]

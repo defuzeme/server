@@ -19,4 +19,4 @@
       %ol
         - for solution in @error.solutions
           %li
-            = simple_format solution.text
+            %div.solution= raw solution.html

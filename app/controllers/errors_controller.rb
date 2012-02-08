@@ -3,7 +3,7 @@ class ErrorsController < ApplicationController
   before_filter :load_error, :only => [:show, :edit, :update, :destroy, :delete]
 
   def index
-    @errors = Error.all
+    @errors = Error.order('module, file, line').all
   end
   
   def show

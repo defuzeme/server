@@ -1,8 +1,9 @@
 module ApplicationHelper
-  def auto_field type, f, field, options = {}
+  def auto_field type, f, field, options = {}, &block
     out = ''
     out += f.label field
     out += f.send(type, field, options)
+    out += content_tag(:div, capture(&block), :class => :details) if block_given?
     out += f.error_message_on field
     out.html_safe
   end
@@ -24,9 +25,9 @@ module ApplicationHelper
     auto_field :check_box, *args
   end
 
-  def auto_text_area f, field, options = {}
+  def auto_text_area f, field, options = {}, &block
     options.merge! :style => ''
-    auto_field :text_area, f, field, options
+    auto_field :text_area, f, field, options, &block
   end
 
   def auto_select f, field, options = {}

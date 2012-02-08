@@ -24,6 +24,10 @@ class Solution < ActiveRecord::Base
     user and user.admin?
   end
   
+  def html
+    RedCloth.new(text).to_html
+  end
+  
   def name
     text.split(/\n/).first
   end

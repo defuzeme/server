@@ -56,19 +56,26 @@ h3 {
 h4 {
   color: white;
   font-weight: normal;
-  font-size: 1.1em;
+  font-size: 1.2em;
   margin: 0.5em 0; }
 
 ul {
   list-style: none;
   padding: 0; }
 
-ol li {
+ol > li {
   font-size: 2em;
   color: #776655; }
-  ol li p {
+  ol > li div.solution {
     font-size: 0.5em;
     color: #bbbbbb; }
+
+div.solution ol {
+  padding-left: 2em; }
+  div.solution ol li {
+    font-size: 1em;
+    color: #bbbbbb;
+    line-height: 1.7em; }
 
 cite {
   color: #776655; }
@@ -276,7 +283,11 @@ form {
     width: 20%;
     padding: 0.4em 0;
     text-align: right; }
-  form input, form textarea, form select, form a {
+  form div.details {
+    clear: both;
+    margin-left: 20%;
+    padding-left: 1em; }
+  form input, form textarea, form select {
     border: 1px solid #333333;
     background-color: #404040 !important;
     color: white;
@@ -292,7 +303,7 @@ form {
     -moz-border-radius-topright: 3px;
     border-bottom-right-radius: 3px;
     -moz-border-radius-bottomright: 3px; }
-    form input:focus, form textarea:focus, form select:focus, form a:focus {
+    form input:focus, form textarea:focus, form select:focus {
       outline: none;
       border: 1px solid #88c833;
       -webkit-box-shadow: 0 0 9px -1px #88c833;
@@ -693,9 +704,9 @@ footer {
     line-height: 0.8em;
     height: 1em; }
 
-.license, .faq {
+.license, .faq, .solution {
   text-align: justify; }
-  .license ul, .faq ul {
+  .license ul, .faq ul, .solution ul {
     list-style: circle;
     padding-left: 2em; }
 
