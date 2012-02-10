@@ -16,6 +16,34 @@ window.addEvent('domready', function() {
   })
 })*/
 
+// Audio play control related
+function play(playBtn) {
+  pauseBtn = $(playBtn).next();
+  pauseBtn.removeClass('hidden');
+  $(playBtn).addClass('hidden');
+  sendControl("play");
+}
+
+function pause(pauseBtn) {
+  playBtn = $(pauseBtn).prev();
+  playBtn.removeClass('hidden');
+  $(pauseBtn).addClass('hidden');
+  sendControl("pause");
+}
+
+function stop(btn) {
+  sendControl("stop");
+}
+
+function next(btn) {
+  sendControl("next");
+}
+
+function sendControl(action) {
+  $.ajax("/radios/me/control?do=" + action, {'type': 'POST'});
+}
+
+// Domready
 $(document).ready(function() {
   var queue = $("ol.queue");
   if (queue.length)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120206144614) do
+ActiveRecord::Schema.define(:version => 20120210094440) do
 
   create_table "error_instances", :force => true do |t|
     t.integer  "user_id"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20120206144614) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status"
   end
 
   add_index "radios", ["permalink"], :name => "index_radios_on_permalink", :unique => true

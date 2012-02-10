@@ -9,6 +9,7 @@
 #  id          :integer       not null, primary key
 #  name        :string(255)
 #  permalink   :string(255)
+#  status      :integer
 #  updated_at  :datetime
 #  website     :string(255)
 #
