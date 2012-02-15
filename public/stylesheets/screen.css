@@ -643,6 +643,8 @@ ol.queue {
   padding: 0;
   margin: 0; }
   ol.queue li {
+    font-size: 1em;
+    color: #bbbbbb;
     display: block;
     margin-bottom: 0.5em;
     padding-left: 55px;
@@ -667,6 +669,25 @@ ol.queue {
     padding: 6px 0;
     border: 2px solid #88c833;
     background-color: rgba(136, 200, 51, 0.1); }
+
+.player {
+  height: 4em; }
+  .player a {
+    line-height: 34px;
+    height: 40px;
+    float: left; }
+    .player a.play, .player a.pause {
+      border-top-left-radius: 3px;
+      -moz-border-radius-topleft: 3px;
+      border-bottom-left-radius: 3px;
+      -moz-border-radius-bottomleft: 3px; }
+    .player a.next {
+      border-top-right-radius: 3px;
+      -moz-border-radius-topright: 3px;
+      border-bottom-right-radius: 3px;
+      -moz-border-radius-bottomright: 3px; }
+    .player a.hidden {
+      display: none; }
 
 .status {
   float: right;

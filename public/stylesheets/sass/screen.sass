@@ -579,6 +579,8 @@ ol.queue
   padding: 0
   margin: 0
   li
+    font-size: 1em
+    color: $color
     display: block
     margin-bottom: 0.5em
     padding-left: 55px
@@ -603,6 +605,19 @@ ol.queue
     padding: 6px 0
     border: 2px solid $apple
     background-color: transparentize($apple, 0.9)
+
+.player
+  height: 4em
+  a
+    line-height: 34px
+    height: 40px
+    float: left
+    &.play, &.pause
+      @include lborder-radius(3px)
+    &.next
+      @include rborder-radius(3px)
+    &.hidden
+      display: none
 
 .status
   float: right
