@@ -3,6 +3,6 @@
 %h2= t('.title')
 
 .block
-  = render 'radios/player', :radio => @radio
+  =# render 'radios/player', :radio => @radio
   %ol.queue{'data-radio-id' => @radio.id}
     = render 'queue_elems', :queue_elems => @queue_elems
