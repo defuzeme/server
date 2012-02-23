@@ -1,6 +1,8 @@
 - @user.password = @user.password_confirmation = nil
 
 = form_for @user, {:html => {:autocomplete => 'off'}} do |f|
+  - if @user.new_record? and @user.invitation_code.present?
+    = f.hidden_field :invitation_code
   .split
     .left
       = auto_text_field f, :login
@@ -20,11 +22,6 @@
 
     .right
       = auto_password_field f, :password_confirmation
-
-  .split
-    .left
-      - if @user.new_record?
-        = auto_text_field f, :invitation_code
   .actions
     = f.submit
 

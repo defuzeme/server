@@ -7,9 +7,17 @@ class UsersController; def rescue_action(e) raise e end; end
 class UsersControllerTest < ActionController::TestCase
   fixtures :users
 
-  test 'should allow signup' do
+  test 'should allow signup without invitation' do
     assert_difference 'User.count' do
       create_user
+      assert_response :redirect
+    end
+  end
+
+  test 'should allow signup with invitation' do
+    i = invitations :aaron_to_john
+    assert_difference 'User.count' do
+      create_user :invitation_code => i.token
       assert_response :redirect
     end
   end
@@ -49,8 +57,16 @@ class UsersControllerTest < ActionController::TestCase
   test 'should sign up user with activation code' do
     create_user
     assigns(:user).reload
-  #  activation disabled during invitation beta
-  #  assert_not_nil assigns(:user).activation_code
+    #activation disabled during invitation beta
+    assert_not_nil assigns(:user).activation_code
+  end
+
+  test 'should skip activation code if invited' do
+    i = invitations :aaron_to_john
+    create_user :invitation_code => i.token
+    assigns(:user).reload
+    #activation disabled during invitation beta
+    assert_nil assigns(:user).activation_code
   end
 
   test 'should activate user' do
@@ -135,8 +151,7 @@ class UsersControllerTest < ActionController::TestCase
   protected
 
   def create_user(options = {})
-    i = invitations :aaron_to_john
     post :create, :user => { :login => 'quire', :email => 'quire@example.com',
-      :password => 'quire69', :password_confirmation => 'quire69', :invitation_code => i.token}.merge(options)
+      :password => 'quire69', :password_confirmation => 'quire69'}.merge(options)
   end
 end

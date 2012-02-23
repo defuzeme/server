@@ -29,12 +29,6 @@ class UserTest < ActiveSupport::TestCase
     assert_equal i.radio, user.radio
   end
 
-  test 'should deny create with bad token' do
-    assert_no_difference 'User.count' do
-      user = create_user(:invitation_code => 'toto')
-    end
-  end
-
   test 'should_initialize_activation_code_upon_creation' do
     user = create_user
     user.reload
@@ -46,7 +40,6 @@ class UserTest < ActiveSupport::TestCase
     user.reload
     assert_equal User::INVITATIONS_PER_USER, user.invitations_left
   end
-
 
   test 'should_require_login' do
     assert_no_difference 'User.count' do

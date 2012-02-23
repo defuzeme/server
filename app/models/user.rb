@@ -126,6 +126,10 @@ class User < ActiveRecord::Base
     user and (user.admin? or user == self)
   end
 
+  def need_activation?
+    not invitation.present?
+  end
+
   protected
     
   def make_activation_code
@@ -137,8 +141,8 @@ class User < ActiveRecord::Base
     self.invitation = Invitation.pending.find_by_token(invitation_code)
     if invitation.present?
       self.radio = invitation.radio
-    else
-      errors[:invitation_code] << I18n.t("activerecord.errors.messages.invalid") unless admin?
+    #else
+    #  errors[:invitation_code] << I18n.t("activerecord.errors.messages.invalid") unless admin?
     end
   end
   

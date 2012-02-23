@@ -25,13 +25,13 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     success = @user && @user.save
     if success && @user.errors.empty?
-#      With activation:
-#      redirect_back_or_default('/', :notice => "Thanks for signing up!  We're sending you an email with your activation code.")
-
-#      Without activation:
-       @user.activate!
-       self.current_user = @user
-       redirect_back_or_default(dashboard_path, :notice => "Logged in successfully")
+      if @user.need_activation?
+        redirect_back_or_default('/', :notice => "Thanks for signing up!  We're sending you an email with your activation code.")
+      else
+        @user.activate!
+        self.current_user = @user
+        redirect_back_or_default(dashboard_path, :notice => "Logged in successfully")
+      end
     else
       flash.now[:error]  = "We couldn't set up that account, sorry. Please correct errors below"
       respond_with(@user)
