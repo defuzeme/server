@@ -1,11 +1,8 @@
-= t '.blurb', :creator => @invitation.creator.name
+%h2= t '.title', :creator => @invitation.creator.name
 - if @invitation.radio.present?
-  = t '.join_radio', :radio => @invitation.radio.name
-= "\n"
+  %p= t '.join_radio', :radio => @invitation.radio.name
 - if @invitation.message.present?
-  = t '.message', :name => @invitation.creator.name, :message => @invitation.message
-= "\n"
-= t '.your_invitation_code', :code => @invitation.token
-= "\n"
-= t '.how_to_join'
-= invitation_url(@invitation)
+  %p= t '.message', :name => @invitation.creator.name, :message => @invitation.message
+%p
+  = t '.how_to_join'
+  = link_to invitation_url(@invitation), invitation_url(@invitation)

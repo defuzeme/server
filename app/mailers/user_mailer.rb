@@ -1,18 +1,18 @@
 class UserMailer < ActionMailer::Base
   def signup_notification user
     setup_email user
-    @subject += 'Please activate your new account'
+    @subject += t('user_mailer.signup_notification.title')
   end
   
   def activation user
     setup_email user
-    @subject += 'Your account has been activated!'
+    @subject += t('user_mailer.activation.title')
   end
   
   def invitation inv
     setup_email inv.email
     @invitation = inv
-    @subject += inv.creator.name + ' invites you to join defuze.me'
+    @subject += t('user_mailer.invitation.title', :creator => inv.creator.name)
   end
   
   protected
@@ -23,7 +23,7 @@ class UserMailer < ActionMailer::Base
     else
       @recipients  = user
     end
-    @from        = "noreply@defuze.me"
+    @from        = "defuze.me <noreply@defuze.me>"
     @subject     = "[Defuze.me] "
     @sent_on     = Time.now
     @user = user

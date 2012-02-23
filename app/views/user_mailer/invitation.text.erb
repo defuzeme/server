@@ -1,0 +1,11 @@
+<%= t '.title', :creator => @invitation.creator.name %>
+<% if @invitation.radio.present? %>
+  <%= t '.join_radio', :radio => @invitation.radio.name %>
+<% end %>
+
+<% if @invitation.message.present? %>
+  <%= t '.message', :name => @invitation.creator.name, :message => @invitation.message %>
+<% end %>
+
+<%= t '.how_to_join' %>
+<%= invitation_url(@invitation) %>

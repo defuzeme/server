@@ -1,0 +1,10 @@
+%div{:style => 'padding: 0.5em; background-color: #333;'}
+  = image_tag 'http://defuze.me/images/logo.png', :style => 'margin: 0.5em'
+= yield
+%br
+%div{:style => 'font-size: 0.8em; color: #555; border-top: 1px solid #ccc; padding-top: 1em'}
+  = t('user_mailer.sent_by')
+  = link_to 'defuze.me', 'http://defuze.me'
+  %br
+  = t('user_mailer.why_support')
+  = mail_to 'support@defuze.me'

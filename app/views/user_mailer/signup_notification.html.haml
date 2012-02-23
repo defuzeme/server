@@ -1,0 +1,7 @@
+%h2= t('.title')
+%p
+  = t('.login') 
+  %strong= @user.login
+%p
+  = t('.visit_url')
+  = link_to activate_url(@user.activation_code), activate_url(@user.activation_code)

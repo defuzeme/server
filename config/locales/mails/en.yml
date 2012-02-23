@@ -1,8 +1,16 @@
 en:
   user_mailer:
+    sent_by: "This email was automatically sent by"
+    why_support: "If you have any difficulties understanding why you received it, you can contact us at"
     invitation:
-      blurb: "You've been invited by %{creator} to join defuze.me."
+      title: "You've been invited by %{creator} to join defuze.me."
       join_radio: "As requested by the person inviting you, your account will automatically be linked to his radio called : %{radio}"
-      your_invitation_code: "Here is your invitation code: %{code}"
-      how_to_join: "You can join defuze.me by using this code in the registration form, or simply by following this link:"
+      how_to_join: "You can join defuze.me by following this link:"
       message: "Here is %{name}'s message: %{message}"
+    signup_notification:
+      title: "Please activate your new account"
+      login: "Your login is:"
+      visit_url: "Visit this url to activate your account:"
+    activation:
+      title: "Your account has been activated!"
+      welcome: "Welcome aboard %{user}!"
