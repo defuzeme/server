@@ -25,7 +25,7 @@ class InvitationsController < ApplicationController
       format.html do
         if @invitation.valid?
           @invitation.send!
-          redirect_back_or_default(current_user, :notice => "Your invitation has been sent!")
+          redirect_back_or_default(current_user, :notice => t('alerts.invitation_sent'))
         else
           render :new
         end

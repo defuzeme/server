@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
           self.current_user = user
           new_cookie_flag = (params[:remember_me] == "1")
           handle_remember_cookie! new_cookie_flag
-          redirect_back_or_default(dashboard_path, :notice => "Logged in successfully")
+          redirect_back_or_default(dashboard_path, :notice => t('alerts.login_ok'))
         end
         format.any(:json, :xml) do
           # login using client api return a new token
@@ -43,13 +43,13 @@ class SessionsController < ApplicationController
 
   def destroy
     logout_killing_session!
-    redirect_back_or_default(root_path, :notice => "You have been logged out.")
+    redirect_back_or_default(root_path, :notice => t('alerts.logout_ok'))
   end
 
 protected
   # Track failed login attempts
   def note_failed_signin
-    flash.now[:error] = "Couldn't log you in as '#{params[:login]}'"
+    flash.now[:error] = t('alerts.login_fail', :login => params[:login])
     logger.warn "Failed login for '#{params[:login]}' from #{request.remote_ip} at #{Time.now.utc}"
   end
 end

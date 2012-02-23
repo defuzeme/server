@@ -31,3 +31,11 @@ fr:
   radio: Radio
   alerts:
     token_expired: "Votre clef a maintenant expiré et ne pourra plus être utilisée."
+    invitation_sent: "Votre invitation a été envoyé !"
+    login_ok: "Connexion réussi."
+    logout_ok: "Vous êtes maintenant déconnecté."
+    login_fail: "Impossible de vous identifier en tant que '%{login}'."
+    activation: "Merci de votre inscription ! Vous allez recevoir un email pour activer votre compte."
+    signup_ok: "Inscription terminé ! Vous pouvez maintenant vous connecter."
+    code_missing: "Le code d'activation est manquant. Merci de suivre le lien dans votre email."
+    code_invalid: "Il n'y a pas d'utilisateur associés à ce code d'activation. Vérifiez votre lien ou essayez de vous connecter!"

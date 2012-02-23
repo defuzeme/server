@@ -30,4 +30,12 @@ en:
   eip: Epitech Innovative Projects
   radio: Radio
   alerts:
-    token_expired: "Your token is now expired and can't be used any more"
+    token_expired: "Your token is now expired and can't be used any more."
+    invitation_sent: "Your invitation has been sent!"
+    login_ok: "Logged in successfully."
+    logout_ok: "You have been logged out."
+    login_fail: "Couldn't log you in as '%{login}'."
+    activation: "Thanks for signing up! We're sending you an email to activate your account."
+    signup_ok: "Signup complete! Please sign in to continue."
+    code_missing: "The activation code is missing. Please follow the URL from your email."
+    code_invalid: "We couldn't find a user for this activation code. Double check your link or try signing in!"
