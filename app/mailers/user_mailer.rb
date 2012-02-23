@@ -1,33 +1,28 @@
 class UserMailer < ActionMailer::Base
+  default :from => "defuze.me website <noreply@defuze.me>",
+          :reply_to => 'defuze.me support <support@defuze.me>'
+
   def signup_notification user
-    setup_email user
-    @subject += t('user_mailer.signup_notification.title')
+    send_email user, :object => t('user_mailer.signup_notification.title')
   end
   
   def activation user
-    setup_email user
-    @subject += t('user_mailer.activation.title')
+    send_email user, :object => t('user_mailer.activation.title')
   end
   
   def invitation inv
-    setup_email inv.email
     @invitation = inv
-    @subject += t('user_mailer.invitation.title', :creator => inv.creator.name)
+    send_email inv.email, :object => t('user_mailer.invitation.title', :creator => inv.creator.name)
   end
   
   protected
 
-  def setup_email(user)
-    if user.is_a? User
-      @recipients  = "user.name <#{user.email}>"
-    else
-      @recipients  = user
-    end
-    @from        = "defuze.me <noreply@defuze.me>"
-    @subject     = "[Defuze.me] "
-    @sent_on     = Time.now
+  def send_email user, options
+    recipients = (user.is_a?(User) ? "#{user.name} <#{user.email}>" : user)
+    object     = "[Defuze.me] #{options[:object]}"
     @user = user
     default_url_options[:host] = $host || 'defuze.me'
+    mail :to => recipients, :subject => object
   end
 
 end
