@@ -42,4 +42,8 @@ module ApplicationHelper
       javascript_include_tag *args
     end
   end
+  
+  def download_file file, title = nil, opts = {}
+    render 'shared/download', :filename => file, :title => title, :options => opts
+  end
 end

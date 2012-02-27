@@ -36,16 +36,19 @@ fr:
       my_radio: "Ma radio"
     download:
       title: "Téléchargement"
-      not_available: "Le logiciel client et l'application mobile ne sont pour l'instant pas disponibles au téléchargement public.<br /><br />Merci de votre patience."
-      available: "Vous pouvez télécharger ici la dernière version du code source et de la documentation de defuze.me. Les versions compilés et installables seront bientôt disponibles."
-      github: "Vous pouvez récupérer defuze.me via github!"
+      available: "Vous pouvez télécharger ici la dernière version du logiciel principal, de l'application mobile ou de la documentation. Le code source de defuze.me est disponible sur github ou dans une archive ci-dessous."
+      github: "Récupérez les sources de defuze.me via github !"
       keep_informed: "Restez informé :"
       source_code: "Code source"
       doc: "Documentation"
-      client: "Logiciel client"
+      client: "Logiciel principal"
       mobile_app: "Application mobile"
       doc_user: "Documentation utilisateur"
       doc_technical: "Documentation technique"
+      license: "defuze.me est un logiciel libre couvert par la licence GNU LGPLv3 et comprend du code de FFmpeg, TagLib at Qt, tous sous licence GNU LGPLv2.1."
+      windows_installer: "Installateur Windows"
+      debian_package: "Paquet Debian"
+      android_app: "Application Android"
     contact:
       title: Contact
       email: "Envoyez-nous vos remarques par e-mail :"

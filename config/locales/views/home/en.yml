@@ -28,16 +28,15 @@ en:
         website: The web site
         mobile: The tablet application
       blurbs:
-        software: "<p>Running on your computer, it is the main tool to manage your radio broadcast. Import and export from anywhere, social integration, full mixer and advanced scheduling are include beyond <a href=''>many other</a>.</p>"
-        website: "<p>Manage your radio and monitor the activity from anywhere in the world. Statistics, schedueling, blog and <a href=''>more</a> are accesible from your radio account on <a href='http://defuze.me'>http://defuze.me</a></p>"
-        mobile: "<p>Gives you the power to remotely control your radio broadcast, from both your iPad or Android tablet. <a href=''>Discover more about the tablet app functionalities</a>.</p>"
+        software: "<p>Running on your computer, it is the main tool to manage your radio broadcast. Import and export from anywhere, social integration, full mixer and advanced scheduling are include beyond many other.</p>"
+        website: "<p>Manage your radio and monitor the activity from anywhere in the world. Statistics, schedueling, blog and more are accesible from your radio account on <a href='http://defuze.me'>http://defuze.me</a></p>"
+        mobile: "<p>Gives you the power to remotely control your radio broadcast, from both your iPad or Android tablet.</p>"
     dashboard:
       title: "Dashboard"
       my_radio: "My radio"
     download:
       title: "Download"
-      not_available: "The desktop and mobile applications are not available yet for public download.<br /><br />Thank you for your patience."
-      available: "Here you can download the latest version of defuze.me source code and documentation. Binary release and installers are comming soon."
+      available: "Here you can download the latest version of the desktop application, the mobile application or the documentation. The source code is available on github or in the snapshot archive below"
       keep_informed: "Stay tuned:"
       github: "Clone or fork defuze.me using github!"
       source_code: "Source code snapshot"
@@ -46,6 +45,10 @@ en:
       mobile_app: "Mobile application"
       doc_user: "User documentation"
       doc_technical: "Technical documentation"
+      license: "This program is free software covered by the GNU LGPLv3 license and includes code from FFmpeg, TagLib and Qt, all under GNU LGPLv2.1."
+      windows_installer: "Windows installer"
+      debian_package: "Debian package"
+      android_app: "Android application"
     contact:
       title: Contact
       email: "Send any comments and suggestions by e-mail:"
