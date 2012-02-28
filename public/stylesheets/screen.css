@@ -870,39 +870,47 @@ div#carousel-images {
       bottom: 0;
       display: block;
       text-align: center; }
-  #download .source-code a, #download .doc a {
+  #download a {
     display: block;
     margin: 0 10px;
     height: 48px;
     font-size: 0.9em;
-    padding: 4px 0 0 50px; }
-    #download .source-code a strong, #download .doc a strong {
+    padding: 4px 0 0 55px;
+    background-color: transparent;
+    background-position: top left;
+    background-repeat: no-repeat; }
+    #download a strong {
       font-size: 1.3em;
       font-weight: normal; }
-    #download .source-code a em, #download .doc a em {
+    #download a em {
       font-style: normal;
       color: #bbbbbb; }
-  #download .source-code a {
-    width: 175px;
-    background: transparent url("/images/icons/box.png") top left no-repeat; }
-  #download .doc a {
-    width: 235px;
-    background: transparent url("/images/icons/pdf.png") top left no-repeat; }
-  #download .mobile .ios {
-    background-position: center -90px; }
-  #download .client {
+  #download .doc {
     clear: both; }
-    #download .client .windows {
-      background-position: center -180px; }
-    #download .client .linux {
-      background-position: center -270px; }
-    #download .client .macos {
-      background-position: center -360px; }
+  #download .source-code a {
+    width: 170px;
+    background-image: url("/images/icons/box.png"); }
+  #download .mobile a {
+    width: 170px;
+    background-image: url("/images/icons/android.png"); }
+  #download .doc a {
+    width: 230px;
+    background-image: url("/images/icons/pdf.png"); }
+  #download .client a {
+    width: 230px; }
+    #download .client a.windows {
+      background-image: url("/images/icons/windows.png"); }
+    #download .client a.linux {
+      background-image: url("/images/icons/linux.png"); }
 
 #main .intro p.github {
-  background: transparent url("/images/icons/github.png") 5px center no-repeat;
-  height: 46px;
-  padding: 2px 0 0 65px;
+  background: #404040 url("/images/icons/github.png") 15px center no-repeat;
+  border-radius: 2px;
+  height: 55px;
+  padding: 13px 0 0 85px;
   margin: 2em 0; }
   #main .intro p.github a {
     font-size: 1.3em; }
+#main .intro p.license {
+  font-size: 0.9em;
+  color: #737373; }

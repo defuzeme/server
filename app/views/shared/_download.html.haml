@@ -1,0 +1,11 @@
+- title ||= filename
+- url = "/#{filename}"
+- path = 'public' + url
+- if File.exists? path
+  = link_to url, options do
+    %strong= title
+    %br
+    %em
+      = l(File.ctime(path).to_date.to_date, :format => :long)
+      = '-'
+      = number_to_human_size File.size(path)

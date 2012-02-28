@@ -10,8 +10,6 @@
         #version
           - if defined? admin
             admin
-          - else
-            alphα
         #language-selector
           = render :partial => 'shared/language_selector'
         #signin
@@ -23,8 +21,6 @@
         #misc
           = render :partial => 'shared/menu'
           = yield :misc
-        #main
-          -#breadcrumb= render :partial => 'shared/breadcrumb'
-          = yield
+        #main= yield
       %footer
         = render :partial => 'layouts/footer'
