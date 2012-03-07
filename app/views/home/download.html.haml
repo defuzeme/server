@@ -17,7 +17,7 @@
       %h3= t('.doc')
       - for doc in [:user, :technical]
         - name = t(".doc_#{doc}")
-        - file = "/defuzeme_#{name.downcase.gsub(/\s+/, '_')}.pdf"
+        - file = "defuzeme_#{name.downcase.gsub(/\s+/, '_')}.pdf"
         = download_file file, name
     .source-code
       %h3= t('.source_code')
