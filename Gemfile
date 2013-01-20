@@ -13,6 +13,9 @@ gem 'json'
 gem 'globalize3', :git => 'https://github.com/svenfuchs/globalize3.git'
 gem 'RedCloth'
 
+# App server
+gem 'thin'
+
 # Push server
 gem 'em-http-request'
 
@@ -20,11 +23,4 @@ group :development, :test do
   # Capistrano
 	gem 'capistrano'
   gem 'capistrano_colors'
-  
-  # App server
-  gem 'thin'
-end
-
-group :production do
-  gem 'unicorn'
 end
