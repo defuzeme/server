@@ -10,7 +10,7 @@ gem 'haml'
 gem 'sass'
 gem 'routing-filter'
 gem 'json'
-gem 'globalize3', :git => 'https://github.com/svenfuchs/globalize3.git'
+gem 'globalize3'
 gem 'RedCloth'
 
 # App server
