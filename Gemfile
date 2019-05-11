@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+ruby "2.4.6"
 
 # Database
 gem 'pg'
