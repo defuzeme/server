@@ -3,7 +3,7 @@
 defuze.me website
 =================
 
-This project holds all the source code of the web service/website [defuze.me](http://defuze.me)
+This project holds all the source code of the web service/website [defuze.me](http://defuzeme.herokuapp.com)
 
 It is not very useful to run your own unless you need really custom setup with [defuze.me's desktop application](https://github.com/defuzeme/desktop).
 
@@ -31,4 +31,4 @@ It's a pretty standard Rails 3 application, all you have to do is:
 
 License
 -------
-This program is free software covered by the [GNU LGPLv3 license](http://defuze.me/en/license)
+This program is free software covered by the [GNU LGPLv3 license](http://defuzeme.herokuapp.com/en/license)
