@@ -6,7 +6,7 @@ gem 'pg'
 
 # Rails
 gem 'rake'
-gem 'rails', '3.0.10'
+gem 'rails', '3.0.20'
 gem 'haml'
 gem 'sass'
 gem 'routing-filter'
